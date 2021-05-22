@@ -6,12 +6,12 @@
         <div id="pictureFrame" class="flex-1 bg-black">
           <img src="./../assets/material/Stimulus9-1.png" />
         </div>
-        <div class="flex-1 bg-green-500">
+        <div class="flex-1 bg-green-500 m-5">
           <SliderMenu />
         </div>
       </div>
       <div>
-        <button class="bg-red-200">next</button>
+        <el-button class="bg-red-200">next</el-button>
       </div>
     </div>
   </div>
