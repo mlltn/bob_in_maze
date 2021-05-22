@@ -1,3 +1,6 @@
 TODO
 - styling for sliders
 - 
+
+ISSUES
+- dynamic colors

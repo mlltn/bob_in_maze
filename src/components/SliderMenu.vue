@@ -1,6 +1,9 @@
 <template>
   <div id="slider-menu" class="bg-green-300">
-    <div class="bg-red-500" v-bind:class="{ 'bg-green-500': totalScore == 10 }">
+    <div
+      class="bg-red-500"
+      v-bind:class="{ 'bg-green-500': isValidTotalScore }"
+    >
       Total score {{ totalScore }}
     </div>
     <div>
@@ -8,6 +11,8 @@
         <el-slider
           v-bind:id="'slider-' + slider.id"
           class="flex-auto bg-red-200"
+          :class="slider.color"
+          slider.color
           :min="0"
           :max="10"
           show-stops
@@ -23,21 +28,24 @@
 export default {
   data() {
     return {
+      props: {
+        validTotalScore: 10,
+      },
       default_settings: {
         score: 0,
         min: 0,
         max: 10,
       },
       sliders: [
-        { id: 1, color: "rgb(0, 255, 255)" },
-        { id: 2, color: "rgb(255, 0, 0)" },
-        { id: 3, color: "rgb(0, 0, 255)" },
+        { id: 1, color: "yellow" },
+        { id: 2, color: "red" },
+        { id: 3, color: "green" },
       ],
     };
   },
   created() {
     this.sliders.forEach((slider, index) => {
-      this.$set(this.sliders[index], "score", this.default_settings.score);
+      this.$set(slider, "score", this.default_settings.score);
       this.$set(this.sliders[index], "min", this.default_settings.min);
       this.$set(this.sliders[index], "max", this.default_settings.max);
     });
@@ -46,17 +54,43 @@ export default {
     totalScore() {
       let totalScore = 0;
       this.sliders.forEach((slider) => {
-        console.log(totalScore);
         totalScore += slider.score;
       });
       return totalScore;
     },
-    // dynamicStyles() {
-    //   return;
-    // },
+    isValidTotalScore() {
+      return this.totalScore == this.props.validTotalScore;
+    },
   },
 };
 </script>
 
-<style>
+<style lang="scss">
+.yellow {
+  .el-slider__button {
+    border-color: yellow;
+    background-color: yellow;
+  }
+  .el-slider__bar {
+    background-color: yellow;
+  }
+}
+.red {
+  .el-slider__button {
+    border-color: red;
+    background-color: red;
+  }
+  .el-slider__bar {
+    background-color: red;
+  }
+}
+.green {
+  .el-slider__button {
+    border-color: green;
+    background-color: green;
+  }
+  .el-slider__bar {
+    background-color: green;
+  }
+}
 </style>
