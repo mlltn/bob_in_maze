@@ -1,6 +1,7 @@
 TODO
-- styling for sliders
+- slider colors with element ui style customization
 - 
 
 ISSUES
-- dynamic colors
+-
++ dynamic colors

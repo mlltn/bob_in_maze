@@ -1,5 +1,5 @@
 <template>
-  <div id="slider-menu" class="bg-green-300">
+  <div id="slider-menu" class="">
     <div
       class="bg-red-500"
       v-bind:class="{ 'bg-green-500': isValidTotalScore }"
@@ -7,14 +7,13 @@
       Total score {{ totalScore }}
     </div>
     <div>
-      <div class="flex" v-for="slider in sliders" v-bind:key="slider.id">
+      <div class="flex mt-5" v-for="slider in sliders" v-bind:key="slider.id">
         <el-slider
           v-bind:id="'slider-' + slider.id"
-          class="flex-auto bg-red-200"
+          class="flex-auto"
           :class="slider.color"
-          slider.color
-          :min="0"
-          :max="10"
+          :min="slider.min"
+          :max="slider.max"
           show-stops
           v-model="slider.score"
         ></el-slider>
@@ -34,12 +33,12 @@ export default {
       default_settings: {
         score: 0,
         min: 0,
-        max: 10,
+        max: 5,
       },
       sliders: [
-        { id: 1, color: "yellow" },
-        { id: 2, color: "red" },
-        { id: 3, color: "green" },
+        { id: 1, color: "green" },
+        { id: 2, color: "blue" },
+        { id: 3, color: "blueviolet" },
       ],
     };
   },
@@ -66,24 +65,6 @@ export default {
 </script>
 
 <style lang="scss">
-.yellow {
-  .el-slider__button {
-    border-color: yellow;
-    background-color: yellow;
-  }
-  .el-slider__bar {
-    background-color: yellow;
-  }
-}
-.red {
-  .el-slider__button {
-    border-color: red;
-    background-color: red;
-  }
-  .el-slider__bar {
-    background-color: red;
-  }
-}
 .green {
   .el-slider__button {
     border-color: green;
@@ -91,6 +72,24 @@ export default {
   }
   .el-slider__bar {
     background-color: green;
+  }
+}
+.blue {
+  .el-slider__button {
+    border-color: blue;
+    background-color: blue;
+  }
+  .el-slider__bar {
+    background-color: blue;
+  }
+}
+.blueviolet {
+  .el-slider__button {
+    border-color: blueviolet;
+    background-color: blueviolet;
+  }
+  .el-slider__bar {
+    background-color: blueviolet;
   }
 }
 </style>
