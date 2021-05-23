@@ -1,10 +1,14 @@
 <template>
-  <div id="slider-menu" class="">
+  <div
+    id="slider-menu"
+    class="centered"
+    :style="{ width: props.sliderBoxWidth }"
+  >
     <div
       class="bg-red-500"
       v-bind:class="{ 'bg-green-500': isValidTotalScore }"
     >
-      Total score {{ totalScore }}
+      Total score {{ totalScore + '/' + props.validTotalScore }}
     </div>
     <div>
       <div class="flex mt-5" v-for="slider in sliders" v-bind:key="slider.id">
@@ -16,6 +20,7 @@
           :max="slider.max"
           show-stops
           v-model="slider.score"
+          @change="scoreChanged"
         ></el-slider>
         <div class="m-2">{{ slider.score }}</div>
       </div>
@@ -29,25 +34,31 @@ export default {
     return {
       props: {
         validTotalScore: 10,
+        sliderBoxWidth: '300px',
       },
       default_settings: {
         score: 0,
         min: 0,
-        max: 5,
+        max: 10,
       },
       sliders: [
-        { id: 1, color: "green" },
-        { id: 2, color: "blue" },
-        { id: 3, color: "blueviolet" },
+        { id: 1, color: 'green' },
+        { id: 2, color: 'blue' },
+        { id: 3, color: 'blueviolet' },
       ],
     };
   },
   created() {
     this.sliders.forEach((slider, index) => {
-      this.$set(slider, "score", this.default_settings.score);
-      this.$set(this.sliders[index], "min", this.default_settings.min);
-      this.$set(this.sliders[index], "max", this.default_settings.max);
+      this.$set(slider, 'score', this.default_settings.score);
+      this.$set(this.sliders[index], 'min', this.default_settings.min);
+      this.$set(this.sliders[index], 'max', this.default_settings.max);
     });
+  },
+  methods: {
+    scoreChanged() {
+      this.$emit('scoreChanged', this.isValidTotalScore);
+    },
   },
   computed: {
     totalScore() {
@@ -55,6 +66,7 @@ export default {
       this.sliders.forEach((slider) => {
         totalScore += slider.score;
       });
+
       return totalScore;
     },
     isValidTotalScore() {
