@@ -1,7 +1,17 @@
+
+IDEAS
+- option to show sliders in random order
+
 TODO
-- slider colors with element ui style customization
-- 
+
 
 ISSUES
--
+
+- Add ability to switch between experiment modes
+- setup vuex
++ enable button when valid answer
+
+**************************************************
+
++ slider colors with element ui style customization
 + dynamic colors
