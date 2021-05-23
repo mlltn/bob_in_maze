@@ -80,7 +80,9 @@ export default {
     enableNextButton(enable) {
       this.nextEnabled = enable;
     },
-    nextTast() {},
+    nextTask() {
+      return true;
+    },
   },
   computed: {
     currentImg() {

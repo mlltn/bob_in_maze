@@ -8,10 +8,10 @@ TODO
 ISSUES
 
 - Add ability to switch between experiment modes
-- setup vuex
-+ enable button when valid answer
++ setup vuex store
 
 **************************************************
 
++ enable button when valid answer
 + slider colors with element ui style customization
 + dynamic colors

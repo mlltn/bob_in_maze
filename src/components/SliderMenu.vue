@@ -8,7 +8,8 @@
       class="bg-red-500"
       v-bind:class="{ 'bg-green-500': isValidTotalScore }"
     >
-      Total score {{ totalScore + '/' + props.validTotalScore }}
+      Total score
+      {{ totalScore + '/' + $store.state.sliderMenu.props.validTotalScore }}
     </div>
     <div>
       <div class="flex mt-5" v-for="slider in sliders" v-bind:key="slider.id">
@@ -29,24 +30,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
-    return {
-      props: {
-        validTotalScore: 10,
-        sliderBoxWidth: '300px',
-      },
-      default_settings: {
-        score: 0,
-        min: 0,
-        max: 10,
-      },
-      sliders: [
-        { id: 1, color: 'green' },
-        { id: 2, color: 'blue' },
-        { id: 3, color: 'blueviolet' },
-      ],
-    };
+    return {};
   },
   created() {
     this.sliders.forEach((slider, index) => {
@@ -60,7 +48,14 @@ export default {
       this.$emit('scoreChanged', this.isValidTotalScore);
     },
   },
+
   computed: {
+    ...mapState({
+      props: (state) => state.sliderMenu.props,
+      default_settings: (state) => state.sliderMenu.default_settings,
+      sliders: (state) => state.sliderMenu.sliders,
+    }),
+
     totalScore() {
       let totalScore = 0;
       this.sliders.forEach((slider) => {
