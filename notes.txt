@@ -1,17 +1,41 @@
 
 IDEAS
 - option to show sliders in random order
+- Base component could be composition and some kinda plugin the conductor
 
 TODO
 
+Actual experiment:
+- Populate store from compositionJSON
+- 
 
-ISSUES
+Data stored in database:
+- Setup database connection
+- save results to database
 
-- Add ability to switch between experiment modes
-+ setup vuex store
+Customizable with JSON:
+- parse composition from JSON
+- move all hard coded values to JSON
 
+Support for adding instruction slides:
+
+Various:
+- Access code check
+
+Nice to have:
+- Make Conductor general (eg. the locations to fetch images at mount and component composition)
+- Reuse SliderMenu component better (currently new created for every task e.g. v-show instead of v-if)
+
+
+CURRENT ISSUES
+
+- disable next button while invalid answer
++ Add ability to switch between experiment modes
++ Fetch images from folder
++ refactoring
 **************************************************
 
++ setup vuex store
 + enable button when valid answer
 + slider colors with element ui style customization
 + dynamic colors

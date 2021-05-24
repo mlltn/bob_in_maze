@@ -12,7 +12,11 @@
       {{ totalScore + '/' + $store.state.sliderMenu.props.validTotalScore }}
     </div>
     <div>
-      <div class="flex mt-5" v-for="slider in sliders" v-bind:key="slider.id">
+      <div
+        class="flex mt-5"
+        v-for="slider in this.sliders"
+        v-bind:key="slider.id"
+      >
         <el-slider
           v-bind:id="'slider-' + slider.id"
           class="flex-auto"
@@ -21,7 +25,7 @@
           :max="slider.max"
           show-stops
           v-model="slider.score"
-          @change="scoreChanged"
+          @change="scoreChanged(slider.id)"
         ></el-slider>
         <div class="m-2">{{ slider.score }}</div>
       </div>
@@ -34,26 +38,46 @@ import { mapState } from 'vuex';
 
 export default {
   data() {
-    return {};
+    return {
+      sliders: [],
+    };
   },
+  beforeMount() {},
   created() {
-    this.sliders.forEach((slider, index) => {
-      this.$set(slider, 'score', this.default_settings.score);
-      this.$set(this.sliders[index], 'min', this.default_settings.min);
-      this.$set(this.sliders[index], 'max', this.default_settings.max);
+    this.sliderProps.forEach((sliderProp) => {
+      this.sliders.push({
+        id: sliderProp.id,
+        color: sliderProp.color,
+        min: this.defaultSettings.min,
+        max: this.defaultSettings.max,
+        score: this.defaultSettings.score,
+      });
     });
+  },
+  mounted() {
+    this.$store.commit('setSliderMenuVisible', true);
+  },
+  beforeUnmount() {
+    this.isVisible = false;
   },
   methods: {
     scoreChanged() {
-      this.$emit('scoreChanged', this.isValidTotalScore);
+      this.$store.commit('setTotalScoreValid', this.isValidTotalScore);
+    },
+    resetSliderScore() {
+      this.sliders.forEach((slider) => {
+        slider.score = 0;
+      });
+      this.$store.commit('setTotalScoreValid', this.isValidTotalScore);
     },
   },
-
   computed: {
     ...mapState({
+      isVisible: (state) => state.sliderMenu.isVisible,
+      isValidScore: (state) => state.sliderMenu.isValidScore,
       props: (state) => state.sliderMenu.props,
-      default_settings: (state) => state.sliderMenu.default_settings,
-      sliders: (state) => state.sliderMenu.sliders,
+      defaultSettings: (state) => state.sliderMenu.defaultSettings,
+      sliderProps: (state) => state.sliderMenu.sliderProps,
     }),
 
     totalScore() {
@@ -61,7 +85,6 @@ export default {
       this.sliders.forEach((slider) => {
         totalScore += slider.score;
       });
-
       return totalScore;
     },
     isValidTotalScore() {

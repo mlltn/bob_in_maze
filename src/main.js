@@ -13,16 +13,19 @@ Vue.config.productionTip = false
 var store = new Vuex.Store({
   state: {
     sliderMenu: {
+      isVisible: false,
+      isValidScore: false,
+
       props: {
         validTotalScore: 10,
-        sliderBoxWidth: '300px',
+        sliderBoxWidth: '400px',
       },
-      default_settings: {
+      defaultSettings: {
         score: 0,
         min: 0,
         max: 10,
       },
-      sliders: [
+      sliderProps: [
         { id: 1, color: 'green' },
         { id: 2, color: 'blue' },
         { id: 3, color: 'blueviolet' },
@@ -32,6 +35,12 @@ var store = new Vuex.Store({
 
   mutations: {
 
+    setSliderMenuVisible(state, visible) {
+      state.sliderMenu.isVisible = visible;
+    },
+    setTotalScoreValid(state, isValidScore) {
+      state.sliderMenu.isValidScore = isValidScore;
+    }
   }
 })
 
