@@ -5,6 +5,9 @@ IDEAS
 
 TODO
 
+Bugs:
+- stimulus / test image mismatches caused by the temporary "step" variable
+- reset score causes error - fixed by refactoring the menuslider visibility check
 Actual experiment:
 - Populate store from compositionJSON
 - 

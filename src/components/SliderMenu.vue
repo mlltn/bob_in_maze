@@ -58,6 +58,7 @@ export default {
     this.$store.commit('setSliderMenuVisible', true);
   },
   beforeUnmount() {
+    console.log('unmounted');
     this.isVisible = false;
   },
   methods: {

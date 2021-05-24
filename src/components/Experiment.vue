@@ -78,8 +78,7 @@
     </div>
     <el-button
       v-on:click="next"
-      :type="isNextEnabled ? 'success' : 'plain'"
-      :disabled="!isNextEnabled"
+      type="success"
       class="button-corner"
       :key="step"
       >next</el-button
@@ -108,10 +107,13 @@ export default {
   },
   methods: {
     next() {
+      this.step++;
       if (this.sliderMenu.isVisible) {
         this.$refs.slidermenu.resetSliderScore();
       }
-      this.step++;
+    },
+    isNextEnabled() {
+      return this.sliderMenu.isValidScore || !this.sliderMenu.isVisible;
     },
   },
   computed: {
@@ -129,9 +131,6 @@ export default {
         './Test' + ((this.step % 4) + 9) + '-1.png'
       ];
       return [stimulus1, stimulus2, test];
-    },
-    isNextEnabled() {
-      return this.sliderMenu.isValidScore || !this.sliderMenu.isVisible;
     },
   },
 };
