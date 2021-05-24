@@ -29,7 +29,7 @@ Nice to have:
 
 CURRENT ISSUES
 
-- disable next button while invalid answer
++ disable next button while invalid answer
 + Add ability to switch between experiment modes
 + Fetch images from folder
 + refactoring
