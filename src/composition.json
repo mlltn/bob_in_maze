@@ -3,6 +3,10 @@
         "assets": "./"
     },
     "RESULT_SET": "pilot",
+    "NEXT_PAGE_CONDITIONS": [
+        "slider-total",
+        "time-in-seconds"
+    ],
     "PAGES": {
         "landing_page": {
             "Title": {

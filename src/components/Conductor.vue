@@ -1,11 +1,19 @@
 <template>
   <div>
     <Page
-      v-for="(page, key) in this.$store.state.composition.PAGES"
-      v-show="true"
+      v-for="(page, key, index) in this.$store.state.composition.PAGES"
+      v-show="currentPage == index"
       v-bind:key="key"
       v-bind:content="page"
     ></Page>
+
+    <el-button
+      v-on:click="nextPage"
+      type="success"
+      class="button-corner"
+      :key="'asd'"
+      >next</el-button
+    >
   </div>
 </template>
 
@@ -13,12 +21,15 @@
 import Vue from 'vue';
 // import Experiment from './Experiment.vue';
 import Page from './Page.vue';
+import test from '../logic/utils.js';
 
 export default {
   data() {
     return {
-      page: 0,
-      test: {},
+      currentPage: 0,
+      test: test,
+      test2: this.$store.state.next_page_conditions,
+      test3: this.$store.state.composition.PAGES,
     };
   },
   beforeMount() {
@@ -33,6 +44,10 @@ export default {
     Page,
   },
   methods: {
+    nextPage() {
+      this.$store.commit('resetNextPageConditions');
+      this.currentPage++;
+    },
     importAllResourcePaths(assets) {
       // let resourcePaths = this.$store.state.composition.RESOURCE_PATHS;
       // for (var path_key in resourcePaths) {
@@ -58,4 +73,9 @@ export default {
 </script>
 
 <style>
+.button-corner {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+}
 </style>

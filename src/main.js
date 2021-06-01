@@ -5,18 +5,35 @@ import './index.css'
 import ElementUI from 'element-ui'
 import './styles.scss'
 import UUID from 'vue-uuid'
-import compostionJSON from './composition.json'
+import compositionJSON from './composition.json'
+import translationsJSON from './translations.json'
+import * as utils from './logic/utils.js'
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
 Vue.use(UUID);
 
-Vue.config.productionTip = false
+Vue.use({
+  install(Vue) {
+    Vue.prototype.$t = (translationKey) => {
+      let o = translationsJSON[translationKey];
+      console.log(o);
+      if (o !== undefined && o["en"] !== undefined) {
+        return o["en"];
+      }
+      return translationKey;
+    }
+  }
+})
 
+Vue.config.productionTip = false
 
 var store = new Vuex.Store({
   state: {
-    composition: compostionJSON,
+    paska: "asdf",
+    composition: compositionJSON,
+    next_page_conditions: utils.initBooleanConditions(compositionJSON.NEXT_PAGE_CONDITIONS),
+
     //TODO Add all below to composement
     sliderMenu: {
       isVisible: false,
@@ -39,6 +56,12 @@ var store = new Vuex.Store({
     }
   },
   mutations: {
+
+    resetNextPageConditions(state) {
+      Object.keys(state.next_page_conditions).forEach(key => {
+        state.next_page_conditions[key] = false;
+      });
+    },
 
     setSliderMenuVisible(state, visible) {
       state.sliderMenu.isVisible = visible;

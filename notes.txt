@@ -26,14 +26,19 @@ Support for adding instruction slides:
 Various:
 - Access code check
 
+Refactoring:
+- Handle props cleaner (get rid of $attrs...)
+- setup state mutation commit
+
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
 - Reuse SliderMenu component better (currently new created for every task e.g. v-show instead of v-if)
 
+**************************************************
 
 CURRENT ISSUES
-- parse composition from JSON
-
++ parse composition from JSON
++ localization support
 **************************************************
 
 + disable next button while invalid answer

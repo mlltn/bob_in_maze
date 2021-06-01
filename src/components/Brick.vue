@@ -18,7 +18,7 @@
         v-for="(text_code, id) in this.$attrs.content"
         v-bind:key="id + '_' + $uuid.v4()"
       >
-        {{ text_code }}
+        {{ $t(text_code) }}
       </p>
     </template>
     <template v-else-if="this.$attrs.name == 'Image'">
