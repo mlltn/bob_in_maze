@@ -4,14 +4,20 @@ import App from './App.vue'
 import './index.css'
 import ElementUI from 'element-ui'
 import './styles.scss'
+import UUID from 'vue-uuid'
+import compostionJSON from './composition.json'
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
+Vue.use(UUID);
 
 Vue.config.productionTip = false
 
+
 var store = new Vuex.Store({
   state: {
+    composition: compostionJSON,
+    //TODO Add all below to composement
     sliderMenu: {
       isVisible: false,
       isValidScore: false,
@@ -32,7 +38,6 @@ var store = new Vuex.Store({
       ],
     }
   },
-
   mutations: {
 
     setSliderMenuVisible(state, visible) {

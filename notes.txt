@@ -1,7 +1,7 @@
 
 IDEAS
 - option to show sliders in random order
-- Base component could be composition and some kinda plugin the conductor
+- Base component could be composition and some kinda plugin the cond"uctor
 
 TODO
 
@@ -17,10 +17,11 @@ Data stored in database:
 - save results to database
 
 Customizable with JSON:
-- parse composition from JSON
 - move all hard coded values to JSON
+- register components automatically
 
 Support for adding instruction slides:
+
 
 Various:
 - Access code check
@@ -31,13 +32,14 @@ Nice to have:
 
 
 CURRENT ISSUES
+- parse composition from JSON
+
+**************************************************
 
 + disable next button while invalid answer
 + Add ability to switch between experiment modes
 + Fetch images from folder
 + refactoring
-**************************************************
-
 + setup vuex store
 + enable button when valid answer
 + slider colors with element ui style customization

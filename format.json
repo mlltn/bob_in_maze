@@ -1,19 +1,21 @@
 {
-	"data":{
+	"data": {
 		"localizations": "/path/to/localizations",
 		"practice_pictures": "/path/to/practice/pictures",
 		"experiment_pictures": "/path/to/practice/pictures",
 	},
-	"result_set": {"pilot"}				//every set has their own database json file
+	"result_set": {
+		"pilot"
+	} //every set has their own database json file
 	"pages": {
 		"GLOBAL_TOP_BAR": {
-			"components":{
+			"components": {
 				"logo": {
-					"path":"path/to/logo"
+					"path": "path/to/logo"
 				}
 			}
 		},
-		"GLOBAL_FOOTER":{
+		"GLOBAL_FOOTER": {
 			"components": {
 				"button": {
 					"caption": "PREVIOUS_PAGE"
@@ -23,46 +25,46 @@
 				}
 			}
 		},
-		"landing_page": {
-			"components":{
-				"title":{
+		"landing_page": { //page key must be unique
+			"components": {
+				"title": {
 					"caption": "ENTER_CODE"
 				},
 				""
 			}
 		},
 		"consent_page": {
-			"components":{
-				"title":{
+			"components": {
+				"title": {
 					"caption": "CONSENT_FORMS"
 				},
-				"formatted_text_area":{
+				"formatted_text_area": {
 					"text_from_file": "/path/to/consent/text/file"
 				},
 				""
 			}
 		},
 		"basic_info": {
-			"components":{
-				"dropdown":{
+			"components": {
+				"dropdown": {
 					"id": "age"
 					"caption": "AGE"
 				},
-				"dropdown":{
+				"dropdown": {
 					"id": "gender"
 					"caption": "GENDER"
 				},
-				"dropdown":{
+				"dropdown": {
 					"id": "experience"
 					"caption": "EXPERIENCE"
 				},
 			}
 		},
 		"practise_experiment": {
-			"components":{
+			"components": {
 				"looping_page": {
 					"page": "bob_in_maze",
-					"props":{
+					"props": {
 						"mode": "practise"
 						""
 					},
@@ -71,21 +73,20 @@
 			}
 		},
 		"Experiment": {
-			"components":{
+			"components": {
 				"looping_page": {
 					"page": "bob_in_maze"
 					"loop_count": "20"
 				}
 			}
 		}
-		
 	}
 }
 
 LOCALIZATIONS
 
 {
-	"ENTER_CODE":{
+	"ENTER_CODE": {
 		"en": "Enter access code:"
 	},
 	"GIVE_CONSENT": {
@@ -102,27 +103,26 @@ LOCALIZATIONS
 DATABASE
 
 {
-	"kfjdkswidk2834":{					//unique result key (just in case the access_code is 
-										//used multiple times for some reason)		
+	"kfjdkswidk2834": { //unique result key (just in case the access_code is 
+		//used multiple times for some reason)		
 		"access_code": "FJEOKF",
 		"basic_info": {
 			"age": 25,
 			"gender": 30,
-			"experience": 3				//0-5
+			"experience": 3 //0-5
 		}
-		"feedback":{
-			"interesting": 89			//0-100
+		"feedback": {
+			"interesting": 89 //0-100
 		},
 		"entry_timestamp": "120721_122456",
 		"leave_timestamp": "120721_130002"
 		"practice_results": {
-			"1": {						//sequence number
-				"task_id": "a", 		//practise round id is char
-				"slider_1": 3,			//0-10
-				"slider_2": 1,			//0-10
-				"slider_3": 6,			//0-10
-				"task_time": "23,5"		//seconds
-				
+			"1": { //sequence number
+				"task_id": "a", //practise round id is char
+				"slider_1": 3, //0-10
+				"slider_2": 1, //0-10
+				"slider_3": 6, //0-10
+				"task_time": "23,5" //seconds
 			},
 			"2": {
 				"task_id": "b",
@@ -130,30 +130,24 @@ DATABASE
 				"slider_2": 1,
 				"slider_3": 7,
 				"task_time": "23,5"
-				
 			},
-
-			
 		}
 		"results": {
-				"practice_results": {
-			"1": {							//sequence number
-				"task_id": "14", 			//randomized
-				"slider_1": 8,
-				"slider_2": 1,
-				"slider_3": 1,
-				"task_time": "23,5"
-				
-			},
-			"2": {
-				"task_id": "3",
-				"slider_1": 4,
-				"slider_2": 1,
-				"slider_3": 5,
-				"task_time": "23,5"
-				
-			},
+			"practice_results": {
+				"1": { //sequence number
+					"task_id": "14", //randomized
+					"slider_1": 8,
+					"slider_2": 1,
+					"slider_3": 1,
+					"task_time": "23,5"
+				},
+				"2": {
+					"task_id": "3",
+					"slider_1": 4,
+					"slider_2": 1,
+					"slider_3": 5,
+					"task_time": "23,5"
+				},
+			}
 		}
 	}
-}
-

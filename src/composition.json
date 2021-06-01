@@ -1,0 +1,33 @@
+{
+    "RESOURCE_PATHS": {
+        "assets": "./"
+    },
+    "RESULT_SET": "pilot",
+    "PAGES": {
+        "landing_page": {
+            "Title": {
+                "id": "landing_page_title",
+                "caption": "LANDING_PAGE_CAPTION"
+            },
+            "Text": {
+                "welcome_text": "WELCOME_TEXT"
+            }
+        },
+        "1_intro_page": {
+            "Title": {
+                "caption": "1_INTRO_TITLE"
+            },
+            "Horizontal": {
+                "Image": {
+                    "src": {
+                        "path_key": "assets",
+                        "filename": "logo.png"
+                    }
+                },
+                "Text": {
+                    "blaablaa": "BLAABLAA"
+                }
+            }
+        }
+    }
+}
