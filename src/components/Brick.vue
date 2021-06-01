@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div :class="horizontal ? 'inline-block' : ''">
     <template v-if="this.$attrs.name == 'Horizontal'">
       <Brick
         v-for="(component, name) in this.$attrs.content"
         v-bind:key="name + '_' + $uuid.v4()"
         v-bind:name="name"
         v-bind:content="component"
+        :horizontal="true"
       >
       </Brick>
     </template>
@@ -37,6 +38,7 @@
 import Picture from './Picture.vue';
 export default {
   name: 'Brick',
+  props: { horizontal: Boolean },
   data() {
     return {};
   },
