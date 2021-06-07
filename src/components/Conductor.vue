@@ -7,13 +7,13 @@
       v-bind:content="page"
     ></Page>
 
-    <el-button
+    <!-- <el-button
       v-on:click="nextPage"
       type="success"
       class="button-corner"
       :key="'asd'"
       >next</el-button
-    >
+    > -->
   </div>
 </template>
 

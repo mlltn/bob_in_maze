@@ -98,7 +98,7 @@ export default {
 
       props: {
         pic_width: '10em',
-        mode: 1,
+        mode: 3,
       },
     };
   },

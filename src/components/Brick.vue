@@ -17,7 +17,7 @@
         v-for="(content, name) in parseComponents(this.$attrs.content)"
         v-bind:key="name + '_' + $uuid.v4()"
         v-bind:name="name"
-        v-bind:content="content"
+        :content="content"
       >
       </Brick>
     </template>
@@ -33,8 +33,8 @@
       <Picture v-bind:source="this.$attrs.content.src" />
     </template>
 
-    <template v-else-if="this.$attrs.name.startsWith('Sliders')">
-      <SliderMenu />
+    <template v-else-if="this.$attrs.name.startsWith('SliderMenu')">
+      <SliderMenu :content="this.$attrs.content" />
     </template>
     <template v-else-if="this.$attrs.name.startsWith('Experiment')">
       <Experiment />

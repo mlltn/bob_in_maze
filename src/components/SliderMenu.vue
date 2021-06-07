@@ -2,14 +2,14 @@
   <div
     id="slider-menu"
     class="centered"
-    :style="{ width: props.sliderBoxWidth }"
+    :style="{ width: content.sliderBoxWidth }"
   >
     <div
       class="bg-red-500"
       v-bind:class="{ 'bg-green-500': isValidTotalScore }"
     >
       Total score
-      {{ totalScore + '/' + $store.state.sliderMenu.props.validTotalScore }}
+      {{ totalScore + '/' + content.validTotalScore }}
     </div>
     <div>
       <div
@@ -34,52 +34,56 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { bus } from '../main.js';
 
 export default {
+  props: {
+    content: Object,
+  },
+
   data() {
     return {
       sliders: [],
+      lastEmittedScoreStatus: false,
     };
   },
   beforeMount() {},
   created() {
-    this.sliderProps.forEach((sliderProp) => {
+    bus.$on('resetSliderScore', this.resetSliderScore());
+
+    this.content.sliderProps.forEach((sliderProp) => {
       this.sliders.push({
         id: sliderProp.id,
         color: sliderProp.color,
-        min: this.defaultSettings.min,
-        max: this.defaultSettings.max,
-        score: this.defaultSettings.score,
+        min: this.content.defaultSettings.min,
+        max: this.content.defaultSettings.max,
+        score: this.content.defaultSettings.score,
       });
     });
   },
   mounted() {
-    this.$store.commit('setSliderMenuVisible', true);
+    console.log('jes');
+    // this.$store.commit('setSliderMenuVisible', true);
   },
   beforeUnmount() {
-    this.isVisible = false;
+    console.log('jes');
+    // this.isVisible = false;
   },
   methods: {
     scoreChanged() {
-      this.$store.commit('setTotalScoreValid', this.isValidTotalScore);
+      let ivts = this.isValidTotalScore;
+      if (ivts != this.lastEmittedScoreStatus)
+        bus.$emit('sliderScoreChange', ivts);
+      this.lastEmittedScoreStatus = ivts;
     },
     resetSliderScore() {
       this.sliders.forEach((slider) => {
         slider.score = 0;
       });
-      this.$store.commit('setTotalScoreValid', this.isValidTotalScore);
+      this.scoreChanged();
     },
   },
   computed: {
-    ...mapState({
-      isVisible: (state) => state.sliderMenu.isVisible,
-      isValidScore: (state) => state.sliderMenu.isValidScore,
-      props: (state) => state.sliderMenu.props,
-      defaultSettings: (state) => state.sliderMenu.defaultSettings,
-      sliderProps: (state) => state.sliderMenu.sliderProps,
-    }),
-
     totalScore() {
       let totalScore = 0;
       this.sliders.forEach((slider) => {
@@ -88,7 +92,7 @@ export default {
       return totalScore;
     },
     isValidTotalScore() {
-      return this.totalScore == this.props.validTotalScore;
+      return this.totalScore == this.content.validTotalScore;
     },
   },
 };

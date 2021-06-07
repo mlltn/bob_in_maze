@@ -5,7 +5,7 @@ import './index.css'
 import ElementUI from 'element-ui'
 import './styles.scss'
 import UUID from 'vue-uuid'
-import compositionJSON from './composition.json'
+import compositionJSON from './composition_test.json'
 import translationsJSON from './translations.json'
 import * as utils from './logic/utils.js'
 
@@ -29,30 +29,8 @@ Vue.config.productionTip = false
 
 var store = new Vuex.Store({
   state: {
-    paska: "asdf",
     composition: compositionJSON,
     next_page_conditions: utils.initBooleanConditions(compositionJSON.NEXT_PAGE_CONDITIONS),
-
-    //TODO Add all below to composement
-    sliderMenu: {
-      isVisible: false,
-      isValidScore: false,
-
-      props: {
-        validTotalScore: 10,
-        sliderBoxWidth: '400px',
-      },
-      defaultSettings: {
-        score: 0,
-        min: 0,
-        max: 10,
-      },
-      sliderProps: [
-        { id: 1, color: 'green' },
-        { id: 2, color: 'blue' },
-        { id: 3, color: 'blueviolet' },
-      ],
-    }
   },
   mutations: {
 
@@ -70,6 +48,8 @@ var store = new Vuex.Store({
     }
   }
 })
+
+export const bus = new Vue();
 
 new Vue({
   render: h => h(App),

@@ -1,0 +1,54 @@
+{
+    "RESOURCE_PATHS": {
+        "assets": "./",
+        "material": "./material/"
+    },
+    "RESULT_SET": "pilot",
+    "NEXT_PAGE_CONDITIONS": [
+        "slider-total",
+        "time-in-seconds"
+    ],
+    "TODO--------TEMPLATES": {
+        "#instruction_page": {
+            "Title": {
+                "caption": "TEMPLATE_CAPTION",
+                "_styles": ""
+            },
+            "Horizontal-1": {
+                "Picture-1": {
+                    "_styles": ""
+                },
+                "TextArea-1": {
+                    "_styles": ""
+                }
+            }
+        }
+    },
+    "PAGES": {
+        "experiment": {
+            "SliderMenu#test": {
+                "validTotalScore": 10,
+                "sliderBoxWidth": "400px",
+                "defaultSettings": {
+                    "score": 0,
+                    "min": 0,
+                    "max": 10
+                },
+                "sliderProps": [
+                    {
+                        "id": 1,
+                        "color": "green"
+                    },
+                    {
+                        "id": 2,
+                        "color": "blue"
+                    },
+                    {
+                        "id": 3,
+                        "color": "blueviolet"
+                    }
+                ]
+            }
+        }
+    }
+}
