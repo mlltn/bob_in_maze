@@ -6,6 +6,7 @@
       v-bind:key="name + '_' + $uuid.v4()"
       v-bind:name="name"
       v-bind:content="component"
+      :horizontal="false"
     >
     </Brick>
   </div>

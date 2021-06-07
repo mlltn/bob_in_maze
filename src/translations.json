@@ -2,13 +2,25 @@
     "NEXT": {
         "en": "Next"
     },
-    "NEXT": {
-        "en": "Next"
-    },
     "LONG_TEXT": {
         "en": "Vel facilisis volutpat est velit egestas. Gravida in fermentum et sollicitudin. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Tincidunt tortor aliquam nulla facilisi. Augue ut lectus arcu bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada. Amet purus gravida quis blandit turpis cursus. Eu turpis egestas pretium aenean pharetra magna ac placerat. Facilisis volutpat est velit egestas dui. Viverra nam libero justo laoreet sit amet cursus. Sit amet aliquam id diam maecenas ultricies mi. Interdum varius sit amet mattis vulputate."
     },
     "WELCOME_TEXT": {
         "en": "Noniiiiiiiiiin"
+    },
+    "TEMPLATE_CAPTION": {
+        "en": "Replace this template caption in composition.json::PAGES"
+    },
+    "INTRO_TITLE_1": {
+        "en": "Instructions #1"
+    },
+    "INTRO_TEXT_1": {
+        "en": "In this experiment, you are shown a number of images. In these images you see “Bob” moving in an environment. Bob’s task is to move to the end of the environment. There are differently coloured areas. Generally, Bob prefers to use white coloured areas instead of grey ones. There are also differently coloured “berries” that Bob may like enough to make a detour to pick them up. Your task is to, by looking at example paths taken by Bob, determine what Bob likes and how much."
+    },
+    "INTRO_TITLE_2": {
+        "en": "Instructions #2"
+    },
+    "INTRO_2_STIMULUS": {
+        "en": "You are shown one or more image like this, depicting Bob’s movements."
     }
 }

@@ -1,28 +1,43 @@
 <template>
-  <div :class="horizontal ? 'inline-block' : ''">
-    <template v-if="this.$attrs.name == 'Horizontal'">
+  <div
+    :class="
+      (this.$attrs.content._styles !== undefined
+        ? this.$attrs.content._styles
+        : '') +
+      (this.$attrs.name.startsWith('Horizontal') ? ' flex justify-center' : '')
+    "
+  >
+    <template
+      v-if="
+        this.$attrs.name.startsWith('Horizontal') ||
+        this.$attrs.name.startsWith('Vertical')
+      "
+    >
       <Brick
-        v-for="(component, name) in this.$attrs.content"
+        v-for="(content, name) in parseComponents(this.$attrs.content)"
         v-bind:key="name + '_' + $uuid.v4()"
         v-bind:name="name"
-        v-bind:content="component"
-        :horizontal="true"
+        v-bind:content="content"
       >
       </Brick>
     </template>
     <template v-else-if="this.$attrs.name == 'Title'">
-      <h1>{{ this.$attrs.content.caption }}</h1>
+      <h1>{{ $t(this.$attrs.content.caption) }}</h1>
     </template>
-    <template v-else-if="this.$attrs.name == 'Text'">
-      <p
-        v-for="(text_code, id) in this.$attrs.content"
-        v-bind:key="id + '_' + $uuid.v4()"
-      >
-        {{ $t(text_code) }}
+    <template v-else-if="this.$attrs.name.startsWith('TextArea')">
+      <p>
+        {{ $t(this.$attrs.content.text) }}
       </p>
     </template>
-    <template v-else-if="this.$attrs.name == 'Image'">
+    <template v-else-if="this.$attrs.name.startsWith('Picture')">
       <Picture v-bind:source="this.$attrs.content.src" />
+    </template>
+
+    <template v-else-if="this.$attrs.name.startsWith('Sliders')">
+      <SliderMenu />
+    </template>
+    <template v-else-if="this.$attrs.name.startsWith('Experiment')">
+      <Experiment />
     </template>
 
     <!-- <div
@@ -36,14 +51,24 @@
 
 <script>
 import Picture from './Picture.vue';
+import Experiment from './Experiment.vue';
+import SliderMenu from './SliderMenu';
 export default {
   name: 'Brick',
-  props: { horizontal: Boolean },
   data() {
     return {};
   },
   components: {
     Picture,
+    Experiment,
+    SliderMenu,
+  },
+  methods: {
+    parseComponents(components) {
+      const arr = Object.entries(components);
+      const filteredArr = arr.filter(([key]) => !key.startsWith('_'));
+      return Object.fromEntries(filteredArr);
+    },
   },
 };
 </script>

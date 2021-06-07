@@ -1,35 +1,100 @@
 {
     "RESOURCE_PATHS": {
-        "assets": "./"
+        "assets": "./",
+        "material": "./material/"
     },
     "RESULT_SET": "pilot",
     "NEXT_PAGE_CONDITIONS": [
         "slider-total",
         "time-in-seconds"
     ],
+    "TODO--------TEMPLATES": {
+        "#instruction_page": {
+            "Title": {
+                "caption": "TEMPLATE_CAPTION",
+                "_styles": ""
+            },
+            "Horizontal-1": {
+                "Picture-1": {
+                    "_styles": ""
+                },
+                "TextArea-1": {
+                    "_styles": ""
+                }
+            }
+        }
+    },
     "PAGES": {
         "landing_page": {
-            "Title": {
-                "id": "landing_page_title",
+            "Title#landing": {
                 "caption": "LANDING_PAGE_CAPTION"
             },
-            "Text": {
-                "welcome_text": "WELCOME_TEXT"
+            "TextArea#welcome": {
+                "text": "WELCOME_TEXT",
+                "_styles": ""
+            },
+            "TextArea#lorelimpsum": {
+                "text": "LONG_TEXT",
+                "_styles": "bg-black"
             }
         },
         "1_intro_page": {
-            "Title": {
-                "caption": "1_INTRO_TITLE"
+            "Title#intro1": {
+                "caption": "INTRO_TITLE_1"
             },
-            "Horizontal": {
-                "Image": {
-                    "src": {
-                        "path_key": "assets",
-                        "filename": "logo.png"
+            "TextArea#intro1": {
+                "text": "INTRO_TEXT_1"
+            }
+        },
+        "2_intro_page": {
+            "Title": {
+                "caption": "INTRO_TITLE_2"
+            },
+            "Horizontal-1": {
+                "Vertical#stimulus": {
+                    "Picture#stimulus1": {
+                        "src": {
+                            "path_key": "material",
+                            "filename": "Stimulus9-1.png"
+                        }
+                    },
+                    "TextArea#stimulus1": {
+                        "text": "INTRO_2_STIMULUS"
                     }
                 },
-                "Text": {
-                    "blaablaa": "BLAABLAA"
+                "Vertical#task": {
+                    "Picture#task1": {
+                        "src": {
+                            "path_key": "material",
+                            "filename": "Test9-1.png"
+                        }
+                    },
+                    "TextArea#task1": {
+                        "text": "INTRO_2_STIMULUS"
+                    }
+                },
+                "Sliders#intro2": {}
+            },
+            "experiment": {
+                "Experiment": {}
+            },
+            "example-page": {
+                "Title": {
+                    "caption": "INTRO_TITLE_1"
+                },
+                "Horizontal-1": {
+                    "Picture-1": {
+                        "src": {
+                            "path_key": "assets",
+                            "filename": "logo.png"
+                        },
+                        "_styles": "justify-top"
+                    },
+                    "TextArea-1": {
+                        "text": "LONG_TEXT",
+                        "_styles": " w-1/3"
+                    },
+                    "_styles": "items-center"
                 }
             }
         }

@@ -17,7 +17,6 @@ Vue.use({
   install(Vue) {
     Vue.prototype.$t = (translationKey) => {
       let o = translationsJSON[translationKey];
-      console.log(o);
       if (o !== undefined && o["en"] !== undefined) {
         return o["en"];
       }

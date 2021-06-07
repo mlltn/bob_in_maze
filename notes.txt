@@ -8,6 +8,7 @@ TODO
 Bugs:
 - stimulus / test image mismatches caused by the temporary "step" variable
 - reset score causes error - fixed by refactoring the menuslider visibility check
+
 Actual experiment:
 - Populate store from compositionJSON
 - 
@@ -19,16 +20,19 @@ Data stored in database:
 Customizable with JSON:
 - move all hard coded values to JSON
 - register components automatically
+- implement template support
 
 Support for adding instruction slides:
 
 
 Various:
 - Access code check
+- Use flex box instead of inline-block for horizontal
 
 Refactoring:
 - Handle props cleaner (get rid of $attrs...)
 - setup state mutation commit
+- add styles cleaner
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -37,10 +41,11 @@ Nice to have:
 **************************************************
 
 CURRENT ISSUES
-+ parse composition from JSON
-+ localization support
+- Make first experiment composition
 **************************************************
 
++ parse composition from JSON
++ localization support
 + disable next button while invalid answer
 + Add ability to switch between experiment modes
 + Fetch images from folder

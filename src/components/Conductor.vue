@@ -19,7 +19,6 @@
 
 <script>
 import Vue from 'vue';
-// import Experiment from './Experiment.vue';
 import Page from './Page.vue';
 import test from '../logic/utils.js';
 
@@ -40,7 +39,6 @@ export default {
     this.importAllMedia(require.context('@/assets/material/', true, /\.png$/));
   },
   components: {
-    // Experiment,
     Page,
   },
   methods: {
