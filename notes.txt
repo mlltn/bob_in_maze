@@ -33,6 +33,7 @@ Refactoring:
 - Handle props cleaner (get rid of $attrs...)
 - setup state mutation commit
 - add styles cleaner
+- parse components to store (can be referred with name)
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -41,6 +42,8 @@ Nice to have:
 **************************************************
 
 CURRENT ISSUES
+- Refactor all component state management to vuex
++ Generate component store state from composition
 - Make first experiment composition
 **************************************************
 

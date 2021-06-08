@@ -7,7 +7,8 @@ import './styles.scss'
 import UUID from 'vue-uuid'
 import compositionJSON from './composition_test.json'
 import translationsJSON from './translations.json'
-import * as utils from './logic/utils.js'
+
+import * as utils from './logic/utils'
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
@@ -30,21 +31,26 @@ Vue.config.productionTip = false
 var store = new Vuex.Store({
   state: {
     composition: compositionJSON,
-    next_page_conditions: utils.initBooleanConditions(compositionJSON.NEXT_PAGE_CONDITIONS),
+    currentPage: 0,
+    components: utils.parseComponents(compositionJSON.PAGES)
+  },
+  getters: {
+    getComponentById: (state) => (id) => {
+      return state.components[id]
+    }
   },
   mutations: {
 
+    updateNextPageCondition(state, condition) {
+      state.nextPageConditions[condition.name] = condition.value;
+    },
     resetNextPageConditions(state) {
-      Object.keys(state.next_page_conditions).forEach(key => {
-        state.next_page_conditions[key] = false;
+      Object.keys(state.nextPageConditions).forEach(key => {
+        state.nextPageConditions[key] = false;
       });
     },
-
-    setSliderMenuVisible(state, visible) {
-      state.sliderMenu.isVisible = visible;
-    },
-    setTotalScoreValid(state, isValidScore) {
-      state.sliderMenu.isValidScore = isValidScore;
+    nextPage(state) {
+      state.currentPage++;
     }
   }
 })

@@ -1,47 +1,43 @@
 <template>
   <div
     :class="
-      (this.$attrs.content._styles !== undefined
-        ? this.$attrs.content._styles
-        : '') +
-      (this.$attrs.name.startsWith('Horizontal') ? ' flex justify-center' : '')
+      (content._styles !== undefined ? content._styles : '') +
+      (name.startsWith('Horizontal') ? ' flex justify-center' : '')
     "
   >
     <template
-      v-if="
-        this.$attrs.name.startsWith('Horizontal') ||
-        this.$attrs.name.startsWith('Vertical')
-      "
+      v-if="name.startsWith('Horizontal') || name.startsWith('Vertical')"
     >
       <Brick
-        v-for="(content, name) in parseComponents(this.$attrs.content)"
+        v-for="(content, name) in parseComponents(content)"
         v-bind:key="name + '_' + $uuid.v4()"
         v-bind:name="name"
+        :id="name"
         :content="content"
       >
       </Brick>
     </template>
-    <template v-else-if="this.$attrs.name == 'Title'">
-      <h1>{{ $t(this.$attrs.content.caption) }}</h1>
+    <template v-else-if="name == 'Title'">
+      <h1>{{ $t(content.caption) }}</h1>
     </template>
-    <template v-else-if="this.$attrs.name.startsWith('TextArea')">
+    <template v-else-if="name.startsWith('TextArea')">
       <p>
-        {{ $t(this.$attrs.content.text) }}
+        {{ $t(content.text) }}
       </p>
     </template>
-    <template v-else-if="this.$attrs.name.startsWith('Picture')">
-      <Picture v-bind:source="this.$attrs.content.src" />
+    <template v-else-if="name.startsWith('Picture')">
+      <Picture v-bind:source="content.src" />
     </template>
 
-    <template v-else-if="this.$attrs.name.startsWith('SliderMenu')">
-      <SliderMenu :content="this.$attrs.content" />
+    <template v-else-if="name.startsWith('SliderMenu')">
+      <SliderMenu :content="content" :id="name" />
     </template>
-    <template v-else-if="this.$attrs.name.startsWith('Experiment')">
-      <Experiment />
+    <template v-else-if="name.startsWith('Experiment')">
+      <Experiment :content="content" />
     </template>
 
     <!-- <div
-      v-for="(item, name) in this.$attrs.content"
+      v-for="(item, name) in content"
       v-bind:key="name + '_' + $uuid.v4()"
     >
       {{ item }}
@@ -54,7 +50,7 @@ import Picture from './Picture.vue';
 import Experiment from './Experiment.vue';
 import SliderMenu from './SliderMenu';
 export default {
-  name: 'Brick',
+  props: { name: String, id: String, content: Object },
   data() {
     return {};
   },

@@ -14,8 +14,8 @@
     <div>
       <div
         class="flex mt-5"
-        v-for="slider in this.sliders"
-        v-bind:key="slider.id"
+        v-for="slider in getComponentById(id).sliders"
+        :key="slider.id"
       >
         <el-slider
           v-bind:id="'slider-' + slider.id"
@@ -35,55 +35,50 @@
 
 <script>
 import { bus } from '../main.js';
-
+import { mapGetters } from 'vuex';
 export default {
   props: {
+    id: String,
     content: Object,
   },
 
   data() {
     return {
-      sliders: [],
       lastEmittedScoreStatus: false,
     };
   },
   beforeMount() {},
   created() {
     bus.$on('resetSliderScore', this.resetSliderScore());
-
-    this.content.sliderProps.forEach((sliderProp) => {
-      this.sliders.push({
-        id: sliderProp.id,
-        color: sliderProp.color,
-        min: this.content.defaultSettings.min,
-        max: this.content.defaultSettings.max,
-        score: this.content.defaultSettings.score,
-      });
-    });
   },
   mounted() {
-    console.log('jes');
     // this.$store.commit('setSliderMenuVisible', true);
   },
   beforeUnmount() {
-    console.log('jes');
     // this.isVisible = false;
   },
   methods: {
     scoreChanged() {
       let ivts = this.isValidTotalScore;
-      if (ivts != this.lastEmittedScoreStatus)
-        bus.$emit('sliderScoreChange', ivts);
+      if (ivts != this.lastEmittedScoreStatus) {
+        bus.$emit('slider-total', ivts);
+      }
       this.lastEmittedScoreStatus = ivts;
     },
     resetSliderScore() {
-      this.sliders.forEach((slider) => {
-        slider.score = 0;
-      });
-      this.scoreChanged();
+      // this.sliders.forEach((slider) => {
+      //   slider.score = 0;
+      // });
+      // this.scoreChanged();
     },
   },
   computed: {
+    // ...mapState({
+    //   sliders: (state) => state.components[this.id].sliders,
+    ...mapGetters(['getComponentById']),
+    sliders() {
+      return this.getComponentById(this.id).sliders;
+    },
     totalScore() {
       let totalScore = 0;
       this.sliders.forEach((slider) => {

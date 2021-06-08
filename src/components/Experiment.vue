@@ -70,19 +70,24 @@
           </div>
         </div>
         <div id="sliderFrame" class="flex-1 m-20">
-          <SliderMenu ref="slidermenu" class="w-full" />
+          <SliderMenu
+            ref="slidermenu"
+            class="w-full"
+            :content="content['SliderMenu#experiment']"
+            id="SliderMenu#experiment"
+          />
         </div>
       </div>
 
       <!-- END OF PICTURE MODES -->
     </div>
-    <el-button
+    <!-- <el-button
       v-on:click="next"
       type="success"
       class="button-corner"
       :key="step"
       >next</el-button
-    >
+    > -->
   </div>
 </template>
 
@@ -91,6 +96,7 @@ import { mapState } from 'vuex';
 import SliderMenu from './SliderMenu.vue';
 
 export default {
+  props: { content: Object },
   data() {
     return {
       step: 0,
