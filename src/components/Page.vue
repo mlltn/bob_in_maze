@@ -12,7 +12,7 @@
     </Brick>
 
     <el-button
-      :v-show="content.useDefaultNextButton"
+      v-show="content.useDefaultNextButton"
       :disabled="!nextPageConditionsMet"
       v-on:click="nextPage()"
       type="success"

@@ -81,13 +81,14 @@
 
       <!-- END OF PICTURE MODES -->
     </div>
-    <!-- <el-button
-      v-on:click="next"
+    <el-button
+      v-on:click="nextStep"
+      :disabled="!isValidTotal"
       type="success"
       class="button-corner"
       :key="step"
       >next</el-button
-    > -->
+    >
   </div>
 </template>
 
@@ -95,13 +96,14 @@
 import { mapState } from 'vuex';
 import SliderMenu from './SliderMenu.vue';
 
+import { bus } from '../main.js';
+
 export default {
   props: { content: Object },
   data() {
     return {
       step: 0,
-      score: false,
-
+      isValidTotal: false,
       props: {
         pic_width: '10em',
         mode: 3,
@@ -111,15 +113,15 @@ export default {
   components: {
     SliderMenu,
   },
+  created() {
+    bus.$on('slider-total', (condition) => {
+      this.isValidTotal = condition;
+    });
+  },
   methods: {
-    next() {
+    nextStep() {
       this.step++;
-      if (this.sliderMenu.isVisible) {
-        this.$refs.slidermenu.resetSliderScore();
-      }
-    },
-    isNextEnabled() {
-      return this.sliderMenu.isValidScore || !this.sliderMenu.isVisible;
+      bus.$emit('reset-slider-score', {});
     },
   },
   computed: {

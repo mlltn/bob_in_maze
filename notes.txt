@@ -10,7 +10,6 @@ Bugs:
 - reset score causes error - fixed by refactoring the menuslider visibility check
 
 Actual experiment:
-- Populate store from compositionJSON
 - 
 
 Data stored in database:
@@ -19,7 +18,6 @@ Data stored in database:
 
 Customizable with JSON:
 - move all hard coded values to JSON
-- register components automatically
 - implement template support
 
 Support for adding instruction slides:
@@ -27,13 +25,15 @@ Support for adding instruction slides:
 
 Various:
 - Access code check
-- Use flex box instead of inline-block for horizontal
 
 Refactoring:
 - Handle props cleaner (get rid of $attrs...)
+- get rid of most of composition related props and use state
 - setup state mutation commit
 - add styles cleaner
-- parse components to store (can be referred with name)
+- event bus stuff to store
+- common next button
+- remove experiment SliderMenu id hardcoding
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -43,10 +43,14 @@ Nice to have:
 
 CURRENT ISSUES
 - Refactor all component state management to vuex
-+ Generate component store state from composition
 - Make first experiment composition
++ Next page button functionality
+
 **************************************************
 
++ register components automatically
++ Use flex box instead of inline-block for horizontal
++ Generate component store state from composition
 + parse composition from JSON
 + localization support
 + disable next button while invalid answer

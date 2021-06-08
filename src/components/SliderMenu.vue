@@ -43,13 +43,11 @@ export default {
   },
 
   data() {
-    return {
-      lastEmittedScoreStatus: false,
-    };
+    return {};
   },
   beforeMount() {},
   created() {
-    bus.$on('resetSliderScore', this.resetSliderScore());
+    bus.$on('reset-slider-score', this.resetSliderScore);
   },
   mounted() {
     // this.$store.commit('setSliderMenuVisible', true);
@@ -60,22 +58,20 @@ export default {
   methods: {
     scoreChanged() {
       let ivts = this.isValidTotalScore;
-      if (ivts != this.lastEmittedScoreStatus) {
-        bus.$emit('slider-total', ivts);
-      }
-      this.lastEmittedScoreStatus = ivts;
+      bus.$emit('slider-total', ivts);
     },
     resetSliderScore() {
-      // this.sliders.forEach((slider) => {
-      //   slider.score = 0;
-      // });
-      // this.scoreChanged();
+      this.sliders.forEach((slider) => {
+        slider.score = 0;
+      });
+      this.scoreChanged();
     },
   },
   computed: {
-    // ...mapState({
-    //   sliders: (state) => state.components[this.id].sliders,
     ...mapGetters(['getComponentById']),
+    properties() {
+      return this.getComponentById(this.id);
+    },
     sliders() {
       return this.getComponentById(this.id).sliders;
     },
@@ -87,7 +83,7 @@ export default {
       return totalScore;
     },
     isValidTotalScore() {
-      return this.totalScore == this.content.validTotalScore;
+      return this.totalScore == this.properties.validTotalScore;
     },
   },
 };
