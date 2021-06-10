@@ -9,23 +9,7 @@
         "time-in-seconds"
     ],
     "TEMPLATES": {
-        "#instruction_page": {
-            "Title": {
-                "caption": "TEMPLATE_CAPTION",
-                "_styles": ""
-            },
-            "Horizontal-1": {
-                "Picture-1": {
-                    "_styles": ""
-                },
-                "TextArea-1": {
-                    "_styles": ""
-                }
-            }
-        }
-    },
-    "PAGES": {
-        "basic_intro_page": {
+        "&basic_intro_page": {
             "useDefaultNextButton": true,
             "nextPageConditions": [],
             "components": {
@@ -34,7 +18,7 @@
                 },
                 "TextArea#pic-header": {
                     "text": "TEXT_3",
-                    "_styles": ""
+                    "_styles": "mt-20"
                 },
                 "Picture#stimulus1": {
                     "src": {
@@ -44,7 +28,7 @@
                 }
             }
         },
-        "basic_intro_page_with_slider": {
+        "&basic_intro_page_with_slider": {
             "useDefaultNextButton": true,
             "nextPageConditions": [
                 "slider-total"
@@ -67,6 +51,7 @@
                         }
                     },
                     "SliderMenu#tutorial": {
+                        "_styles": "m-20",
                         "validTotalScore": 10,
                         "sliderBoxWidth": "400px",
                         "defaultSettings": {},
@@ -88,6 +73,55 @@
                         ]
                     }
                 }
+            }
+        }
+    },
+    "PAGES": {
+        "&basic_intro_page#1": {
+            "TextArea#top": {
+                "text": "TEXT_2"
+            },
+            "TextArea#pic-header": {
+                "text": "TEXT_3"
+            },
+            "Picture#stimulus": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Stimulus9-1.png"
+                }
+            }
+        },
+        "&basic_intro_page_with_slider#1": {
+            "TextArea#top": {
+                "text": "TEXT_2"
+            },
+            "TextArea#pic-header": {
+                "text": "TEXT_3",
+                "_styles": ""
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Stimulus9-1.png"
+                }
+            },
+            "SliderMenu#tutorial": {
+                "sliders": [
+                    {
+                        "id": 1,
+                        "color": "green",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 2,
+                        "color": "blue",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    }
+                ]
             }
         },
         "experiment": {

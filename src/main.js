@@ -30,7 +30,7 @@ Vue.config.productionTip = false
 
 var store = new Vuex.Store({
   state: {
-    composition: compositionJSON,
+    composition: utils.parseComposition(compositionJSON),
     currentPage: 0,
     nextPageConditions: [],
     pages: utils.parsePages(compositionJSON.PAGES),
