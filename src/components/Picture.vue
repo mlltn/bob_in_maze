@@ -1,7 +1,5 @@
 <template>
-  <div class="">
-    <img :src="pictureSource" />
-  </div>
+  <img class="m-auto" :src="pictureSource" />
 </template>
 
 <script>

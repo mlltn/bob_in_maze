@@ -32,7 +32,9 @@ var store = new Vuex.Store({
   state: {
     composition: compositionJSON,
     currentPage: 0,
-    components: utils.parseComponents(compositionJSON.PAGES)
+    nextPageConditions: [],
+    pages: utils.parsePages(compositionJSON.PAGES),
+    components: utils.parseComponents(compositionJSON.PAGES),
   },
   getters: {
     getComponentById: (state) => (id) => {

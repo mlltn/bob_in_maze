@@ -11,7 +11,7 @@
       <Brick
         v-for="(content, name) in parseComponents(content)"
         v-bind:key="name + '_' + $uuid.v4()"
-        v-bind:name="name"
+        :name="name"
         :id="name"
         :content="content"
       >
@@ -51,6 +51,7 @@ import Experiment from './Experiment.vue';
 import SliderMenu from './SliderMenu';
 export default {
   props: { name: String, id: String, content: Object },
+  name: 'Brick',
   data() {
     return {};
   },

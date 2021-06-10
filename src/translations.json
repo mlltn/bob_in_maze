@@ -22,5 +22,80 @@
     },
     "INTRO_2_STIMULUS": {
         "en": "You are shown one or more image like this, depicting Bob’s movements."
+    },
+    "TEXT_2": {
+        "en": "Let’s practice! Here you see an example path taken by the robot. Take a look at it and pay attention to a) if the robot picks up the berry, and what the colour of the berry is; b) if there are any gray areas and if the robot avoids them. Please note that once you press ‘ready’, you can’t look back."
+    },
+    "TEXT_3": {
+        "en": "Stimulus 1"
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
     }
 }

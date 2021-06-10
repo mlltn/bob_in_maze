@@ -3,8 +3,9 @@
     <Page
       v-for="(page, key, index) in this.$store.state.composition.PAGES"
       v-show="$store.state.currentPage == index"
-      v-bind:key="key"
-      v-bind:content="page"
+      :key="key"
+      :content="page"
+      :id="key"
     ></Page>
   </div>
 </template>

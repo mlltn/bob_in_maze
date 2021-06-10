@@ -5,13 +5,21 @@ export function initBooleanConditions(conditionList) {
     }
     return boolObject
 }
+export function parsePages(rootNode) {
+    let pages = {}
+    for (const pageId in rootNode) {
+        let pageProps = { ...rootNode[pageId] };
+        delete pageProps.components //refactor the pages to have the components for cleaner state
+        pages[pageId] = pageProps;
+    }
+}
 export function parseComponents(rootNode) {
     let components = {};
-    for (const node_key in rootNode) {
-        let candidate = rootNode[node_key]
-        if (isComponentKey(node_key)) {
+    for (const key in rootNode) {
+        let candidate = rootNode[key]
+        if (isComponentKey(key)) {
             let newComponent = {}
-            newComponent[node_key] = stripComponents(candidate)
+            newComponent[key] = stripComponents(candidate)
             components = {
                 ...components,
                 ...newComponent

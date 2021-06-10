@@ -8,7 +8,7 @@
         "slider-total",
         "time-in-seconds"
     ],
-    "TODO--------TEMPLATES": {
+    "TEMPLATES": {
         "#instruction_page": {
             "Title": {
                 "caption": "TEMPLATE_CAPTION",
@@ -25,11 +25,74 @@
         }
     },
     "PAGES": {
-        "experiment": {
-            "useDefaultNextButton": false,
+        "basic_intro_page": {
+            "useDefaultNextButton": true,
+            "nextPageConditions": [],
+            "components": {
+                "TextArea#top": {
+                    "text": "TEXT_2"
+                },
+                "TextArea#pic-header": {
+                    "text": "TEXT_3",
+                    "_styles": ""
+                },
+                "Picture#stimulus1": {
+                    "src": {
+                        "path_key": "material",
+                        "filename": "Stimulus9-1.png"
+                    }
+                }
+            }
+        },
+        "basic_intro_page_with_slider": {
+            "useDefaultNextButton": true,
             "nextPageConditions": [
                 "slider-total"
             ],
+            "components": {
+                "TextArea#top": {
+                    "text": "TEXT_2"
+                },
+                "Horizontal#stimulus-slider": {
+                    "Vertical#pic-helper": {
+                        "TextArea#pic-header": {
+                            "text": "TEXT_3",
+                            "_styles": ""
+                        },
+                        "Picture#stimulus1": {
+                            "src": {
+                                "path_key": "material",
+                                "filename": "Stimulus9-1.png"
+                            }
+                        }
+                    },
+                    "SliderMenu#tutorial": {
+                        "validTotalScore": 10,
+                        "sliderBoxWidth": "400px",
+                        "defaultSettings": {},
+                        "sliders": [
+                            {
+                                "id": 1,
+                                "color": "green",
+                                "score": 0,
+                                "min": 0,
+                                "max": 10
+                            },
+                            {
+                                "id": 2,
+                                "color": "blue",
+                                "score": 0,
+                                "min": 0,
+                                "max": 10
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "experiment": {
+            "useDefaultNextButton": false,
+            "nextPageConditions": [],
             "components": {
                 "Experiment#practice": {
                     "iterations": 10,

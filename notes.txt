@@ -19,6 +19,7 @@ Data stored in database:
 Customizable with JSON:
 - move all hard coded values to JSON
 - implement template support
+- generate default props if missing
 
 Support for adding instruction slides:
 
@@ -34,6 +35,7 @@ Refactoring:
 - event bus stuff to store
 - common next button
 - remove experiment SliderMenu id hardcoding
+- parse component inside pages to have nicer state (easy to refactor in utils methods)
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -42,12 +44,13 @@ Nice to have:
 **************************************************
 
 CURRENT ISSUES
-- Refactor all component state management to vuex
 - Make first experiment composition
-+ Next page button functionality
++ Refactor important component state management to vuex
++ page states store
 
 **************************************************
 
++ Next page button functionality
 + register components automatically
 + Use flex box instead of inline-block for horizontal
 + Generate component store state from composition
