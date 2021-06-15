@@ -15,7 +15,7 @@
         "en": "Instructions #1"
     },
     "INTRO_TEXT_1": {
-        "en": "In this experiment, you are shown a number of images. In these images you see “Bob” moving in an environment. Bob’s task is to move to the end of the environment. There are differently coloured areas. Generally, Bob prefers to use white coloured areas instead of grey ones. There are also differently coloured “berries” that Bob may like enough to make a detour to pick them up. Your task is to, by looking at example paths taken by Bob, determine what Bob likes and how much."
+        "en": "In this experiment, ou are shown a number of images. In these images you see “Bob” moving in an environment. Bob’s task is to move to the end of the environment. There are differently coloured areas. Generally, Bob prefers to use white coloured areas instead of grey ones. There are also differently coloured “berries” that Bob may like enough to make a detour to pick them up. Your task is to, by looking at example paths taken by Bob, determine what Bob likes and how much."
     },
     "INTRO_TITLE_2": {
         "en": "Instructions #2"
