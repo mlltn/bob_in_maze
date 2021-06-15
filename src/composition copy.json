@@ -14,17 +14,17 @@
             "nextPageConditions": [],
             "components": {
                 "TextArea#top": {
-                    "text": "TEMPLATE_TEXT",
+                    "text": "TEXT_2",
                     "_styles": ""
                 },
                 "TextArea#pic-header": {
-                    "text": "TEMPLATE_TEXT",
+                    "text": "TEXT_3",
                     "_styles": ""
                 },
                 "Picture#stimulus1": {
                     "src": {
-                        "path_key": "assets",
-                        "filename": "logo.png"
+                        "path_key": "material",
+                        "filename": "Stimulus9-1.png"
                     }
                 }
             }
@@ -34,42 +34,36 @@
             "nextPageConditions": [],
             "components": {
                 "TextArea#top": {
-                    "text": "TEMPLATE_TEXT",
+                    "text": "TEXT_MISSING",
                     "_styles": ""
-                },
-                "TextArea#top-description": {
-                    "text": "TEMPLATE_TEXT",
-                    "_styles": "text-left"
                 },
                 "Horizontal#image-text": {
                     "Picture#image-1": {
-                        "_styles": "w-96",
                         "src": {
                             "path_key": "assets",
                             "filename": "logo.png"
                         }
                     },
                     "TextArea#pic-description": {
-                        "text": "TEMPLATE_TEXT",
-                        "_styles": "m-auto ml-12"
+                        "text": "TEXT_MISSING",
+                        "_styles": "m-10"
                     }
                 },
                 "Horizontal#image-text-2": {
                     "Picture#image-2": {
-                        "_styles": "w-96",
                         "src": {
                             "path_key": "assets",
                             "filename": "logo.png"
                         }
                     },
                     "TextArea#pic-description-2": {
-                        "text": "TEMPLATE_TEXT",
-                        "_styles": "m-auto ml-12"
+                        "text": "TEXT_MISSING",
+                        "_styles": "m-auto"
                     }
                 }
             }
         },
-        "&one_pic_with_slider": {
+        "&basic_intro_page_with_slider": {
             "useDefaultNextButton": true,
             "nextPageConditions": [
                 "slider-total"
@@ -103,166 +97,72 @@
                                 "score": 0,
                                 "min": 0,
                                 "max": 10
+                            },
+                            {
+                                "id": 2,
+                                "color": "blue",
+                                "score": 0,
+                                "min": 0,
+                                "max": 10
                             }
                         ]
-                    }
-                }
-            }
-        },
-        "&two_pics_with_slider": {
-            "useDefaultNextButton": true,
-            "nextPageConditions": [
-                "slider-total"
-            ],
-            "components": {
-                "TextArea#top": {
-                    "text": "TEMPLATE_TEXT"
-                },
-                "Horizontal#two-image-slider": {
-                    "Vertical#pic-helper": {
-                        "Picture#image-1": {
-                            "src": {
-                                "path_key": "assets",
-                                "filename": "logo.png"
-                            }
-                        },
-                        "TextArea#pic-description": {
-                            "text": "TEMPLATE_TEXT",
-                            "_styles": ""
-                        }
-                    },
-                    "Vertical#pic-helper-2": {
-                        "Picture#image-2": {
-                            "src": {
-                                "path_key": "assets",
-                                "filename": "logo.png"
-                            }
-                        },
-                        "TextArea#pic-description-2": {
-                            "text": "TEMPLATE_TEXT",
-                            "_styles": ""
-                        }
-                    },
-                    "Vertical#pic-helper-3": {
-                        "SliderMenu#tutorial": {
-                            "_styles": "",
-                            "validTotalScore": 10,
-                            "sliderBoxWidth": "400px",
-                            "defaultSettings": {},
-                            "sliders": [
-                                {
-                                    "id": 1,
-                                    "color": "green",
-                                    "score": 0,
-                                    "min": 0,
-                                    "max": 10
-                                },
-                                {
-                                    "id": 2,
-                                    "color": "blue",
-                                    "score": 0,
-                                    "min": 0,
-                                    "max": 10
-                                },
-                                {
-                                    "id": 3,
-                                    "color": "blueviolet",
-                                    "score": 0,
-                                    "min": 0,
-                                    "max": 10
-                                }
-                            ]
-                        },
-                        "TextArea#slider-info": {
-                            "text": "TEMPLATE_SLIDER_INFO",
-                            "_styles": ""
-                        }
                     }
                 }
             }
         }
     },
     "PAGES": {
-        "&one_pic_intro_page#1": {
+        "&two_pic_intro_page#first-test": {
+            "TextArea#top": {
+                "text": "TEXT_MISSING123"
+            },
+            "Picture#image-1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Stimulus9-1.png"
+                }
+            },
+            "TextArea#pic-description": {
+                "text": "TEXT_MISSING123"
+            },
+            "Picture#image-2": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Stimulus9-2.png"
+                }
+            },
+            "TextArea#pic-description-2": {
+                "text": "TEXT_MISSING123"
+            }
+        },
+        "&basic_intro_page#1": {
+            "TextArea#top": {
+                "text": "TEST_TEXT"
+            },
+            "TextArea#pic-header": {
+                "text": "TEXT_3"
+            },
+            "Picture#stimulus": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Stimulus9-1.png"
+                }
+            }
+        },
+        "&basic_intro_page_with_slider#1": {
             "TextArea#top": {
                 "text": "TEXT_2"
             },
             "TextArea#pic-header": {
-                "text": "TEXT_3"
+                "text": "TEXT_3",
             },
             "Picture#stimulus1": {
                 "src": {
                     "path_key": "material",
                     "filename": "Stimulus9-1.png"
                 }
-            }
-        },
-        "&one_pic_intro_page#2": {
-            "TextArea#top": {
-                "text": "TEXT_4"
-            },
-            "TextArea#pic-header": {
-                "text": "TEXT_3"
-            },
-            "Picture#stimulus1": {
-                "src": {
-                    "path_key": "material",
-                    "filename": "Stimulus9-2.png"
-                }
-            }
-        },
-        "&two_pic_intro_page#first-test": {
-            "TextArea#top": {
-                "text": "TEXT_MISSING"
-            },
-            "Picture#image-1": {
-                "src": {
-                    "path_key": "material",
-                    "filename": "Stimulus9-1.png"
-                }
-            },
-            "TextArea#pic-description": {
-                "text": "TEXT_MISSING"
-            },
-            "Picture#image-2": {
-                "src": {
-                    "path_key": "material",
-                    "filename": "Stimulus9-2.png"
-                }
-            },
-            "TextArea#pic-description-2": {
-                "text": "TEXT_MISSING"
-            }
-        },
-        "&two_pics_with_slider": {
-            "TextArea#top": {
-                "text": "TEMPLATE_TEXT"
-            },
-            "Picture#image-1": {
-                "src": {
-                    "path_key": "assets",
-                    "filename": "logo.png"
-                }
-            },
-            "TextArea#pic-description": {
-                "text": "TEMPLATE_TEXT",
-                "_styles": ""
-            },
-            "Picture#image-2": {
-                "src": {
-                    "path_key": "assets",
-                    "filename": "logo.png"
-                }
-            },
-            "TextArea#pic-description-2": {
-                "text": "TEMPLATE_TEXT",
-                "_styles": ""
             },
             "SliderMenu#tutorial": {
-                "_styles": "",
-                "validTotalScore": 10,
-                "sliderBoxWidth": "400px",
-                "defaultSettings": {},
                 "sliders": [
                     {
                         "id": 1,
@@ -277,19 +177,8 @@
                         "score": 0,
                         "min": 0,
                         "max": 10
-                    },
-                    {
-                        "id": 3,
-                        "color": "blueviolet",
-                        "score": 0,
-                        "min": 0,
-                        "max": 10
                     }
                 ]
-            },
-            "TextArea#slider-info": {
-                "text": "TEMPLATE_SLIDER_INFO",
-                "_styles": ""
             }
         },
         "experiment": {

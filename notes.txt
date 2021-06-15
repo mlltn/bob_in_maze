@@ -46,12 +46,13 @@ Nice to have:
 
 CURRENT ISSUES
 - Make first experiment composition
-- sliders not updated to template
 - templates referring to same data in bg
-+ BUG/template components in every instance of the template page
+
++ BUG/sliders not updated to template
 
 **************************************************
 
++ BUG/template components in every instance of the template page
 + implement template support
 + fix deep copy
 + Refactor important component state management to vuex

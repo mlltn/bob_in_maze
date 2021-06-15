@@ -16,7 +16,6 @@ export function parseComposition(composition) {
             composition.PAGES[pageKey] = templateCopy;
         }
     }
-    console.log(composition)
     return composition
 }
 function replaceTemplateComponents(templateCopy, components) {
@@ -26,15 +25,14 @@ function replaceTemplateComponents(templateCopy, components) {
                 templateCopy[key][propertyKey] = components[key][propertyKey]
             }
         }
-        if (isObject(key)) {
-            replaceTemplateComponents(templateCopy[key])
+        if (isObject(templateCopy[key])) {
+            replaceTemplateComponents(templateCopy[key], components)
         }
     }
 }
 
 function isTemplateKey(candidateKey) {
     let isTemplatePrefix = /^&/
-    console.log(candidateKey + " " + isTemplatePrefix.test(candidateKey))
     return isTemplatePrefix.test(candidateKey)
 }
 
