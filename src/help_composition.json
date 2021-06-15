@@ -1,0 +1,166 @@
+{
+    "RESOURCE_PATHS": {
+        "assets": "./",
+        "material": "./material/"
+    },
+    "RESULT_SET": "pilot",
+    "NEXT_PAGE_CONDITIONS": [
+        "slider-total",
+        "time-in-seconds"
+    ],
+    "TEMPLATES": { //Page templates include the layout definition of reusable layouts. You can move any page layout to template and then refer to the components in PAGES section for unique content modificatio.
+        "&basic_intro_page": { //The name of the template must start with character "&"
+            "useDefaultNextButton": true, //the first level includes varying props.
+            "nextPageConditions": [],
+            "components": //components section includes the component tree
+            "TextArea#top": { //Component names MUST start with CAPITAL letter and have unique identifier after "#"
+                "text": "TEXT_2"
+            },
+            "TextArea#pic-header": {
+                "text": "TEXT_3",
+                "_styles": "mt-20"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Stimulus9-1.png"
+                }
+            }
+        }
+    },
+    "&basic_intro_page_with_slider": {
+        "useDefaultNextButton": true,
+        "nextPageConditions": [
+            "slider-total"
+        ],
+        "components": {
+            "TextArea#top": {
+                "text": "TEXT_2"
+            },
+            "Horizontal#stimulus-slider": {
+                "Vertical#pic-helper": {
+                    "TextArea#pic-header": {
+                        "text": "TEXT_3",
+                        "_styles": ""
+                    },
+                    "Picture#stimulus1": {
+                        "src": {
+                            "path_key": "material",
+                            "filename": "Stimulus9-1.png"
+                        }
+                    }
+                },
+                "SliderMenu#tutorial": {
+                    "_styles": "m-20",
+                    "validTotalScore": 10,
+                    "sliderBoxWidth": "400px",
+                    "defaultSettings": {},
+                    "sliders": [
+                        {
+                            "id": 1,
+                            "color": "green",
+                            "score": 0,
+                            "min": 0,
+                            "max": 10
+                        },
+                        {
+                            "id": 2,
+                            "color": "blue",
+                            "score": 0,
+                            "min": 0,
+                            "max": 10
+                        }
+                    ]
+                }
+            }
+        }
+    }
+},
+"PAGES": {
+    "&basic_intro_page#1": {
+        "TextArea#top": {
+            "text": "TEXT_2"
+        },
+        "TextArea#pic-header": {
+            "text": "TEXT_3"
+        },
+        "Picture#stimulus": {
+            "src": {
+                "path_key": "material",
+                "filename": "Stimulus9-1.png"
+            }
+        }
+    },
+    "&basic_intro_page_with_slider#1": {
+        "TextArea#top": {
+            "text": "TEXT_2"
+        },
+        "TextArea#pic-header": {
+            "text": "TEXT_3",
+            "_styles": ""
+        },
+        "Picture#stimulus1": {
+            "src": {
+                "path_key": "material",
+                "filename": "Stimulus9-1.png"
+            }
+        },
+        "SliderMenu#tutorial": {
+            "sliders": [
+                {
+                    "id": 1,
+                    "color": "green",
+                    "score": 0,
+                    "min": 0,
+                    "max": 10
+                },
+                {
+                    "id": 2,
+                    "color": "blue",
+                    "score": 0,
+                    "min": 0,
+                    "max": 10
+                }
+            ]
+        }
+    },
+    "experiment": {
+        "useDefaultNextButton": false,
+        "nextPageConditions": [],
+        "components": {
+            "Experiment#practice": {
+                "iterations": 10,
+                "mode": "practice",
+                "SliderMenu#experiment": {
+                    "validTotalScore": 10,
+                    "sliderBoxWidth": "400px",
+                    "defaultSettings": {},
+                    "sliders": [
+                        {
+                            "id": 1,
+                            "color": "green",
+                            "score": 0,
+                            "min": 0,
+                            "max": 10
+                        },
+                        {
+                            "id": 2,
+                            "color": "blue",
+                            "score": 0,
+                            "min": 0,
+                            "max": 10
+                        },
+                        {
+                            "id": 3,
+                            "color": "blueviolet",
+                            "score": 0,
+                            "min": 0,
+                            "max": 10
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
+}

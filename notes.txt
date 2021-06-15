@@ -36,6 +36,7 @@ Refactoring:
 - remove experiment SliderMenu id hardcoding
 - parse component inside pages to have nicer state (easy to refactor in utils methods)
 - refactor utils to more meaningful modules
+- naming of the content in Brick is confusing as its prop and var in for
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -45,11 +46,14 @@ Nice to have:
 
 CURRENT ISSUES
 - Make first experiment composition
-+ implement template support
-+ fix deep copy
+- sliders not updated to template
+- templates referring to same data in bg
++ BUG/template components in every instance of the template page
 
 **************************************************
 
++ implement template support
++ fix deep copy
 + Refactor important component state management to vuex
 + page states store
 + Next page button functionality

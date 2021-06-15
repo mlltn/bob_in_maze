@@ -12,7 +12,7 @@ export function parseComposition(composition) {
         if (isTemplateKey(pageKey)) {
             let templateKey = pageKey.split("#")[0];
             let templateCopy = cloneDeep(composition.TEMPLATES[templateKey]);
-            replaceTemplateComponents(templateCopy, { ...composition.components });
+            replaceTemplateComponents(templateCopy.components, { ...composition.PAGES[pageKey] });
             composition.PAGES[pageKey] = templateCopy;
         }
     }
@@ -38,11 +38,11 @@ function isTemplateKey(candidateKey) {
     return isTemplatePrefix.test(candidateKey)
 }
 
-export function parsePages(rootNode) {
+export function parsePages(pageNodes) {
     let pages = {}
-    for (const pageId in rootNode) {
-        let pageProps = { ...rootNode[pageId] };
-        delete pageProps.components //refactor the pages to have the components for cleaner state
+    for (const pageId in pageNodes) {
+        let pageProps = { ...pageNodes[pageId] };
+        pageProps.components //refactor the pages to have the components for cleaner state
         pages[pageId] = pageProps;
     }
 }

@@ -5,7 +5,7 @@ import './index.css'
 import ElementUI from 'element-ui'
 import './styles.scss'
 import UUID from 'vue-uuid'
-import compositionJSON from './composition_test.json'
+import compositionJSON from './composition.json'
 import translationsJSON from './translations.json'
 
 import * as utils from './logic/utils'
