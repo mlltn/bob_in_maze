@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import './styles.scss'
 import UUID from 'vue-uuid'
 import compositionJSON from './composition.json'
+import templatesJSON from './templates.json'
 import translationsJSON from './translations.json'
 
 import * as utils from './logic/utils'
@@ -30,8 +31,8 @@ Vue.config.productionTip = false
 
 var store = new Vuex.Store({
   state: {
-    composition: utils.parseComposition(compositionJSON),
-    currentPage: 4,
+    composition: utils.parseComposition(compositionJSON, templatesJSON),
+    currentPage: 0,
     nextPageConditions: [],
     pages: utils.parsePages(compositionJSON.PAGES),
     components: utils.parseComponents(compositionJSON.PAGES),
