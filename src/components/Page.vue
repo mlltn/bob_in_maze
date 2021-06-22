@@ -1,6 +1,7 @@
 <template>
   <!-- <div>df {{ this.$vnode.key }}</div> -->
   <div>
+    <p>{{ id }}</p>
     <Brick
       v-for="(component, name) in content.components"
       :key="name + '_' + $uuid.v4()"
