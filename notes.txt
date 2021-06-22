@@ -26,16 +26,17 @@ Various:
 - Access code check
 
 Refactoring:
+- remove experiment SliderMenu id hardcoding, :content="content["SliderMenu#experiment"]", id="SliderMenu#experiment"
+- parse component inside pages to have nicer state (easy to refactor in utils methods)
+- naming of the "content" in Brick is confusing as its prop and var in for
 - Handle props cleaner (get rid of $attrs...)
+- refactor utils to more meaningful modules
 - get rid of most of composition related props and use state
 - setup state mutation commit
 - add styles cleaner
 - event bus stuff to store
 - common next button
-- remove experiment SliderMenu id hardcoding
-- parse component inside pages to have nicer state (easy to refactor in utils methods)
-- refactor utils to more meaningful modules
-- naming of the "content" in Brick is confusing as its prop and var in for
+- 
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)

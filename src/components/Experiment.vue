@@ -56,7 +56,12 @@
           </div>
         </div>
         <div v-if="step % 2 == 1" id="sliderFrame" class="flex-1 m-20">
-          <SliderMenu ref="slidermenu" class="w-full" />
+          <SliderMenu
+            ref="slidermenu"
+            :content="content['SliderMenu#experiment']"
+            class="w-full"
+            id="SliderMenu#experiment"
+          />
         </div>
       </div>
 
@@ -79,7 +84,12 @@
           </div>
         </div>
         <div v-if="step % 3 == 2" id="sliderFrame" class="flex-1 m-20">
-          <SliderMenu ref="slidermenu" class="w-full" />
+          <SliderMenu
+            ref="slidermenu"
+            :content="content['SliderMenu#experiment']"
+            lass="w-full"
+            id="SliderMenu#experiment"
+          />
         </div>
       </div>
 
@@ -107,6 +117,7 @@ export default {
   props: { content: Object },
   data() {
     return {
+      asdf: 1,
       step: 0,
       task: 1,
       isValidTotal: true,
@@ -150,11 +161,6 @@ export default {
       preloadedMedia: (state) => state.preloadedMedia,
     }),
     currentImgSet() {
-      console.log(this.preloadedMedia);
-      console.log(this.randomizedTaskOrder[this.task]);
-      console.log(
-        './' + this.randomizedTaskOrder[this.task] + '/Stimulus-1.png'
-      );
       let stimulus1 =
         this.preloadedMedia[
           './' + this.randomizedTaskOrder[this.task] + '/Stimulus-1.png'

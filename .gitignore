@@ -27,3 +27,4 @@ pnpm-debug.log*
 
 #Custom
 src/translations.json
+src/composition.json
