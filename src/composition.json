@@ -86,8 +86,8 @@
                         },
                         "Picture#stimulus1": {
                             "src": {
-                                "path_key": "material",
-                                "filename": "Stimulus9-1.png"
+                                "path_key": "assests",
+                                "filename": "logo.png"
                             }
                         }
                     },

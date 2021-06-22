@@ -6,7 +6,6 @@ IDEAS
 TODO
 
 Bugs:
-- stimulus / test image mismatches caused by the temporary "step" variable
 - reset score causes error - fixed by refactoring the menuslider visibility check
 
 Actual experiment:
@@ -36,22 +35,28 @@ Refactoring:
 - remove experiment SliderMenu id hardcoding
 - parse component inside pages to have nicer state (easy to refactor in utils methods)
 - refactor utils to more meaningful modules
-- naming of the content in Brick is confusing as its prop and var in for
+- naming of the "content" in Brick is confusing as its prop and var in for
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
 - Reuse SliderMenu component better (currently new created for every task e.g. v-show instead of v-if)
 
 **************************************************
+VIPJONO
+-previous button 
+-randomize mode between 1 and 2
+-master code
+    - skip practise button
 
 CURRENT ISSUES
 - Make first experiment composition
-- templates referring to same data in bg
-
-+ BUG/sliders not updated to template
+- templates referring to same data in bg -> add page name to component id
++ stimulus / test image mismatches caused by the temporary "step" variable
++ randomize imgages in experiments
 
 **************************************************
 
++ BUG/sliders not updated to template
 + BUG/template components in every instance of the template page
 + implement template support
 + fix deep copy

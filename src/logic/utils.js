@@ -85,3 +85,14 @@ function stripComponents(obj) {
 }
 
 export const test = 1337
+
+export function getMediaObject(media) {
+    let mediaObject = {}
+    media.keys().forEach((key) => {
+        mediaObject[key] = {
+            path: media(key),
+            fileName: key,
+        };
+    });
+    return mediaObject;
+}
