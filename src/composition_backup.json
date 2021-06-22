@@ -63,7 +63,7 @@
                         }
                     },
                     "TextArea#pic-description-2": {
-                        "text": "TEMPLATE_TEXT",
+                        "text": "TEMPLATE_TEfXT",
                         "_styles": "m-auto ml-12"
                     }
                 }
