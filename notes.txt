@@ -55,10 +55,11 @@ VIPJONO
 
 CURRENT ISSUES
 - Access code input
-+ previous button 
++ BUG / experiment pics and modes out of sync   
 
 **************************************************
 
++ previous button 
 + BUG / sliders not resetting in practice mode
 + dev helpers (component ids on ui while developing)
 + templates referring to same data in bg -> add page name to component id

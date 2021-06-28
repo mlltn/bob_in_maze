@@ -64,4 +64,9 @@ export default {
   bottom: 100px;
   left: 100px;
 }
+.button-right-top-corner {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+}
 </style>

@@ -29,6 +29,13 @@
       :key="'button-' + $uuid.v4()"
       >next</el-button
     >
+    <el-button
+      v-on:click="nextPage()"
+      type="danger"
+      class="button-right-top-corner"
+      :key="'button-' + $uuid.v4()"
+      >next</el-button
+    >
   </div>
 </template>
 
