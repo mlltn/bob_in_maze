@@ -58,6 +58,7 @@ export default {
     nextPage() {
       this.$store.commit('resetNextPageConditions');
       this.$store.commit('nextPage');
+      bus.$emit('reset-slider-score', {}); //make general resetter
     },
   },
   computed: {

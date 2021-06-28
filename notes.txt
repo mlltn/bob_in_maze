@@ -36,6 +36,7 @@ Refactoring:
 - event bus stuff to store
 - common next button
 - All components should use the pages.components binding if they hold data in the future
+- make general resetter in page nextPage method (now there is specific resetter for slidermenu)
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -55,11 +56,12 @@ VIPJONO
 
 CURRENT ISSUES
 - Access code input
-+ dev helpers (component ids on ui while developing)
-+ templates referring to same data in bg -> add page name to component id
++ BUG / sliders not resetting in practice mode
 
 **************************************************
 
++ dev helpers (component ids on ui while developing)
++ templates referring to same data in bg -> add page name to component id
 + stimulus / test image mismatches caused by the temporary "step" variable
 + randomize imgages in experiments
 + BUG/sliders not updated to template
