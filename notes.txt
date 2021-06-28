@@ -48,7 +48,6 @@ BEFORE PRODUCTION
 
 VIPJONO
 -Make first experiment composition (Shanshan will do the initial composition)
--previous button 
 -randomize mode between 1 and 2
 -master code
     - skip practise button
@@ -56,16 +55,17 @@ VIPJONO
 
 CURRENT ISSUES
 - Access code input
-+ BUG / sliders not resetting in practice mode
++ previous button 
 
 **************************************************
 
++ BUG / sliders not resetting in practice mode
 + dev helpers (component ids on ui while developing)
 + templates referring to same data in bg -> add page name to component id
 + stimulus / test image mismatches caused by the temporary "step" variable
 + randomize imgages in experiments
-+ BUG/sliders not updated to template
-+ BUG/template components in every instance of the template page
++ BUG / sliders not updated to template
++ BUG / template components in every instance of the template page
 + implement template support
 + fix deep copy
 + Refactor important component state management to vuex

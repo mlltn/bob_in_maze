@@ -52,6 +52,9 @@ var store = new Vuex.Store({
         state.nextPageConditions[key] = false;
       });
     },
+    previousPage(state) {
+      state.currentPage--;
+    },
     nextPage(state) {
       state.currentPage++;
     }

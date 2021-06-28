@@ -54,9 +54,14 @@ export default {
 </script>
 
 <style>
-.button-corner {
+.button-right-corner {
   position: fixed;
   bottom: 100px;
   right: 100px;
+}
+.button-left-corner {
+  position: fixed;
+  bottom: 100px;
+  left: 100px;
 }
 </style>
