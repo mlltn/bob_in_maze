@@ -41,9 +41,10 @@ export function parsePages(pageNodes) {
     let pages = {}
     for (const pageId in pageNodes) {
         let pageProps = { ...pageNodes[pageId] };
-        pageProps.components //refactor the pages to have the components for cleaner state
+        pageProps.components = parseComponents(pageProps.components)
         pages[pageId] = pageProps;
     }
+    return pages
 }
 export function parseComponents(rootNode) {
     let components = {};

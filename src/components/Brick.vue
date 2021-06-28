@@ -5,6 +5,9 @@
       (name.startsWith('Horizontal') ? ' flex justify-center' : '')
     "
   >
+    <p v-if="!name.startsWith('Horizontal') && !name.startsWith('Vertical')">
+      {{ '(' + name + ')' }}
+    </p>
     <template
       v-if="name.startsWith('Horizontal') || name.startsWith('Vertical')"
     >
@@ -13,6 +16,7 @@
         v-bind:key="name + '_' + $uuid.v4()"
         :name="name"
         :id="name"
+        :pageId="pageId"
         :content="content"
       >
       </Brick>
@@ -25,12 +29,17 @@
         {{ $t(content.text) }}
       </p>
     </template>
+    <template v-else-if="name.startsWith('TextInput')">
+      <p>
+        <el-input />
+      </p>
+    </template>
     <template v-else-if="name.startsWith('Picture')">
       <Picture v-bind:source="content.src" />
     </template>
 
     <template v-else-if="name.startsWith('SliderMenu')">
-      <SliderMenu :content="content" :id="name" />
+      <SliderMenu :content="content" :id="name" :pageId="pageId" :name="name" />
     </template>
     <template v-else-if="name.startsWith('Experiment')">
       <Experiment :content="content" />
@@ -50,7 +59,12 @@ import Picture from './Picture.vue';
 import Experiment from './Experiment.vue';
 import SliderMenu from './SliderMenu';
 export default {
-  props: { name: String, id: String, content: Object },
+  props: {
+    name: String,
+    id: String,
+    pageId: String,
+    content: Object,
+  },
   name: 'Brick',
   data() {
     return {};

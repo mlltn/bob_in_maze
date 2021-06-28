@@ -1,4 +1,11 @@
 {
+    "&access_code_input": {
+        "useDefaultNextButton": true,
+        "nextPageConditions": [],
+        "components": {
+            "TextInput#access-code": {}
+        }
+    },
     "&one_pic_intro_page": {
         "useDefaultNextButton": true,
         "nextPageConditions": [],
@@ -166,6 +173,76 @@
                     "TextArea#slider-info": {
                         "text": "TEMPLATE_SLIDER_INFO",
                         "_styles": ""
+                    }
+                }
+            }
+        }
+    },
+    "&explanation_of_items": {
+        "useDefaultNextButton": true,
+        "nextPageConditions": [],
+        "components": {
+            "TextArea#top": {
+                "text": "TEMPLATE_TEXT",
+                "_styles": ""
+            },
+            "TextArea#description": {
+                "text": "TEMPLATE_TEXT",
+                "_styles": ""
+            },
+            "Horizontal#1": {
+                "Picture#examplepic": {
+                    "src": {
+                        "path_key": "assets",
+                        "filename": "logo.png"
+                    }
+                },
+                "Vertical#1": {
+                    "Horizontal#0": {
+                        "Picture#item0": {
+                            "src": {
+                                "path_key": "assets",
+                                "filename": "logo.png"
+                            }
+                        },
+                        "TextArea#item0desc": {
+                            "text": "TEMPLATE_TEXT"
+                        }
+                    },
+                    "Horizontal#2": {
+                        "Horizontal#3": {
+                            "Picture#item1": {
+                                "src": {
+                                    "path_key": "assets",
+                                    "filename": "logo.png"
+                                }
+                            },
+                            "TextArea#item1desc": {
+                                "text": "TEMPLATE_TEXT"
+                            }
+                        },
+                        "Horizontal#5": {
+                            "Picture#item1": {
+                                "src": {
+                                    "path_key": "assets",
+                                    "filename": "logo.png"
+                                }
+                            },
+                            "TextArea#item1desc": {
+                                "text": "TEMPLATE_TEXT"
+                            }
+                        }
+                    },
+                    "Horizontal#4": {
+                        "Picture#item3": {
+                            "src": {
+                                "path_key": "assets",
+                                "filename": "logo.png"
+                            }
+                        },
+                        "TextArea#item1desc": {
+                            "text": "TEMPLATE_TEXT"
+                        }
                     }
                 }
             }

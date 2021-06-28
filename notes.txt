@@ -23,7 +23,6 @@ Support for adding instruction slides:
 
 
 Various:
-- Access code check
 
 Refactoring:
 - remove experiment SliderMenu id hardcoding, :content="content["SliderMenu#experiment"]", id="SliderMenu#experiment"
@@ -36,27 +35,33 @@ Refactoring:
 - add styles cleaner
 - event bus stuff to store
 - common next button
-- 
+- All components should use the pages.components binding if they hold data in the future
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
 - Reuse SliderMenu component better (currently new created for every task e.g. v-show instead of v-if)
 
 **************************************************
+BEFORE PRODUCTION
+- dev mods behind access code
+
 VIPJONO
+-Make first experiment composition (Shanshan will do the initial composition)
 -previous button 
 -randomize mode between 1 and 2
 -master code
     - skip practise button
+- 
 
 CURRENT ISSUES
-- Make first experiment composition
-- templates referring to same data in bg -> add page name to component id
-+ stimulus / test image mismatches caused by the temporary "step" variable
-+ randomize imgages in experiments
+- Access code input
++ dev helpers (component ids on ui while developing)
++ templates referring to same data in bg -> add page name to component id
 
 **************************************************
 
++ stimulus / test image mismatches caused by the temporary "step" variable
++ randomize imgages in experiments
 + BUG/sliders not updated to template
 + BUG/template components in every instance of the template page
 + implement template support

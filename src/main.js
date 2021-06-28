@@ -35,12 +35,11 @@ var store = new Vuex.Store({
     currentPage: 0,
     nextPageConditions: [],
     pages: utils.parsePages(compositionJSON.PAGES),
-    components: utils.parseComponents(compositionJSON.PAGES),
     preloadedMedia: utils.getMediaObject(require.context('./assets/tasks/'))
   },
   getters: {
-    getComponentById: (state) => (id) => {
-      return state.components[id]
+    getComponentById: (state) => (pageId, componentId) => {
+      return state.pages[pageId].components[componentId]
     }
   },
   mutations: {

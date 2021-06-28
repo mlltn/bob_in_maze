@@ -14,7 +14,7 @@
     <div>
       <div
         class="flex mt-5"
-        v-for="slider in getComponentById(id).sliders"
+        v-for="slider in getComponentById(pageId, id).sliders"
         :key="slider.id"
       >
         <el-slider
@@ -39,6 +39,7 @@ import { mapGetters } from 'vuex';
 export default {
   props: {
     id: String,
+    pageId: String,
     content: Object,
   },
 
@@ -70,10 +71,10 @@ export default {
   computed: {
     ...mapGetters(['getComponentById']),
     properties() {
-      return this.getComponentById(this.id);
+      return this.getComponentById(this.pageId, this.id);
     },
     sliders() {
-      return this.getComponentById(this.id).sliders;
+      return this.getComponentById(this.pageId, this.id).sliders;
     },
     totalScore() {
       let totalScore = 0;
