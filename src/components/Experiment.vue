@@ -4,13 +4,13 @@
     <div class="w-full">
       <!-- PICTURE MODES -->
       <el-button
-        v-on:click="props.mode = (props.mode % 2) + 1"
+        v-on:click="mode = (mode % 2) + 1"
         :type="'primary'"
         class="button-corner-tl"
-        >CHANGE MODE ({{ props.mode }})</el-button
+        >CHANGE MODE ({{ mode }})</el-button
       >
       <!-- MODE 1 -->
-      <div v-if="props.mode == 1" class="flex">
+      <div v-if="mode == 1" class="flex">
         <div
           id="pictureFrame"
           class="flex flex-2 flex-wrap justify-center w-full"
@@ -38,7 +38,7 @@
         </div>
       </div>
       <!-- MODE 2 -->
-      <div v-if="props.mode == 2" class="flex">
+      <div v-if="mode == 2" class="flex">
         <div
           id="pictureFrame"
           class="flex flex-2 flex-wrap justify-center w-full"
@@ -94,10 +94,10 @@ export default {
     return {
       step: 0,
       task: 0,
+      mode: 0,
       isValidTotal: false,
       props: {
         pic_width: '10em',
-        mode: 2,
         totalTasks: 5,
       },
       randomizedTaskOrder: [],
@@ -111,6 +111,7 @@ export default {
       this.isValidTotal = condition;
     });
     this.randomizedTaskOrder = _.shuffle([...Array(5).keys()]);
+    this.mode = _.random(1, 2);
   },
   methods: {
     nextStep() {
@@ -125,18 +126,18 @@ export default {
       }
     },
     isSliderStep() {
-      if (this.props.mode == 1) {
+      if (this.mode == 1) {
         return this.step == 2;
-      } else if (this.props.mode == 2) {
+      } else if (this.mode == 2) {
         return this.step == 1;
       } else {
         console.log('############# VIRHE ###############');
       }
     },
     endOfTask() {
-      if (this.props.mode == 1) {
+      if (this.mode == 1) {
         return this.step > 2;
-      } else if (this.props.mode == 2) {
+      } else if (this.mode == 2) {
         return this.step > 1;
       } else {
         console.log('############# VIRHE ###############');

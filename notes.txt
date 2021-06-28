@@ -48,17 +48,17 @@ BEFORE PRODUCTION
 
 VIPJONO
 -Make first experiment composition (Shanshan will do the initial composition)
--randomize mode between 1 and 2
 -master code
     - skip practise button
 - 
 
 CURRENT ISSUES
 - Access code input
-+ BUG / experiment pics and modes out of sync   
++randomize mode between 1 and 2
 
 **************************************************
 
++ BUG / experiment pics and modes out of sync   
 + previous button 
 + BUG / sliders not resetting in practice mode
 + dev helpers (component ids on ui while developing)
