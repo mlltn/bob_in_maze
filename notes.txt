@@ -6,13 +6,11 @@ IDEAS
 TODO
 
 Bugs:
-- reset score causes error - fixed by refactoring the menuslider visibility check
 
 Actual experiment:
 - 
 
 Data stored in database:
-- Setup database connection
 - save results to database
 
 Customizable with JSON:
@@ -54,10 +52,12 @@ VIPJONO
 
 CURRENT ISSUES
 - Access code input
-+randomize mode between 1 and 2
+- collect results to state
+- Setup database connection
 
 **************************************************
 
++ randomize mode between 1 and 2
 + BUG / experiment pics and modes out of sync   
 + previous button 
 + BUG / sliders not resetting in practice mode

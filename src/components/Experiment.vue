@@ -78,6 +78,9 @@
       :key="step"
       >next</el-button
     >
+    <!-- <el-button v-on:click="saveResult" type="success" key="asfkjasf"
+      >test</el-button
+    > -->
   </div>
 </template>
 
@@ -101,6 +104,7 @@ export default {
         totalTasks: 5,
       },
       randomizedTaskOrder: [],
+      results: {},
     };
   },
   components: {
@@ -117,6 +121,7 @@ export default {
     nextStep() {
       this.step++;
       if (this.endOfTask()) {
+        // this.saveResult();
         this.step = 0;
         this.task++;
         bus.$emit('reset-slider-score', {});
@@ -125,6 +130,9 @@ export default {
         }
       }
     },
+    // saveResult() {
+    //   console.log(this.sliders);
+    // },
     isSliderStep() {
       if (this.mode == 1) {
         return this.step == 2;
@@ -154,7 +162,8 @@ export default {
   },
   computed: {
     ...mapState({
-      sliderMenu: (state) => state.sliderMenu,
+      sliders: (state) =>
+        state.pages['experiment'].components['SliderMenu#experiment'].sliders,
       preloadedMedia: (state) => state.preloadedMedia,
     }),
     currentImgSet() {

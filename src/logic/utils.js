@@ -46,7 +46,7 @@ export function parsePages(pageNodes) {
     }
     return pages
 }
-export function parseComponents(rootNode) {
+function parseComponents(rootNode) {
     let components = {};
     for (const key in rootNode) {
         let candidate = cloneDeep(rootNode[key]);
