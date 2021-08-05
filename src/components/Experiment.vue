@@ -121,18 +121,22 @@ export default {
     nextStep() {
       this.step++;
       if (this.endOfTask()) {
-        // this.saveResult();
-        this.step = 0;
-        this.task++;
-        bus.$emit('reset-slider-score', {});
+        this.saveResult();
+        this.prepareNextTask();
         if (this.isEndOfExperiment()) {
           this.endExperiment();
         }
       }
     },
-    // saveResult() {
-    //   console.log(this.sliders);
-    // },
+    prepareNextTask() {
+      this.step = 0;
+      this.task++;
+      bus.$emit('reset-slider-score', {});
+    },
+    saveResult() {
+      let taskResult = {};
+      taskResult;
+    },
     isSliderStep() {
       if (this.mode == 1) {
         return this.step == 2;
