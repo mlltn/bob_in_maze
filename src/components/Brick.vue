@@ -21,19 +21,23 @@
       >
       </Brick>
     </template>
+
     <template v-else-if="name == 'Title'">
       <h1>{{ $t(content.caption) }}</h1>
     </template>
+
     <template v-else-if="name.startsWith('TextArea')">
       <p>
         {{ $t(content.text) }}
       </p>
     </template>
+
     <template v-else-if="name.startsWith('TextInput')">
       <p>
         <el-input />
       </p>
     </template>
+
     <template v-else-if="name.startsWith('Picture')">
       <Picture v-bind:source="content.src" />
     </template>
@@ -41,6 +45,11 @@
     <template v-else-if="name.startsWith('SliderMenu')">
       <SliderMenu :content="content" :id="name" :pageId="pageId" :name="name" />
     </template>
+
+    <template v-else-if="name.startsWith('ProgressBar')">
+      <ProgressBar :step="content.step" :maxSteps="content.maxSteps" />
+    </template>
+
     <template v-else-if="name.startsWith('Experiment')">
       <Experiment :content="content" />
     </template>
@@ -56,8 +65,9 @@
 
 <script>
 import Picture from './Picture.vue';
-import Experiment from './Experiment.vue';
+import Experiment from './Experiment';
 import SliderMenu from './SliderMenu';
+import ProgressBar from './ProgressBar';
 export default {
   props: {
     name: String,
@@ -73,6 +83,7 @@ export default {
     Picture,
     Experiment,
     SliderMenu,
+    ProgressBar,
   },
   methods: {
     parseComponents(components) {

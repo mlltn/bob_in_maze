@@ -70,6 +70,14 @@
 
       <!-- END OF PICTURE MODES -->
     </div>
+
+    <ProgressBar
+      class="fixed left-1/4 bottom-24 m-3 w-1/2"
+      :step="task + 1"
+      :maxSteps="props.totalTasks + 1"
+    >
+    </ProgressBar>
+
     <el-button
       v-on:click="nextStep"
       :disabled="isSliderStep() && !isValidTotal"
@@ -88,6 +96,7 @@
 import _ from 'lodash';
 import { mapState } from 'vuex';
 import SliderMenu from './SliderMenu.vue';
+import ProgressBar from './ProgressBar.vue';
 
 import { bus } from '../main.js';
 
@@ -109,6 +118,7 @@ export default {
   },
   components: {
     SliderMenu,
+    ProgressBar,
   },
   created() {
     bus.$on('slider-total', (condition) => {

@@ -8,7 +8,6 @@ export function initBooleanConditions(conditionList) {
     return boolObject
 }
 export function parseComposition(composition, templates) {
-    console.log(templates)
     for (let pageKey in composition.PAGES) {
         if (isTemplateKey(pageKey)) {
             let templateKey = pageKey.split("#")[0];

@@ -36,6 +36,7 @@ Refactoring:
 - All components should use the pages.components binding if they hold data in the future
 - make general resetter in page nextPage method (now there is specific resetter for slidermenu)
 
+
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
 - Reuse SliderMenu component better (currently new created for every task e.g. v-show instead of v-if)
@@ -43,17 +44,20 @@ Nice to have:
 **************************************************
 BEFORE PRODUCTION
 - dev mods behind access code
+- ensure progress bar and other elements which are not generated from template are same in experiment and templates
+
 
 VIPJONO
--Make first experiment composition (Shanshan will do the initial composition)
 -master code
     - skip practise button
 - 
-
-CURRENT ISSUES
 - Access code input
 - collect results to state
 - Setup database connection
+
+CURRENT ISSUES
++ progress bar
+- styling 
 
 **************************************************
 

@@ -1,4 +1,13 @@
 {
+    "&testest": {
+        "useDefaultNextButton": true,
+        "nextPageConditions": [],
+        "components": {
+            "ProgressBar#test": {
+                "_styles": "fixed left-1/4 bottom-24 m-3 w-1/2"
+            }
+        }
+    },
     "&access_code_input": {
         "useDefaultNextButton": true,
         "nextPageConditions": [],
