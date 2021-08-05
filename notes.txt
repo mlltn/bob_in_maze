@@ -56,11 +56,12 @@ VIPJONO
 - Setup database connection
 
 CURRENT ISSUES
-+ progress bar
+- maali
 - styling 
 
 **************************************************
 
++ progress bar
 + randomize mode between 1 and 2
 + BUG / experiment pics and modes out of sync   
 + previous button 

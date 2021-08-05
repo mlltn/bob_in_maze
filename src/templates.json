@@ -49,7 +49,7 @@
             },
             "Horizontal#image-text": {
                 "Picture#image-1": {
-                    "_styles": "w-96",
+                    "_styles": "",
                     "src": {
                         "path_key": "assets",
                         "filename": "logo.png"
@@ -62,7 +62,7 @@
             },
             "Horizontal#image-text-2": {
                 "Picture#image-2": {
-                    "_styles": "w-96",
+                    "_styles": "",
                     "src": {
                         "path_key": "assets",
                         "filename": "logo.png"

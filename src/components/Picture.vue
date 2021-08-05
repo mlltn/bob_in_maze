@@ -1,14 +1,15 @@
 <template>
-  <img class="m-auto" :src="pictureSource" />
+  <img class="m-auto default-size" :src="pictureSource" />
 </template>
 
 <script>
 export default {
   computed: {
     pictureSource() {
-      let folder = this.$store.state.composition.RESOURCE_PATHS[
-        this.$attrs.source.path_key
-      ];
+      let folder =
+        this.$store.state.composition.RESOURCE_PATHS[
+          this.$attrs.source.path_key
+        ];
       let path = folder + this.$attrs.source.filename;
       return this.$resourcePaths[path].webpackPath;
     },
@@ -17,4 +18,7 @@ export default {
 </script>
 
 <style>
+.default-size {
+  width: 25em;
+}
 </style>
