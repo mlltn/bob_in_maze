@@ -8,6 +8,7 @@
     <p v-if="!name.startsWith('Horizontal') && !name.startsWith('Vertical')">
       {{ '(' + name + ')' }}
     </p>
+
     <template
       v-if="name.startsWith('Horizontal') || name.startsWith('Vertical')"
     >
@@ -18,6 +19,7 @@
         :id="name"
         :pageId="pageId"
         :content="content"
+        class="m-4"
       >
       </Brick>
     </template>
@@ -27,7 +29,7 @@
     </template>
 
     <template v-else-if="name.startsWith('TextArea')">
-      <p>
+      <p class="mx-4 max-w-xl mx-auto my-4">
         {{ $t(content.text) }}
       </p>
     </template>

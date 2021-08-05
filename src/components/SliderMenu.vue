@@ -23,6 +23,7 @@
           :class="slider.color"
           :min="slider.min"
           :max="slider.max"
+          :show-tooltip="false"
           show-stops
           v-model="slider.score"
           @change="scoreChanged(slider.id)"

@@ -124,10 +124,20 @@ export default {
     bus.$on('slider-total', (condition) => {
       this.isValidTotal = condition;
     });
-    this.randomizedTaskOrder = _.shuffle([...Array(5).keys()]);
+
+    this.randomizedTaskOrder = _.shuffle([
+      ...Array(this.getTaskCount()).keys(),
+    ]);
     this.mode = _.random(1, 2);
   },
   methods: {
+    getTaskCount() {
+      let tasks = {};
+      Object.keys(this.preloadedMedia).forEach((key) => {
+        tasks[key.split('/')[1]] = 'PURKKA';
+      });
+      return Object.keys(tasks).length;
+    },
     nextStep() {
       this.step++;
       if (this.endOfTask()) {

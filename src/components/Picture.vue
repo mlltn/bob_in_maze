@@ -19,6 +19,7 @@ export default {
 
 <style>
 .default-size {
+  min-width: 25em;
   width: 25em;
 }
 </style>
