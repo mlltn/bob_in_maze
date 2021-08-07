@@ -6,8 +6,12 @@ module.exports = {
   darkMode: false,
 
   theme: {
+    minWidth: {
+      '96': '24rem'
+    },
 
-    extend: {},
+    extend: {
+    },
 
   },
 

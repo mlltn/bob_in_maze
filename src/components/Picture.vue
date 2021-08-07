@@ -1,5 +1,5 @@
 <template>
-  <img class="m-auto default-size" :src="pictureSource" />
+  <img class="m-auto w-96 min-w-96" :src="pictureSource" />
 </template>
 
 <script>
@@ -18,8 +18,4 @@ export default {
 </script>
 
 <style>
-.default-size {
-  min-width: 25em;
-  width: 25em;
-}
 </style>
