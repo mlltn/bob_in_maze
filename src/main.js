@@ -35,11 +35,15 @@ var store = new Vuex.Store({
     currentPage: 0,
     nextPageConditions: [],
     pages: utils.parsePages(compositionJSON.PAGES),
-    preloadedMedia: utils.getMediaObject(require.context('./assets/tasks/'))
+    preloadedMedia: utils.getMediaObject(require.context('./assets/tasks/')),
+    dynamicProps: {}
   },
   getters: {
     getComponentById: (state) => (pageId, componentId) => {
-      return state.pages[pageId].components[componentId]
+      return state.pages[pageId].components[componentId];
+    },
+    getDynamicProp: (state) => (key) => {
+      return state.dynamicProps[key];
     }
   },
   mutations: {
@@ -57,7 +61,10 @@ var store = new Vuex.Store({
     },
     nextPage(state) {
       state.currentPage++;
-    }
+    },
+    setDynamicProp(state, newProp) {
+      Vue.set(state.dynamicProps, newProp['key'], newProp['value']);
+    },
   }
 })
 

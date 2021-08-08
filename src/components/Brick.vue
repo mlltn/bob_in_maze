@@ -34,10 +34,13 @@
       </p>
     </template>
 
-    <template v-else-if="name.startsWith('TextInput')">
-      <p>
-        <el-input />
-      </p>
+    <template v-else-if="name.startsWith('InputField')">
+      <InputField
+        :id="name"
+        :pageId="pageId"
+        :placeholder="content.placeholder"
+        :type="content.type"
+      ></InputField>
     </template>
 
     <template v-else-if="name.startsWith('Picture')">
@@ -49,7 +52,11 @@
     </template>
 
     <template v-else-if="name.startsWith('ProgressBar')">
-      <ProgressBar :step="content.step" :maxSteps="content.maxSteps" />
+      <ProgressBar
+        :id="name"
+        :step="content.step"
+        :maxSteps="content.maxSteps"
+      />
     </template>
 
     <template v-else-if="name.startsWith('Experiment')">
@@ -70,6 +77,7 @@ import Picture from './Picture.vue';
 import Experiment from './Experiment';
 import SliderMenu from './SliderMenu';
 import ProgressBar from './ProgressBar';
+import InputField from './InputField';
 export default {
   props: {
     name: String,
@@ -86,6 +94,7 @@ export default {
     Experiment,
     SliderMenu,
     ProgressBar,
+    InputField,
   },
   methods: {
     parseComponents(components) {

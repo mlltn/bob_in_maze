@@ -23,6 +23,8 @@ Support for adding instruction slides:
 Various:
 
 Refactoring:
+--- event bus stuff to store (update: really hard to debug and always remaking components on change which is annoying)
+-- Dynamic props to the common composition/component structure
 - remove experiment SliderMenu id hardcoding, :content="content["SliderMenu#experiment"]", id="SliderMenu#experiment"
 - parse component inside pages to have nicer state (easy to refactor in utils methods)
 - naming of the "content" in Brick is confusing as its prop and var in for
@@ -31,11 +33,10 @@ Refactoring:
 - get rid of most of composition related props and use state
 - setup state mutation commit
 - add styles cleaner
-- event bus stuff to store
 - common next button
 - All components should use the pages.components binding if they hold data in the future
 - make general resetter in page nextPage method (now there is specific resetter for slidermenu)
-
+- look up https://github.com/maoberlehner/vuex-map-fields for input vuex binding
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -48,6 +49,10 @@ BEFORE PRODUCTION
 
 
 VIPJONO
+- next button explanation
+- slider explanations
+- Title and top description support
+
 -master code
     - skip practise button
 - 
@@ -59,6 +64,8 @@ CURRENT ISSUES
 - maali
 - styling 
 
++ dynamic props (temporary)
++ input component
 **************************************************
 
 + progress bar

@@ -10,9 +10,19 @@
     },
     "&access_code_input": {
         "useDefaultNextButton": true,
-        "nextPageConditions": [],
+        "nextPageConditions": [
+            "input-not-empty"
+        ],
         "components": {
-            "TextInput#access-code": {}
+            "TextArea#top": {
+                "text": "TEMPLATE_TEXT",
+                "_styles": "mt-32"
+            },
+            "InputField#access-code": {
+                "placeholder": "TEMPLATE_PLACEHOLDER",
+                "type": "text",
+                "_styles": "w-52 mx-auto"
+            }
         }
     },
     "&one_pic_intro_page": {
@@ -207,7 +217,8 @@
                     "src": {
                         "path_key": "assets",
                         "filename": "logo.png"
-                    }
+                    },
+                    "_styles": "w-52"
                 },
                 "Vertical#1": {
                     "Horizontal#0": {
