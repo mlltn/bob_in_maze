@@ -321,13 +321,13 @@
                             }
                         },
                         "Horizontal#5": {
-                            "Picture#item1": {
+                            "Picture#item2": {
                                 "src": {
                                     "path_key": "assets",
                                     "filename": "logo.png"
                                 }
                             },
-                            "TextArea#item1desc": {
+                            "TextArea#item2desc": {
                                 "text": "TEMPLATE_TEXT"
                             }
                         }
@@ -339,7 +339,7 @@
                                 "filename": "logo.png"
                             }
                         },
-                        "TextArea#item1desc": {
+                        "TextArea#item3desc": {
                             "text": "TEMPLATE_TEXT"
                         }
                     }
