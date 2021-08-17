@@ -50,8 +50,6 @@ BEFORE PRODUCTION
 
 
 VIPJONO
-- slider explanations
-- Title and top description support
 
 -master code
     - skip practise button
@@ -65,9 +63,12 @@ VIPJONO
 
 CURRENT ISSUES
 
-+ next button explanation
++ slider explanations for one template
++ Title and top description support
+
 **************************************************
 
++ next button explanation
 + dynamic props (temporary)
 + input component
 + progress bar
