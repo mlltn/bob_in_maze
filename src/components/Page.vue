@@ -1,7 +1,7 @@
 <template>
   <!-- <div>df {{ this.$vnode.key }}</div> -->
   <div>
-    <p>{{ '(' + id + ')' }}</p>
+    <p v-if="$store.state.showGuides">{{ '(' + id + ')' }}</p>
     <Brick
       v-for="(component, name) in content.components"
       :key="name + '_' + $uuid.v4()"
@@ -39,6 +39,18 @@
       >
     </div>
     <div class="button-right-top-corner">
+      <el-button
+        v-on:click="toggleGuides()"
+        type="danger"
+        :key="'button-' + $uuid.v4()"
+        >toggle guides</el-button
+      >
+      <el-button
+        v-on:click="toExperiment()"
+        type="danger"
+        :key="'button-' + $uuid.v4()"
+        >Go to experiment</el-button
+      >
       <el-button
         v-on:click="nextPage()"
         type="danger"
@@ -90,6 +102,12 @@ export default {
       this.$store.commit('resetNextPageConditions');
       this.$store.commit('nextPage');
       bus.$emit('reset-slider-score', {}); //make general resetter
+    },
+    toggleGuides() {
+      this.$store.commit('toggleGuides');
+    },
+    toExperiment() {
+      this.$store.commit('toExperiment');
     },
   },
   computed: {

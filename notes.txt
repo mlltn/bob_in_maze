@@ -38,10 +38,13 @@ Refactoring:
     DUPLICATE state.composition.PAGES and state.pages mix usage
 - make general resetter in page nextPage method (now there is specific resetter for slidermenu)
 - look up https://github.com/maoberlehner/vuex-map-fields for input vuex binding
+- remove component level width definitions from Picture component. The point is to keep it general
+
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
 - Reuse SliderMenu component better (currently new created for every task e.g. v-show instead of v-if)
+- Add default properties to composition (e.g. picture size)
 
 **************************************************
 BEFORE PRODUCTION
@@ -52,8 +55,6 @@ BEFORE PRODUCTION
 VIPJONO
 
 -master code
-    - skip practise button
-    - show guides
 - 
 - Access code input
 - collect results to state
@@ -63,11 +64,14 @@ VIPJONO
 
 CURRENT ISSUES
 
-+ slider explanations for one template
-+ Title and top description support
++ skip practise button
++ show guides button
+* styling fixes
 
 **************************************************
 
++ slider explanations for one template
++ Title and top description support
 + next button explanation
 + dynamic props (temporary)
 + input component

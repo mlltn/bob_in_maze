@@ -32,6 +32,7 @@ Vue.config.productionTip = false
 var store = new Vuex.Store({
   state: {
     currentPage: 0,
+    showGuides: false,
     nextPageConditions: [],
     composition: utils.parseComposition(compositionJSON, templatesJSON), // real component tree and props
     pages: utils.parsePages(compositionJSON.PAGES), //flat hierarchy (pages -> components) for easy data hold
@@ -61,6 +62,12 @@ var store = new Vuex.Store({
     },
     nextPage(state) {
       state.currentPage++;
+    },
+    toggleGuides(state) {
+      state.showGuides = !state.showGuides
+    },
+    toExperiment(state) {
+      state.currentPage = Object.keys(state.pages).length - 1;
     },
     setDynamicProp(state, newProp) {
       Vue.set(state.dynamicProps, newProp['key'], newProp['value']);

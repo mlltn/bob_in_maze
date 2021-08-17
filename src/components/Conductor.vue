@@ -68,8 +68,8 @@ export default {
 }
 .button-right-top-corner {
   position: fixed;
-  top: 100px;
-  right: 100px;
+  top: 10px;
+  right: 10px;
   text-align: right;
 }
 </style>

@@ -293,12 +293,12 @@
                     "src": {
                         "path_key": "assets",
                         "filename": "logo.png"
-                    },
-                    "_styles": "w-52"
+                    }
                 },
                 "Vertical#1": {
                     "Horizontal#0": {
                         "Picture#item0": {
+                            "size": 20,
                             "src": {
                                 "path_key": "assets",
                                 "filename": "logo.png"
@@ -311,6 +311,7 @@
                     "Horizontal#2": {
                         "Horizontal#3": {
                             "Picture#item1": {
+                                "size": 20,
                                 "src": {
                                     "path_key": "assets",
                                     "filename": "logo.png"
@@ -322,6 +323,7 @@
                         },
                         "Horizontal#5": {
                             "Picture#item2": {
+                                "size": 20,
                                 "src": {
                                     "path_key": "assets",
                                     "filename": "logo.png"
@@ -333,7 +335,9 @@
                         }
                     },
                     "Horizontal#4": {
+                        "_styles": "justify-left",
                         "Picture#item3": {
+                            "size": 20,
                             "src": {
                                 "path_key": "assets",
                                 "filename": "logo.png"

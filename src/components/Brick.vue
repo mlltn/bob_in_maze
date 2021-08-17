@@ -5,7 +5,13 @@
       (name.startsWith('Horizontal') ? ' flex justify-center' : '')
     "
   >
-    <p v-if="!name.startsWith('Horizontal') && !name.startsWith('Vertical')">
+    <p
+      v-if="
+        $store.state.showGuides &&
+        !name.startsWith('Horizontal') &&
+        !name.startsWith('Vertical')
+      "
+    >
       {{ '(' + name + ')' }}
     </p>
 
@@ -44,7 +50,7 @@
     </template>
 
     <template v-else-if="name.startsWith('Picture')">
-      <Picture v-bind:source="content.src" />
+      <Picture v-bind:content="content" />
     </template>
 
     <template v-else-if="name.startsWith('SliderMenu')">
