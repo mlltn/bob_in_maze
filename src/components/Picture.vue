@@ -16,7 +16,7 @@ export default {
     styles() {
       if ('size' in this.$attrs.content) {
         let size = this.$attrs.content.size;
-        return 'm-auto w-' + size;
+        return 'm-auto w-' + size + ' min-w-' + size;
       }
       return 'm-auto w-96 min-w-96';
     },

@@ -35,7 +35,7 @@
     </template>
 
     <template v-else-if="name.startsWith('TextArea')">
-      <p class="mx-4 max-w-xl mx-auto my-4">
+      <p class="mx-4 max-w-96 mx-auto my-4">
         {{ $t(content.text) }}
       </p>
     </template>
