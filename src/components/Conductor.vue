@@ -58,15 +58,18 @@ export default {
   position: fixed;
   bottom: 100px;
   right: 100px;
+  text-align: right;
 }
 .button-left-corner {
   position: fixed;
   bottom: 100px;
   left: 100px;
+  text-align: left;
 }
 .button-right-top-corner {
   position: fixed;
   top: 100px;
   right: 100px;
+  text-align: right;
 }
 </style>

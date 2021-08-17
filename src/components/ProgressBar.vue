@@ -1,5 +1,5 @@
 <template>
-  <div class="border-2">
+  <div class="fixed left-1/4 bottom-24 border-2 m-3 w-1/2">
     <div
       v-bind:style="{
         color: 'white',

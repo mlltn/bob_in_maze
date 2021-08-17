@@ -12,30 +12,40 @@
       :horizontal="false"
     >
     </Brick>
-    <el-button
-      v-if="content.useDefaultNextButton && currentPage > 0"
-      v-on:click="previousPage()"
-      type="info"
-      class="button-left-corner"
-      :key="'button-' + $uuid.v4()"
-      >previous</el-button
-    >
-    <el-button
-      v-if="content.useDefaultNextButton"
-      :disabled="!nextPageConditionsMet"
-      v-on:click="nextPage()"
-      type="success"
-      class="button-right-corner"
-      :key="'button-' + $uuid.v4()"
-      >next</el-button
-    >
-    <el-button
-      v-on:click="nextPage()"
-      type="danger"
-      class="button-right-top-corner"
-      :key="'button-' + $uuid.v4()"
-      >next</el-button
-    >
+    <div class="button-left-corner">
+      <p v-if="'previousButton' in content._helpTexts" class="my-3 max-w-xxs">
+        {{ $t(content._helpTexts.previousButton) }}
+      </p>
+
+      <el-button
+        v-if="content._useDefaultNextButton && currentPage > 0"
+        v-on:click="previousPage()"
+        type="info"
+        :key="'button-' + $uuid.v4()"
+        >previous</el-button
+      >
+    </div>
+    <div class="button-right-corner">
+      <p v-if="'nextButton' in content._helpTexts" class="my-3 max-w-xxs">
+        {{ $t(content._helpTexts.nextButton) }}
+      </p>
+      <el-button
+        v-if="content._useDefaultNextButton"
+        :disabled="!nextPageConditionsMet"
+        v-on:click="nextPage()"
+        type="success"
+        :key="'button-' + $uuid.v4()"
+        >next</el-button
+      >
+    </div>
+    <div class="button-right-top-corner">
+      <el-button
+        v-on:click="nextPage()"
+        type="danger"
+        :key="'button-' + $uuid.v4()"
+        >next</el-button
+      >
+    </div>
   </div>
 </template>
 
@@ -51,12 +61,12 @@ export default {
   data() {
     return {
       nextPageConditionMap: utils.initBooleanConditions(
-        this.content.nextPageConditions
+        this.content._nextPageConditions
       ),
     };
   },
   created() {
-    for (var condition of this.content.nextPageConditions) {
+    for (var condition of this.content._nextPageConditions) {
       bus.$on(condition, (value) => {
         this.updateNextPageConditions(condition, value);
       });

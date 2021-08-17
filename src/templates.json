@@ -1,18 +1,18 @@
 {
     "&testest": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [],
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
         "components": {
-            "ProgressBar#test": {
-                "_styles": "fixed left-1/4 bottom-24 m-3 w-1/2"
-            }
+            "ProgressBar#test": {}
         }
     },
     "&access_code_input": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [
             "input-not-empty"
         ],
+        "_helpTexts": {},
         "components": {
             "TextArea#top": {
                 "text": "TEMPLATE_TEXT",
@@ -26,8 +26,9 @@
         }
     },
     "&one_pic_intro_page": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [],
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
         "components": {
             "TextArea#top": {
                 "text": "TEMPLATE_TEXT",
@@ -43,14 +44,13 @@
                     "filename": "logo.png"
                 }
             },
-            "ProgressBar#practice": {
-                "_styles": "fixed left-1/4 bottom-24 m-3 w-1/2"
-            }
+            "ProgressBar#practice": {}
         }
     },
     "&two_pic_intro_page": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [],
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
         "components": {
             "TextArea#top": {
                 "text": "TEMPLATE_TEXT",
@@ -89,10 +89,11 @@
         }
     },
     "&one_pic_with_slider": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [
             "slider-total"
         ],
+        "_helpTexts": {},
         "components": {
             "TextArea#top": {
                 "text": "TEXT_2"
@@ -129,10 +130,11 @@
         }
     },
     "&two_pics_with_slider": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [
             "slider-total"
         ],
+        "_helpTexts": {},
         "components": {
             "TextArea#top": {
                 "text": "TEMPLATE_TEXT"
@@ -201,8 +203,9 @@
         }
     },
     "&explanation_of_items": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [],
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
         "components": {
             "TextArea#top": {
                 "text": "TEMPLATE_TEXT",

@@ -31,10 +31,10 @@ Vue.config.productionTip = false
 
 var store = new Vuex.Store({
   state: {
-    composition: utils.parseComposition(compositionJSON, templatesJSON),
     currentPage: 0,
     nextPageConditions: [],
-    pages: utils.parsePages(compositionJSON.PAGES),
+    composition: utils.parseComposition(compositionJSON, templatesJSON), // real component tree and props
+    pages: utils.parsePages(compositionJSON.PAGES), //flat hierarchy (pages -> components) for easy data hold
     preloadedMedia: utils.getMediaObject(require.context('./assets/tasks/')),
     dynamicProps: {}
   },

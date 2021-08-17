@@ -24,6 +24,7 @@ Various:
 
 Refactoring:
 --- event bus stuff to store (update: really hard to debug and always remaking components on change which is annoying)
+    - e.g. see InputField mounted() method where refocus needed because this
 -- Dynamic props to the common composition/component structure
 - remove experiment SliderMenu id hardcoding, :content="content["SliderMenu#experiment"]", id="SliderMenu#experiment"
 - parse component inside pages to have nicer state (easy to refactor in utils methods)
@@ -33,8 +34,8 @@ Refactoring:
 - get rid of most of composition related props and use state
 - setup state mutation commit
 - add styles cleaner
-- common next button
 - All components should use the pages.components binding if they hold data in the future
+    DUPLICATE state.composition.PAGES and state.pages mix usage
 - make general resetter in page nextPage method (now there is specific resetter for slidermenu)
 - look up https://github.com/maoberlehner/vuex-map-fields for input vuex binding
 
@@ -49,25 +50,26 @@ BEFORE PRODUCTION
 
 
 VIPJONO
-- next button explanation
 - slider explanations
 - Title and top description support
 
 -master code
     - skip practise button
+    - show guides
 - 
 - Access code input
 - collect results to state
 - Setup database connection
-
-CURRENT ISSUES
 - maali
 - styling 
 
-+ dynamic props (temporary)
-+ input component
+CURRENT ISSUES
+
++ next button explanation
 **************************************************
 
++ dynamic props (temporary)
++ input component
 + progress bar
 + randomize mode between 1 and 2
 + BUG / experiment pics and modes out of sync   

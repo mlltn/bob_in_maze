@@ -10,8 +10,8 @@
     ],
     "TEMPLATES": { //Page templates include the layout definition of reusable layouts. You can move any page layout to template and then refer to the components in PAGES section for unique content modificatio.
         "&basic_intro_page": { //The name of the template must start with character "&"
-            "useDefaultNextButton": true, //the first level includes varying props.
-            "nextPageConditions": [],
+            "_useDefaultNextButton": true, //the first level includes varying props.
+            "_nextPageConditions": [],
             "components": //components section includes the component tree
             "TextArea#top": { //Component names MUST start with CAPITAL letter and have unique identifier after "#"
                 "text": "TEXT_2"
@@ -29,8 +29,8 @@
         }
     },
     "&basic_intro_page_with_slider": {
-        "useDefaultNextButton": true,
-        "nextPageConditions": [
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [
             "slider-total"
         ],
         "components": {
@@ -125,8 +125,8 @@
         }
     },
     "experiment": {
-        "useDefaultNextButton": false,
-        "nextPageConditions": [],
+        "_useDefaultNextButton": false,
+        "_nextPageConditions": [],
         "components": {
             "Experiment#practice": {
                 "iterations": 10,

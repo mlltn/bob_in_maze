@@ -79,8 +79,8 @@
             }
         },
         "experiment": {
-            "useDefaultNextButton": false,
-            "nextPageConditions": [],
+            "_useDefaultNextButton": false,
+            "_nextPageConditions": [],
             "components": {
                 "Experiment#practice": {
                     "iterations": 10,
