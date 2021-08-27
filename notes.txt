@@ -53,7 +53,8 @@ BEFORE PRODUCTION
 
 
 VIPJONO
-
+- styling
+- previous button
 
 -master code
 - 
@@ -65,13 +66,14 @@ VIPJONO
 
 CURRENT ISSUES
 
++ progress bar Title
+
+**************************************************
+
 + skip practise button
 + show guides button
 + explanation slide pictures disappear so better scaling must be implemented
 * styling fixes
-
-**************************************************
-
 + slider explanations for one template
 + Title and top description support
 + next button explanation

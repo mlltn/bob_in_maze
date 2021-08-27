@@ -60,6 +60,7 @@
     <template v-else-if="name.startsWith('ProgressBar')">
       <ProgressBar
         :id="name"
+        :title="content.title"
         :step="content.step"
         :maxSteps="content.maxSteps"
       />
