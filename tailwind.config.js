@@ -1,7 +1,7 @@
 
 module.exports = {
 
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', './src/composition.json'],
+  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', './src/composition.json', './src/templates.json'],
 
   darkMode: false,
 
