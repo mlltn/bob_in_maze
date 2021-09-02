@@ -7,24 +7,12 @@
       :key="name + '_' + $uuid.v4()"
       :name="name"
       :id="name"
+      :ref="name"
       :pageId="id"
       :content="component"
       :horizontal="false"
     >
     </Brick>
-    <div class="button-left-corner">
-      <p v-if="'previousButton' in content._helpTexts" class="my-3 max-w-xxs">
-        {{ $t(content._helpTexts.previousButton) }}
-      </p>
-
-      <el-button
-        v-if="content._useDefaultNextButton && currentPage > 0"
-        v-on:click="previousPage()"
-        type="info"
-        :key="'button-' + $uuid.v4()"
-        >previous</el-button
-      >
-    </div>
     <div class="button-right-corner">
       <p v-if="'nextButton' in content._helpTexts" class="my-3 max-w-xxs">
         {{ $t(content._helpTexts.nextButton) }}
@@ -50,6 +38,13 @@
         type="danger"
         :key="'button-' + $uuid.v4()"
         >Go to experiment</el-button
+      >
+      <el-button
+        v-if="currentPage > 0"
+        v-on:click="previousPage()"
+        type="danger"
+        :key="'button-' + $uuid.v4()"
+        >previous</el-button
       >
       <el-button
         v-on:click="nextPage()"
@@ -99,9 +94,18 @@ export default {
     },
 
     nextPage() {
+      this.executeLeavePageActions(this.content._leavePage);
       this.$store.commit('resetNextPageConditions');
       this.$store.commit('nextPage');
       bus.$emit('reset-slider-score', {}); //make general resetter
+    },
+    executeLeavePageActions() {
+      // Object.keys(this.content.components).forEach((refHandle) => {
+      //   this.$refs[refHandle][0].executeLeavePageActions();
+      // });
+      // this.content._leavePageActions.forEach((action) => {
+      // $store.commit('executeLeavePageActions', action)
+      // }
     },
     toggleGuides() {
       this.$store.commit('toggleGuides');

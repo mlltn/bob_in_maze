@@ -37,6 +37,7 @@ export default {
         bus.$emit('input-not-empty', false);
       }
     },
+    executeLeavePageActions() {},
   },
   computed: {
     ...mapGetters(['getDynamicProp']),

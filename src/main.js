@@ -10,6 +10,7 @@ import templatesJSON from './templates.json'
 import translationsJSON from './translations.json'
 
 import * as utils from './logic/utils'
+import execute from './logic/leavePageActions'
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
@@ -56,6 +57,9 @@ var store = new Vuex.Store({
       Object.keys(state.nextPageConditions).forEach(key => {
         state.nextPageConditions[key] = false;
       });
+    },
+    executeLeavePageAction(state, action) {
+      execute[action](state);
     },
     previousPage(state) {
       state.currentPage--;

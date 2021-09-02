@@ -26,6 +26,7 @@
         :pageId="pageId"
         :content="content"
         class="m-4"
+        :ref="'_REF_HANDLE_'"
       >
       </Brick>
     </template>
@@ -46,6 +47,7 @@
         :pageId="pageId"
         :placeholder="content.placeholder"
         :type="content.type"
+        :ref="'_REF_HANDLE_'"
       ></InputField>
     </template>
 
@@ -54,7 +56,13 @@
     </template>
 
     <template v-else-if="name.startsWith('SliderMenu')">
-      <SliderMenu :content="content" :id="name" :pageId="pageId" :name="name" />
+      <SliderMenu
+        :content="content"
+        :id="name"
+        :pageId="pageId"
+        :name="name"
+        :ref="'_REF_HANDLE_'"
+      />
     </template>
 
     <template v-else-if="name.startsWith('ProgressBar')">
@@ -108,6 +116,13 @@ export default {
       const arr = Object.entries(components);
       const filteredArr = arr.filter(([key]) => !key.startsWith('_'));
       return Object.fromEntries(filteredArr);
+    },
+    executeLeavePageActions() {
+      try {
+        this.$refs['_REF_HANDLE_'].executeLeavePageActions();
+      } catch {
+        console.log('NoLeavePageAction: ' + this.id);
+      }
     },
   },
 };

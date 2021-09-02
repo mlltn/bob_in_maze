@@ -12,6 +12,9 @@
         "_nextPageConditions": [
             "input-not-empty"
         ],
+        "_leavePageActions": [
+            "enable-dev-mode"
+        ],
         "_helpTexts": {},
         "components": {
             "TextArea#top": {
@@ -66,7 +69,7 @@
             },
             "TextArea#top-description": {
                 "text": "TEMPLATE_TEXT",
-                "_styles": "text-left"
+                "_styles": ""
             },
             "Horizontal#image-text": {
                 "Picture#image-1": {

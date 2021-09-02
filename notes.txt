@@ -53,9 +53,7 @@ BEFORE PRODUCTION
 
 
 VIPJONO
-- styling
-- previous button
-
+-dev mode activation from access code
 -master code
 - 
 - Access code input
@@ -66,10 +64,13 @@ VIPJONO
 
 CURRENT ISSUES
 
-+ progress bar Title
+- styling
++ leave page actions to trigger action in every component
 
 **************************************************
 
++ previous button to DEV mode only
++ progress bar Title
 + skip practise button
 + show guides button
 + explanation slide pictures disappear so better scaling must be implemented
