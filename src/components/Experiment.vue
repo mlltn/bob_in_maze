@@ -13,7 +13,8 @@
       <div v-if="mode == 1" class="flex">
         <div
           id="pictureFrame"
-          class="flex flex-2 flex-wrap justify-center w-full"
+          class="flex flex-1 flex-wrap w-full"
+          :class="step % 3 == 2 ? 'justify-end' : 'justify-center'"
           style=""
         >
           <div
@@ -27,7 +28,7 @@
             <img :src="image.path" class="" style="" />
           </div>
         </div>
-        <div v-if="step % 3 == 2" id="sliderFrame" class="flex-1 m-20">
+        <div v-if="step % 3 == 2" id="sliderFrame" class="flex-1 m-20 mt-28">
           <SliderMenu
             ref="slidermenu"
             :content="content['SliderMenu#experiment']"
@@ -41,14 +42,15 @@
       <div v-if="mode == 2" class="flex">
         <div
           id="pictureFrame"
-          class="flex flex-2 flex-wrap justify-center w-full"
+          class="flex flex-1 flex-wrap w-full"
+          :class="step % 2 == 1 ? 'justify-end' : 'justify-center'"
           style=""
         >
-          <div v-if="step % 2 == 0" class="p-2" style="width: 500px">
+          <div v-if="step % 2 == 0" class="p-2 mx-12" style="width: 500px">
             <p>{{ '(' + currentImgSet[0].fileName + ')' }}</p>
             <img :src="currentImgSet[0].path" class="" style="" />
           </div>
-          <div v-if="step % 2 == 0" class="p-2" style="width: 500px">
+          <div v-if="step % 2 == 0" class="p-2 mx-12" style="width: 500px">
             <p>{{ '(' + currentImgSet[1].fileName + ')' }}</p>
             <img :src="currentImgSet[1].path" class="" style="" />
           </div>
@@ -57,7 +59,7 @@
             <img :src="currentImgSet[2].path" class="" style="width: 500px" />
           </div>
         </div>
-        <div v-if="step % 2 == 1" id="sliderFrame" class="flex-1 m-20">
+        <div v-if="step % 2 == 1" id="sliderFrame" class="flex-1 m-20 mt-28">
           <SliderMenu
             ref="slidermenu"
             :content="content['SliderMenu#experiment']"

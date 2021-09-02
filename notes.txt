@@ -64,11 +64,11 @@ VIPJONO
 
 CURRENT ISSUES
 
-- styling
-+ leave page actions to trigger action in every component
++ styling experiment
 
 **************************************************
 
++ leave page actions to trigger action in every component
 + previous button to DEV mode only
 + progress bar Title
 + skip practise button
