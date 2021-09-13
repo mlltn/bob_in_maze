@@ -12,9 +12,6 @@
         "_nextPageConditions": [
             "input-not-empty"
         ],
-        "_leavePageActions": [
-            "enable-dev-mode"
-        ],
         "_helpTexts": {},
         "components": {
             "TextArea#top": {

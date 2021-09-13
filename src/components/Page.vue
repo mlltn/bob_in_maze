@@ -26,7 +26,7 @@
         >next</el-button
       >
     </div>
-    <div class="button-right-top-corner">
+    <div v-if="devModeEnabled" id="admin-panel" class="button-right-top-corner">
       <el-button
         v-on:click="toggleGuides()"
         type="danger"
@@ -94,18 +94,23 @@ export default {
     },
 
     nextPage() {
-      this.executeLeavePageActions(this.content._leavePage);
+      this.executeLeavePageActions();
       this.$store.commit('resetNextPageConditions');
       this.$store.commit('nextPage');
       bus.$emit('reset-slider-score', {}); //make general resetter
     },
     executeLeavePageActions() {
-      // Object.keys(this.content.components).forEach((refHandle) => {
-      //   this.$refs[refHandle][0].executeLeavePageActions();
-      // });
-      // this.content._leavePageActions.forEach((action) => {
-      // $store.commit('executeLeavePageActions', action)
-      // }
+      try {
+        Object.keys(this.content.components).forEach((refHandle) => {
+          this.$refs[refHandle][0].executeLeavePageActions();
+        });
+        // // Working code if leave Page Actions are enabled for page level
+        // this.content._leavePageActions.forEach((action) => {
+        //   this.$store.commit('executeLeavePageAction', action);
+        // });
+      } catch {
+        console.log('NoLeavePageAction: ' + this.id);
+      }
     },
     toggleGuides() {
       this.$store.commit('toggleGuides');
@@ -115,7 +120,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['getPageById']),
+    ...mapGetters(['getDynamicProp']),
     ...mapState({
       currentPage: (state) => state.currentPage,
     }),
@@ -126,6 +131,10 @@ export default {
         }
       }
       return true;
+    },
+    devModeEnabled() {
+      console.log(this.getDynamicProp('DEV_MODE'));
+      return this.getDynamicProp('DEV_MODE');
     },
   },
 };

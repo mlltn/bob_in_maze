@@ -39,6 +39,7 @@ Refactoring:
 - make general resetter in page nextPage method (now there is specific resetter for slidermenu)
 - look up https://github.com/maoberlehner/vuex-map-fields for input vuex binding
 - remove component level width definitions from Picture component. The point is to keep it general
+- genereal leave page actions
 
 
 Nice to have:
@@ -48,12 +49,10 @@ Nice to have:
 
 **************************************************
 BEFORE PRODUCTION
-- dev mods behind access code
 - ensure progress bar and other elements which are not generated from template are same in experiment and templates
 
 
 VIPJONO
--dev mode activation from access code
 -master code
 - 
 - Access code input
@@ -63,11 +62,16 @@ VIPJONO
 - styling 
 
 CURRENT ISSUES
++ dev mods behind access code
++ dev mode activation from access code
 
-+ styling experiment
-
+INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
+    might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
++ BUG / some styles not recognized in production
++ SOLUTION / tailwind to purge styles from templates.json 
++ styling experiment
 + leave page actions to trigger action in every component
 + previous button to DEV mode only
 + progress bar Title

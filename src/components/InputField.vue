@@ -37,7 +37,15 @@ export default {
         bus.$emit('input-not-empty', false);
       }
     },
-    executeLeavePageActions() {},
+    executeLeavePageActions() {
+      //REFACTOR to more general solution
+      if (this.id == 'InputField#access-code' && this.inputValue == 'dev') {
+        this.$store.commit('setDynamicProp', {
+          key: 'DEV_MODE',
+          value: true,
+        });
+      }
+    },
   },
   computed: {
     ...mapGetters(['getDynamicProp']),

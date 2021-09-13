@@ -10,7 +10,7 @@ import templatesJSON from './templates.json'
 import translationsJSON from './translations.json'
 
 import * as utils from './logic/utils'
-import execute from './logic/leavePageActions'
+import { execute } from './logic/leavePageActions'
 
 Vue.use(Vuex)
 Vue.use(ElementUI)
@@ -59,6 +59,7 @@ var store = new Vuex.Store({
       });
     },
     executeLeavePageAction(state, action) {
+      console.log(action)
       execute[action](state);
     },
     previousPage(state) {
