@@ -31,12 +31,11 @@
       </Brick>
     </template>
 
-    <template v-else-if="name == 'Title'">
-      <h1>{{ $t(content.caption) }}</h1>
-    </template>
-
     <template v-else-if="name.startsWith('TextArea')">
-      <p class="mx-4 max-w-96 mx-auto my-4">
+      <p
+        style="white-space: pre-line"
+        class="text-left mx-4 max-w-96 mx-auto my-4"
+      >
         {{ $t(content.text) }}
       </p>
     </template>
@@ -61,6 +60,16 @@
         :id="name"
         :pageId="pageId"
         :name="name"
+        :ref="'_REF_HANDLE_'"
+      />
+    </template>
+    <template v-else-if="name.startsWith('CheckBoxMenu')">
+      <CheckBoxMenu
+        :id="name"
+        :pageId="pageId"
+        :name="name"
+        :translations="content.translations"
+        :title="content.title"
         :ref="'_REF_HANDLE_'"
       />
     </template>
@@ -93,6 +102,7 @@ import Experiment from './Experiment';
 import SliderMenu from './SliderMenu';
 import ProgressBar from './ProgressBar';
 import InputField from './InputField';
+import CheckBoxMenu from './CheckBoxMenu';
 export default {
   props: {
     name: String,
@@ -110,6 +120,7 @@ export default {
     SliderMenu,
     ProgressBar,
     InputField,
+    CheckBoxMenu,
   },
   methods: {
     parseComponents(components) {

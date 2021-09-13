@@ -350,5 +350,26 @@
                 }
             }
         }
+    },
+    "&checkbox_page": {
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
+        "components": {
+            "TextArea#title": {
+                "text": "TEMPLATE_TITLE",
+                "_styles": ""
+            },
+            "TextArea#description": {
+                "text": "TEMPLATE_DESCRIPTION",
+                "_styles": ""
+            },
+            "CheckBoxMenu#test": {
+                "title": "TEMPLATE",
+                "translations": [
+                    "TEMPLATE"
+                ]
+            }
+        }
     }
 }
