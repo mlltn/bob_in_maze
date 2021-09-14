@@ -32,12 +32,12 @@
     </template>
 
     <template v-else-if="name.startsWith('TextArea')">
-      <p
-        style="white-space: pre-line"
-        class="text-left mx-4 max-w-96 mx-auto my-4"
-      >
-        {{ $t(content.text) }}
-      </p>
+      <TextAreaTODO
+        :id="name"
+        :pageId="pageId"
+        :text="content.text"
+        :type="content.type"
+      />
     </template>
 
     <template v-else-if="name.startsWith('InputField')">
@@ -103,6 +103,7 @@ import SliderMenu from './SliderMenu';
 import ProgressBar from './ProgressBar';
 import InputField from './InputField';
 import CheckBoxMenu from './CheckBoxMenu';
+import TextAreaTODO from './TextAreaTODO';
 export default {
   props: {
     name: String,
@@ -121,6 +122,7 @@ export default {
     ProgressBar,
     InputField,
     CheckBoxMenu,
+    TextAreaTODO,
   },
   methods: {
     parseComponents(components) {

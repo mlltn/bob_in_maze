@@ -40,6 +40,7 @@ Refactoring:
 - look up https://github.com/maoberlehner/vuex-map-fields for input vuex binding
 - remove component level width definitions from Picture component. The point is to keep it general
 - genereal leave page actions
+- Refactor TextArea from composition and templates to custom component as TextArea is reserved by vue
 
 
 Nice to have:
@@ -59,15 +60,15 @@ VIPJONO
 - styling 
 
 CURRENT ISSUES
-- Create TitleText component
-- Create TextArea component
-+ Create CheckBoxMenu component and test template
-+ Support for line breaks for translation in textArea
+
++ Create TextArea component
 
 INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
     might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
++ Create CheckBoxMenu component and test template
++ Support for line breaks for translation in textArea
 + dev mods behind access code
 + dev mode activation from access code
 + BUG / some styles not recognized in production

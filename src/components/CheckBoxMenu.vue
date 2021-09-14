@@ -1,6 +1,6 @@
 <template>
   <div class="text-left m-5">
-    <TitleText>{{ $t(title) }}</TitleText>
+    <p>{{ $t(title) }}</p>
     <el-checkbox-group v-model="checked">
       <div
         v-for="translation in translations"
@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import TitleText from './TitleText';
-
 export default {
   props: {
     name: String,
@@ -29,9 +27,7 @@ export default {
       checked: [],
     };
   },
-  components: {
-    TitleText,
-  },
+  components: {},
 };
 </script>
 
