@@ -61,12 +61,13 @@ VIPJONO
 
 CURRENT ISSUES
 
-+ Create TextArea component
+*template modifications
 
 INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
     might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
++ Create TextArea component
 + Create CheckBoxMenu component and test template
 + Support for line breaks for translation in textArea
 + dev mods behind access code
@@ -115,3 +116,9 @@ INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happe
 + enable button when valid answer
 + slider colors with element ui style customization
 + dynamic colors
+
+
+
+
+Shanshan
+- one_pic_intro_page -> one_pic_practice_page

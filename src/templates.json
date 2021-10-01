@@ -49,8 +49,7 @@
                     "path_key": "assets",
                     "filename": "logo.png"
                 }
-            },
-            "ProgressBar#practice": {}
+            }
         }
     },
     "&two_pic_intro_page": {
@@ -101,6 +100,82 @@
             }
         }
     },
+    "&one_pic_practice_page": {
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
+        "components": {
+            "TextArea#Title": {
+                "text": "TEMPLATE_TITLE",
+                "type": "title",
+                "_styles": ""
+            },
+            "TextArea#top": {
+                "text": "TEMPLATE_TEXT",
+                "_styles": ""
+            },
+            "TextArea#pic-header": {
+                "text": "TEMPLATE_TEXT",
+                "_styles": ""
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "assets",
+                    "filename": "logo.png"
+                }
+            },
+            "ProgressBar#practice": {}
+        }
+    },
+    "&two_pic_practice_page": {
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
+        "components": {
+            "TextArea#Title": {
+                "text": "TEMPLATE_TITLE",
+                "type": "title",
+                "_styles": ""
+            },
+            "TextArea#top": {
+                "text": "TEMPLATE_TEXT",
+                "type": "title",
+                "_styles": ""
+            },
+            "TextArea#top-description": {
+                "text": "TEMPLATE_TEXT",
+                "type": "description",
+                "_styles": "ml-12"
+            },
+            "Horizontal#image-text": {
+                "Picture#image-1": {
+                    "_styles": "",
+                    "src": {
+                        "path_key": "assets",
+                        "filename": "logo.png"
+                    }
+                },
+                "TextArea#pic-description": {
+                    "text": "TEMPLATE_TEXT",
+                    "_styles": "m-auto ml-12"
+                }
+            },
+            "Horizontal#image-text-2": {
+                "Picture#image-2": {
+                    "_styles": "",
+                    "src": {
+                        "path_key": "assets",
+                        "filename": "logo.png"
+                    }
+                },
+                "TextArea#pic-description-2": {
+                    "text": "TEMPLATE_TEfXT",
+                    "_styles": "m-auto ml-12"
+                }
+            },
+            "ProgressBar#practice": {}
+        }
+    },
     "&one_pic_with_slider": {
         "_useDefaultNextButton": true,
         "_nextPageConditions": [
@@ -144,7 +219,8 @@
                         }
                     ]
                 }
-            }
+            },
+            "ProgressBar#practice": {}
         }
     },
     "&one_pic_with_slider_and_helpers": {
@@ -198,7 +274,8 @@
                         "text": "TEXT_SLIDER_BOTTOM_HELPER"
                     }
                 }
-            }
+            },
+            "ProgressBar#practice": {}
         }
     },
     "&two_pics_with_slider": {
@@ -276,7 +353,8 @@
                         "_styles": ""
                     }
                 }
-            }
+            },
+            "ProgressBar#practice": {}
         }
     },
     "&explanation_of_items": {
