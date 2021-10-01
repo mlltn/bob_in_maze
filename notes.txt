@@ -6,7 +6,7 @@ IDEAS
 TODO
 
 Bugs:
-
+- cannot define styles in template and composition for same element
 Actual experiment:
 - 
 
@@ -61,12 +61,21 @@ VIPJONO
 
 CURRENT ISSUES
 
-*template modifications
+Shanshan
++ one_pic_intro_page -> one_pic_practice_page
++ gap between slider and description should be smaller
+    +(&one_pic_with_slider_and_helpers#prac1)
+    +&one_pic_with_slider_and_helpers#prac3)
++ checkboxes in the middle
++ next button enabled when all checkboes checked
++ 30 tasks
++ filenames under guides
 
 INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
     might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
+*template modifications
 + Create TextArea component
 + Create CheckBoxMenu component and test template
 + Support for line breaks for translation in textArea
@@ -121,4 +130,15 @@ INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happe
 
 
 Shanshan
-- one_pic_intro_page -> one_pic_practice_page
++ one_pic_intro_page -> one_pic_practice_page
+
++ gap between slider and description should be smaller
+    +(&one_pic_with_slider_and_helpers#prac1)
+    +&one_pic_with_slider_and_helpers#prac3)
+
++ checkboxes in the middle
++ next button enabled when all checkboes checked
+
++ 30 tasks
+
++ filenames under guides

@@ -1,9 +1,10 @@
 <template>
   <div>
     <!-- <div>Experiment</div> -->
-    <div class="w-full">
+    <div class="w-full mt-40">
       <!-- PICTURE MODES -->
       <el-button
+        v-if="devModeEnabled"
         v-on:click="mode = (mode % 2) + 1"
         :type="'primary'"
         class="button-corner-tl"
@@ -24,7 +25,9 @@
             class="p-2"
             style="width: 500px"
           >
-            <p>{{ '(' + image.fileName + ')' }}</p>
+            <p v-if="$store.state.showGuides">
+              {{ '(' + image.fileName + ')' }}
+            </p>
             <img :src="image.path" class="" style="" />
           </div>
         </div>
@@ -47,15 +50,21 @@
           style=""
         >
           <div v-if="step % 2 == 0" class="p-2 mx-12" style="width: 500px">
-            <p>{{ '(' + currentImgSet[0].fileName + ')' }}</p>
+            <p v-if="$store.state.showGuides">
+              {{ '(' + currentImgSet[0].fileName + ')' }}
+            </p>
             <img :src="currentImgSet[0].path" class="" style="" />
           </div>
           <div v-if="step % 2 == 0" class="p-2 mx-12" style="width: 500px">
-            <p>{{ '(' + currentImgSet[1].fileName + ')' }}</p>
+            <p v-if="$store.state.showGuides">
+              {{ '(' + currentImgSet[1].fileName + ')' }}
+            </p>
             <img :src="currentImgSet[1].path" class="" style="" />
           </div>
           <div v-if="step % 2 == 1">
-            <p>{{ '(' + currentImgSet[2].fileName + ')' }}</p>
+            <p v-if="$store.state.showGuides">
+              {{ '(' + currentImgSet[2].fileName + ')' }}
+            </p>
             <img :src="currentImgSet[2].path" class="" style="width: 500px" />
           </div>
         </div>
@@ -76,7 +85,7 @@
     <ProgressBar
       class="fixed left-1/4 bottom-24 m-3 w-1/2"
       :step="task + 1"
-      :maxSteps="props.totalTasks + 1"
+      :maxSteps="props.totalTasks"
     >
     </ProgressBar>
 
@@ -96,7 +105,7 @@
 
 <script>
 import _ from 'lodash';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 import SliderMenu from './SliderMenu.vue';
 import ProgressBar from './ProgressBar.vue';
 
@@ -112,7 +121,7 @@ export default {
       isValidTotal: false,
       props: {
         pic_width: '10em',
-        totalTasks: 5,
+        totalTasks: 30,
       },
       randomizedTaskOrder: [],
       results: {},
@@ -187,6 +196,7 @@ export default {
     },
   },
   computed: {
+    ...mapGetters(['getDynamicProp']),
     ...mapState({
       sliders: (state) =>
         state.pages['experiment'].components['SliderMenu#experiment'].sliders,
@@ -206,6 +216,10 @@ export default {
           './' + this.randomizedTaskOrder[this.task] + '/Test-1.png'
         ];
       return [stimulus1, stimulus2, test];
+    },
+    devModeEnabled() {
+      console.log(this.getDynamicProp('DEV_MODE'));
+      return this.getDynamicProp('DEV_MODE');
     },
   },
 };

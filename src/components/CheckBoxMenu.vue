@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { bus } from '../main.js';
 export default {
   props: {
     name: String,
@@ -24,8 +25,48 @@ export default {
   },
   data() {
     return {
-      checked: [],
+      checkBoxGroupKey: 'checkBoxGroupKey_' + this.pageId + '_' + this.id,
     };
+  },
+  watch: {
+    checked: function () {
+      this.checkBoxChanged();
+    },
+  },
+  methods: {
+    checkBoxChanged() {
+      if (this.allBoxesChecked()) {
+        bus.$emit('all-boxes-checked', true);
+      } else {
+        bus.$emit('all-boxes-checked', false);
+      }
+    },
+    allBoxesChecked() {
+      if (this.translations.length == this.checked.length) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+  computed: {
+    checked: {
+      get() {
+        if (
+          typeof this.$store.state.dynamicProps[this.checkBoxGroupKey] ===
+          'undefined'
+        ) {
+          return [];
+        }
+        return this.$store.state.dynamicProps[this.checkBoxGroupKey];
+      },
+      set(newValue) {
+        this.$store.commit('setDynamicProp', {
+          key: this.checkBoxGroupKey,
+          value: newValue,
+        });
+      },
+    },
   },
   components: {},
 };

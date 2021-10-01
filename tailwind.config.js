@@ -12,7 +12,8 @@ module.exports = {
     },
     maxWidth: {
       'xxs': '15rem',
-      '96': '24rem'
+      '96': '24rem',
+      'wide': '42rem'
     },
 
     extend: {

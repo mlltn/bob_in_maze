@@ -18,9 +18,11 @@ export default {
         case 'title':
           return 'mx-auto my-4';
         case 'description':
-          return 'text-left m-4 max-w-96';
+          return 'text-left m-4 min-w-96 max-w-96';
+        case 'wide-text':
+          return 'text-left my-4 mx-auto min-w-96 max-w-wide';
         default:
-          return 'text-left my-4 max-w-96 mx-auto';
+          return 'text-left my-4 mx-auto max-w-96';
       }
     },
   },

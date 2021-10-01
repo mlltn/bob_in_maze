@@ -133,7 +133,6 @@ export default {
       return true;
     },
     devModeEnabled() {
-      console.log(this.getDynamicProp('DEV_MODE'));
       return this.getDynamicProp('DEV_MODE');
     },
   },

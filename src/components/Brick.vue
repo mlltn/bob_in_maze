@@ -2,7 +2,7 @@
   <div
     :class="
       (content._styles !== undefined ? content._styles : '') +
-      (name.startsWith('Horizontal') ? ' flex justify-center' : '')
+      (name.startsWith('Horizontal') ? ' flex justify-left' : '')
     "
   >
     <p

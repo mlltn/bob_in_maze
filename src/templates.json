@@ -22,7 +22,7 @@
             "InputField#access-code": {
                 "placeholder": "TEMPLATE_PLACEHOLDER",
                 "type": "text",
-                "_styles": "w-52 mx-auto"
+                "_styles": ""
             }
         }
     },
@@ -67,14 +67,17 @@
                 "type": "title",
                 "_styles": ""
             },
-            "TextArea#top-description": {
-                "text": "TEMPLATE_TEXT",
-                "type": "description",
-                "_styles": "ml-12"
+            "Horizontal#center-helpper": {
+                "_styles": "justify-center",
+                "TextArea#top-description": {
+                    "text": "TEMPLATE_TEXT",
+                    "type": "description"
+                }
             },
             "Horizontal#image-text": {
+                "_styles": "justify-center my-4",
                 "Picture#image-1": {
-                    "_styles": "",
+                    "_styles": "m-auto mr-6",
                     "src": {
                         "path_key": "assets",
                         "filename": "logo.png"
@@ -82,12 +85,13 @@
                 },
                 "TextArea#pic-description": {
                     "text": "TEMPLATE_TEXT",
-                    "_styles": "m-auto ml-12"
+                    "_styles": "m-auto ml-6"
                 }
             },
             "Horizontal#image-text-2": {
+                "_styles": "justify-center my-4",
                 "Picture#image-2": {
-                    "_styles": "",
+                    "_styles": "m-auto mr-6",
                     "src": {
                         "path_key": "assets",
                         "filename": "logo.png"
@@ -95,7 +99,7 @@
                 },
                 "TextArea#pic-description-2": {
                     "text": "TEMPLATE_TEfXT",
-                    "_styles": "m-auto ml-12"
+                    "_styles": "m-auto ml-6 w-"
                 }
             }
         }
@@ -192,6 +196,7 @@
                 "text": "TEXT_2"
             },
             "Horizontal#stimulus-slider": {
+                "_styles": "justify-center",
                 "Vertical#pic-helper": {
                     "TextArea#pic-header": {
                         "text": "TEXT_3",
@@ -239,6 +244,7 @@
                 "text": "TEXT_2"
             },
             "Horizontal#stimulus-slider": {
+                "_styles": "justify-center",
                 "Vertical#pic-helper": {
                     "TextArea#pic-header": {
                         "text": "TEXT_3",
@@ -256,7 +262,7 @@
                         "text": "TEXT_SLIDER_TOP_HELPER"
                     },
                     "SliderMenu#tutorial": {
-                        "_styles": "m-20",
+                        "_styles": "m-20 mt-4",
                         "validTotalScore": 10,
                         "sliderBoxWidth": "400px",
                         "defaultSettings": {},
@@ -294,6 +300,7 @@
                 "text": "TEMPLATE_TEXT"
             },
             "Horizontal#two-image-slider": {
+                "_styles": "justify-center",
                 "Vertical#pic-helper": {
                     "Picture#image-1": {
                         "src": {
@@ -353,8 +360,7 @@
                         "_styles": ""
                     }
                 }
-            },
-            "ProgressBar#practice": {}
+            }
         }
     },
     "&explanation_of_items": {
@@ -377,6 +383,7 @@
                 "_styles": ""
             },
             "Horizontal#1": {
+                "_styles": "justify-center",
                 "Picture#examplepic": {
                     "src": {
                         "path_key": "assets",
@@ -396,30 +403,28 @@
                             "text": "TEMPLATE_TEXT"
                         }
                     },
-                    "Horizontal#2": {
-                        "Horizontal#3": {
-                            "Picture#item1": {
-                                "size": 20,
-                                "src": {
-                                    "path_key": "assets",
-                                    "filename": "logo.png"
-                                }
-                            },
-                            "TextArea#item1desc": {
-                                "text": "TEMPLATE_TEXT"
+                    "Horizontal#3": {
+                        "Picture#item1": {
+                            "size": 20,
+                            "src": {
+                                "path_key": "assets",
+                                "filename": "logo.png"
                             }
                         },
-                        "Horizontal#5": {
-                            "Picture#item2": {
-                                "size": 20,
-                                "src": {
-                                    "path_key": "assets",
-                                    "filename": "logo.png"
-                                }
-                            },
-                            "TextArea#item2desc": {
-                                "text": "TEMPLATE_TEXT"
+                        "TextArea#item1desc": {
+                            "text": "TEMPLATE_TEXT"
+                        }
+                    },
+                    "Horizontal#5": {
+                        "Picture#item2": {
+                            "size": 20,
+                            "src": {
+                                "path_key": "assets",
+                                "filename": "logo.png"
                             }
+                        },
+                        "TextArea#item2desc": {
+                            "text": "TEMPLATE_TEXT"
                         }
                     },
                     "Horizontal#4": {
@@ -441,7 +446,9 @@
     },
     "&checkbox_page": {
         "_useDefaultNextButton": true,
-        "_nextPageConditions": [],
+        "_nextPageConditions": [
+            "all-boxes-checked"
+        ],
         "_helpTexts": {},
         "components": {
             "TextArea#title": {
@@ -454,10 +461,30 @@
                 "_styles": ""
             },
             "CheckBoxMenu#test": {
+                "_styles": "w-1/2 m-auto",
                 "title": "TEMPLATE",
                 "translations": [
                     "TEMPLATE"
                 ]
+            }
+        }
+    },
+    "&feedback_page": {
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [
+            "input-not-empty"
+        ],
+        "_helpTexts": {},
+        "components": {
+            "TextArea#top": {
+                "text": "TEMPLATE_TEXT",
+                "type": "title",
+                "_styles": "mt-32"
+            },
+            "InputField#access-code": {
+                "placeholder": "TEMPLATE_PLACEHOLDER",
+                "type": "text",
+                "_styles": ""
             }
         }
     }
