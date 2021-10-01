@@ -72,7 +72,7 @@ var store = new Vuex.Store({
       state.showGuides = !state.showGuides
     },
     toExperiment(state) {
-      state.currentPage = Object.keys(state.pages).length - 1;
+      state.currentPage = Object.keys(state.pages).length - 3;
     },
     setDynamicProp(state, newProp) {
       Vue.set(state.dynamicProps, newProp['key'], newProp['value']);

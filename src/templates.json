@@ -481,10 +481,23 @@
                 "type": "title",
                 "_styles": "mt-32"
             },
-            "InputField#access-code": {
+            "InputField#feedback": {
                 "placeholder": "TEMPLATE_PLACEHOLDER",
-                "type": "text",
-                "_styles": ""
+                "type": "textarea",
+                "rowCount": 10,
+                "_styles": "h-60 w-1/2 m-auto"
+            }
+        }
+    },
+    "&info_page": {
+        "_useDefaultNextButton": true,
+        "_nextPageConditions": [],
+        "_helpTexts": {},
+        "components": {
+            "TextArea#top": {
+                "text": "THANK_YOU_TEXT",
+                "type": "title",
+                "_styles": "mt-60"
             }
         }
     }

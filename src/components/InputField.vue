@@ -1,8 +1,11 @@
 <template>
   <el-input
+    class="h-full"
     ref="access_code_input"
     :placeholder="placeholder"
     v-model="inputValue"
+    :type="type"
+    :autosize="{ minRows: 5 }"
   />
 </template>
 
