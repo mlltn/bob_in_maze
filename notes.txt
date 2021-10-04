@@ -54,19 +54,21 @@ BEFORE PRODUCTION
 
 
 VIPJONO
-- collect results to state
-- Setup database connection
 - maali
 - styling 
 
 CURRENT ISSUES
 
-*current page change
++ Setup database connection
 
 INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
     might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
++ collect results to state
++ feedback template and page
++ thank you page 
+*current page change
 Shanshan {
 + one_pic_intro_page -> one_pic_practice_page
 + gap between slider and description should be smaller

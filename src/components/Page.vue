@@ -52,6 +52,12 @@
         :key="'button-' + $uuid.v4()"
         >next</el-button
       >
+      <el-button
+        v-on:click="testPost()"
+        type="danger"
+        :key="'button-' + $uuid.v4()"
+        >testpost</el-button
+      >
     </div>
   </div>
 </template>
@@ -117,6 +123,10 @@ export default {
     },
     toExperiment() {
       this.$store.commit('toExperiment');
+    },
+    testPost() {
+      this.$store.commit('pushNewResult', { time_spent: 123 });
+      this.$store.commit('submitResults');
     },
   },
   computed: {

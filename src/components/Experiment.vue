@@ -165,12 +165,15 @@ export default {
       taskResult['task_index'] = this.task;
       taskResult['task_id'] = this.getCurrentTaskId();
       taskResult['time_spent'] = this.getTaskCompletionTime();
-      taskResult['slider_Scores'] = this.sliders;
+      taskResult['slider_info'] = this.getSliders();
 
       this.$store.commit('pushNewResult', taskResult);
     },
     getTaskCompletionTime() {
       return Date.now() - this.currentTaskStartTime;
+    },
+    getSliders() {
+      return _.cloneDeep(this.sliders);
     },
     prepareNextTask() {
       this.step = 0;
@@ -204,6 +207,7 @@ export default {
     },
     endExperiment() {
       console.log('loppu');
+      this.$store.commit('submitResults');
       this.$store.commit('nextPage');
       return;
     },

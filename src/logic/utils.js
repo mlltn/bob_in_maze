@@ -113,3 +113,9 @@ export function getMediaObject(media) {
     });
     return mediaObject;
 }
+
+export function initResults() {
+    let results = {};
+    results["experiment"] = [];
+    return results;
+}

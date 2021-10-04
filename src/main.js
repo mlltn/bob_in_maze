@@ -12,6 +12,11 @@ import translationsJSON from './translations.json'
 import * as utils from './logic/utils'
 import { execute } from './logic/leavePageActions'
 
+import VueAxios from 'vue-axios';
+import axios from 'axios';
+
+Vue.use(VueAxios, axios);
+
 Vue.use(Vuex)
 Vue.use(ElementUI)
 Vue.use(UUID);
@@ -40,7 +45,7 @@ var store = new Vuex.Store({
     preloadedMedia: utils.getMediaObject(require.context('./assets/tasks/')),
     dynamicProps: {},
 
-    results: []
+    results: utils.initResults()
   },
   getters: {
     getComponentById: (state) => (pageId, componentId) => {
@@ -80,7 +85,13 @@ var store = new Vuex.Store({
       Vue.set(state.dynamicProps, newProp['key'], newProp['value']);
     },
     pushNewResult(state, newResult) {
-      state.results.push(newResult)
+      state.results.experiment.push(newResult)
+    },
+    submitResults(state) {
+
+
+      let uri = 'http://localhost:4000/posts/add';
+      axios.post(uri, state.results);
     }
   }
 })
