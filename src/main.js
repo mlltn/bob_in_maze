@@ -38,7 +38,9 @@ var store = new Vuex.Store({
     composition: utils.parseComposition(compositionJSON, templatesJSON), // real component tree and props
     pages: utils.parsePages(compositionJSON.PAGES), //flat hierarchy (pages -> components) for easy data hold
     preloadedMedia: utils.getMediaObject(require.context('./assets/tasks/')),
-    dynamicProps: {}
+    dynamicProps: {},
+
+    results: []
   },
   getters: {
     getComponentById: (state) => (pageId, componentId) => {
@@ -77,6 +79,9 @@ var store = new Vuex.Store({
     setDynamicProp(state, newProp) {
       Vue.set(state.dynamicProps, newProp['key'], newProp['value']);
     },
+    pushNewResult(state, newResult) {
+      state.results.push(newResult)
+    }
   }
 })
 

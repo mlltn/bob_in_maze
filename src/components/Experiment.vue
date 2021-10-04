@@ -123,8 +123,8 @@ export default {
         pic_width: '10em',
         totalTasks: 30,
       },
+      currentTaskStartTime: Date.now(),
       randomizedTaskOrder: [],
-      results: {},
     };
   },
   components: {
@@ -159,14 +159,24 @@ export default {
         }
       }
     },
+    saveResult() {
+      let taskResult = {};
+
+      taskResult['task_index'] = this.task;
+      taskResult['task_id'] = this.getCurrentTaskId();
+      taskResult['time_spent'] = this.getTaskCompletionTime();
+      taskResult['slider_Scores'] = this.sliders;
+
+      this.$store.commit('pushNewResult', taskResult);
+    },
+    getTaskCompletionTime() {
+      return Date.now() - this.currentTaskStartTime;
+    },
     prepareNextTask() {
       this.step = 0;
       this.task++;
       bus.$emit('reset-slider-score', {});
-    },
-    saveResult() {
-      let taskResult = {};
-      taskResult;
+      this.currentTaskStartTime = Date.now();
     },
     isSliderStep() {
       if (this.mode == 1) {
@@ -186,6 +196,9 @@ export default {
         console.log('############# VIRHE ###############');
       }
     },
+    getCurrentTaskId() {
+      return this.randomizedTaskOrder[this.task];
+    },
     isEndOfExperiment() {
       return this.task > this.props.totalTasks - 1;
     },
@@ -204,21 +217,15 @@ export default {
     }),
     currentImgSet() {
       let stimulus1 =
-        this.preloadedMedia[
-          './' + this.randomizedTaskOrder[this.task] + '/Stimulus-1.png'
-        ];
+        this.preloadedMedia['./' + this.getCurrentTaskId() + '/Stimulus-1.png'];
       let stimulus2 =
-        this.preloadedMedia[
-          './' + this.randomizedTaskOrder[this.task] + '/Stimulus-2.png'
-        ];
+        this.preloadedMedia['./' + this.getCurrentTaskId() + '/Stimulus-2.png'];
       let test =
-        this.preloadedMedia[
-          './' + this.randomizedTaskOrder[this.task] + '/Test-1.png'
-        ];
+        this.preloadedMedia['./' + this.getCurrentTaskId() + '/Test-1.png'];
       return [stimulus1, stimulus2, test];
     },
+
     devModeEnabled() {
-      console.log(this.getDynamicProp('DEV_MODE'));
       return this.getDynamicProp('DEV_MODE');
     },
   },
