@@ -31,3 +31,5 @@ src/composition.json
 src/assets_backup
 
 data/
+
+build_and_deploy.sh

@@ -90,7 +90,7 @@ var store = new Vuex.Store({
     submitResults(state) {
 
 
-      let uri = 'http://localhost:4000/posts/add';
+      let uri = 'http://mup.cs.helsinki.fi:4000/posts/add';
       axios.post(uri, state.results);
     }
   }
