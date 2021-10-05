@@ -134,7 +134,14 @@ export default {
       try {
         this.$refs['_REF_HANDLE_'].executeLeavePageActions();
       } catch {
-        console.log('NoLeavePageAction: ' + this.id);
+        // console.log('NoLeavePageAction: ' + this.id);
+      }
+      if (typeof this.content['resultKey'] !== 'undefined') {
+        this.$store.commit('saveResult', {
+          resultKey: this.content['resultKey'],
+          key: this.name.split('#')[1], //TODO dynamically add names to mongoose model
+          value: this.$refs['_REF_HANDLE_'].getValue(),
+        });
       }
     },
   },

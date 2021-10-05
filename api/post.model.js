@@ -20,7 +20,15 @@ let Post = new Schema(
                     }
                 ],
             }
-        ]
+        ],
+        info: {
+            startTime: Schema.Types.Date,
+            access_code: Schema.Types.String,
+
+        },
+        feedback: {
+            feedback: Schema.Types.String
+        }
     },
     {
         collection: 'posts'

@@ -19,9 +19,10 @@
                 "type": "title",
                 "_styles": "mt-32"
             },
-            "InputField#access-code": {
+            "InputField#access_code": {
                 "placeholder": "TEMPLATE_PLACEHOLDER",
                 "type": "text",
+                "resultKey": "info",
                 "_styles": ""
             }
         }
@@ -485,6 +486,7 @@
                 "placeholder": "TEMPLATE_PLACEHOLDER",
                 "type": "textarea",
                 "rowCount": 10,
+                "resultKey": "feedback",
                 "_styles": "h-60 w-1/2 m-auto"
             }
         }
