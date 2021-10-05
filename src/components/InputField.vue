@@ -42,12 +42,15 @@ export default {
     },
     executeLeavePageActions() {
       //REFACTOR to more general solution
-      if (this.id == 'InputField#access-code' && this.inputValue == 'dev') {
+      if (this.id == 'InputField#access_code' && this.inputValue == 'dev') {
         this.$store.commit('setDynamicProp', {
           key: 'DEV_MODE',
           value: true,
         });
       }
+    },
+    getValue() {
+      return this.inputValue;
     },
   },
   computed: {

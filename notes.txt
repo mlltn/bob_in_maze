@@ -1,4 +1,10 @@
 
+important
+- running mongo and enabling start on boot
+    sudo systemctl enable mongod --now
+- setup node server
+    https://di-marco.net/blog/it/2020-08-15-tips-running_a_nodejs_process_on_linux_as_a_systemd_service/
+
 IDEAS
 - option to show sliders in random order
 - Base component could be composition and some kinda plugin the cond"uctor
@@ -41,7 +47,9 @@ Refactoring:
 - remove component level width definitions from Picture component. The point is to keep it general
 - genereal leave page actions
 - Refactor TextArea from composition and templates to custom component as TextArea is reserved by vue
-
+- generate new result keys automatically.. now they are added in utils method "initResults()"
+- rename Post schema to Result tms
+- gather results per page under page name dict
 
 Nice to have:
 - Make Conductor general (eg. the locations to fetch images at mount and component composition)
@@ -54,17 +62,19 @@ BEFORE PRODUCTION
 
 
 VIPJONO
-- maali
-- styling 
+- Mongo uri env variable
+- Next nappula delay
 
 CURRENT ISSUES
 
-+ Setup database connection
+- rest of the info to results
++ experiment results and access code to results
 
 INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
     might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
++ Setup database connection
 + collect results to state
 + feedback template and page
 + thank you page 

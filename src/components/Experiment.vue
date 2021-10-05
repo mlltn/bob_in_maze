@@ -121,7 +121,7 @@ export default {
       isValidTotal: false,
       props: {
         pic_width: '10em',
-        totalTasks: 30,
+        totalTasks: 2,
       },
       currentTaskStartTime: Date.now(),
       randomizedTaskOrder: [],
@@ -167,7 +167,7 @@ export default {
       taskResult['time_spent'] = this.getTaskCompletionTime();
       taskResult['slider_info'] = this.getSliders();
 
-      this.$store.commit('pushNewResult', taskResult);
+      this.$store.commit('pushNewExperimentResult', taskResult);
     },
     getTaskCompletionTime() {
       return Date.now() - this.currentTaskStartTime;

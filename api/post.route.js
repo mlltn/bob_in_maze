@@ -9,7 +9,7 @@ postRoutes.route('/add').post(function (req, res) {
     let post = new Post(req.body);
     post.save()
         .then(() => {
-            res.status(200).json({ 'result': 'result in added successfully' });
+            res.status(200).json({ 'result': 'result is added successfully' });
         })
         .catch(() => {
             res.status(400).send("unable to save to database");

@@ -125,7 +125,7 @@ export default {
       this.$store.commit('toExperiment');
     },
     testPost() {
-      this.$store.commit('pushNewResult', { time_spent: 123 });
+      this.$store.commit('pushNewExperimentResult', { time_spent: 123 });
       this.$store.commit('submitResults');
     },
   },

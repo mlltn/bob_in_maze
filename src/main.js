@@ -84,12 +84,13 @@ var store = new Vuex.Store({
     setDynamicProp(state, newProp) {
       Vue.set(state.dynamicProps, newProp['key'], newProp['value']);
     },
-    pushNewResult(state, newResult) {
+    pushNewExperimentResult(state, newResult) {
       state.results.experiment.push(newResult)
     },
+    saveResult(state, { resultKey, key, value }) {
+      state.results[resultKey][key] = value;
+    },
     submitResults(state) {
-
-
       let uri = 'http://localhost:4000/posts/add';
       axios.post(uri, state.results);
     }

@@ -116,6 +116,10 @@ export function getMediaObject(media) {
 
 export function initResults() {
     let results = {};
+    results["feedback"] = {}
+    results["info"] = {
+        startTime: new Date()
+    }
     results["experiment"] = [];
     return results;
 }
