@@ -62,18 +62,18 @@ BEFORE PRODUCTION
 
 
 VIPJONO
-- Mongo uri env variable
 - Next nappula delay
 
 CURRENT ISSUES
 
-- Hide last next button
-+ fix result model
-+ remove page refres listener int the end
++ Mongo uri env variable
++ Hide last next button (done in untracked composition file)
 
 **************************************************
 
 
++ fix result model
++ remove page refres listener int the end
 + rest of the info to results
 + prevent accidental page refresh etc
 + feedback added to results

@@ -91,7 +91,7 @@ var store = new Vuex.Store({
       state.results[resultKey][key] = value;
     },
     submitResults(state) {
-      let uri = 'http://localhost:4000/posts/add';
+      let uri = (process.env.MONGODB_URI || 'http://localhost:4000') + '/posts/add';
       axios.post(uri, state.results);
     }
   }
