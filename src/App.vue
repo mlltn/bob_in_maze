@@ -6,7 +6,7 @@
 
 <script>
 import Conductor from './components/Conductor.vue';
-
+import { preventNav } from './logic/utils.js';
 export default {
   name: 'App',
   components: {
@@ -16,18 +16,11 @@ export default {
     document.title = 'Bob in Maze';
   },
   beforeMount() {
-    window.addEventListener('beforeunload', this.preventNav);
+    window.addEventListener('beforeunload', preventNav);
   },
 
   beforeDestroy() {
-    window.removeEventListener('beforeunload', this.preventNav);
-  },
-  methods: {
-    preventNav(event) {
-      // MUISTA LAITTAA PÄÄLLE
-      event.preventDefault();
-      event.returnValue = '';
-    },
+    window.removeEventListener('beforeunload', preventNav);
   },
 };
 </script>

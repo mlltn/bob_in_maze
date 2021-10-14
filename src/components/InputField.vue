@@ -12,6 +12,7 @@
 <script>
 import { bus } from '../main.js';
 import { mapGetters } from 'vuex';
+import { preventNav } from '../logic/utils.js';
 export default {
   props: {
     id: String,
@@ -49,6 +50,7 @@ export default {
         });
       } else if (this.id == 'InputField#feedback') {
         this.$store.commit('submitResults');
+        window.removeEventListener('beforeunload', preventNav);
       }
     },
     getValue() {

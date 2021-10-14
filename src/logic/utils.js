@@ -118,9 +118,15 @@ export function initResults(resultSet) {
     let results = {};
     results["feedback"] = {}
     results["info"] = {
-        result_set = resultSet,
+        result_set: resultSet,
         start_time: new Date().toTimeString()
     }
     results["experiment"] = [];
     return results;
+}
+
+export function preventNav(event) {
+    // MUISTA LAITTAA PÄÄLLE
+    event.preventDefault();
+    event.returnValue = '';
 }

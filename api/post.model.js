@@ -7,6 +7,13 @@ const Schema = mongoose.Schema;
 // Define collection and schema for Post
 let Post = new Schema(
     {
+        info: {
+            access_code: Schema.Types.String,
+            result_set: Schema.Types.String,
+            start_time: Schema.Types.String,
+            experiment_start_time: Schema.Types.String,
+
+        },
         experiment: [
             {
                 task_id: Schema.Types.Number,
@@ -14,18 +21,13 @@ let Post = new Schema(
                 time_spent: Schema.Types.Number,
                 slider_info: [
                     {
-                        color: Schema.Types.String,
                         id: Schema.Types.Number,
-                        score: Schema.Types.Number
+                        score: Schema.Types.Number,
+                        color: Schema.Types.String,
                     }
                 ],
             }
         ],
-        info: {
-            startTime: Schema.Types.String,
-            access_code: Schema.Types.String,
-
-        },
         feedback: {
             feedback: Schema.Types.String
         }

@@ -67,11 +67,14 @@ VIPJONO
 
 CURRENT ISSUES
 
-+ rest of the info to results
+- Hide last next button
++ fix result model
++ remove page refres listener int the end
 
 **************************************************
 
 
++ rest of the info to results
 + prevent accidental page refresh etc
 + feedback added to results
 
