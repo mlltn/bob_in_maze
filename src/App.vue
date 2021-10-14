@@ -12,6 +12,23 @@ export default {
   components: {
     Conductor,
   },
+  created() {
+    document.title = 'Bob in Maze';
+  },
+  beforeMount() {
+    window.addEventListener('beforeunload', this.preventNav);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('beforeunload', this.preventNav);
+  },
+  methods: {
+    preventNav(event) {
+      // MUISTA LAITTAA PÄÄLLE
+      event.preventDefault();
+      event.returnValue = '';
+    },
+  },
 };
 </script>
 

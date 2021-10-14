@@ -118,7 +118,7 @@ export function initResults() {
     let results = {};
     results["feedback"] = {}
     results["info"] = {
-        startTime: new Date()
+        startTime: new Date().toTimeString()
     }
     results["experiment"] = [];
     return results;

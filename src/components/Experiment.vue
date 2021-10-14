@@ -121,7 +121,7 @@ export default {
       isValidTotal: false,
       props: {
         pic_width: '10em',
-        totalTasks: 2,
+        totalTasks: 1,
       },
       currentTaskStartTime: Date.now(),
       randomizedTaskOrder: [],
@@ -132,6 +132,8 @@ export default {
     ProgressBar,
   },
   created() {
+    this.recordStartTime();
+
     bus.$on('slider-total', (condition) => {
       this.isValidTotal = condition;
     });
@@ -142,6 +144,13 @@ export default {
     this.mode = _.random(1, 2);
   },
   methods: {
+    recordStartTime() {
+      this.$store.commit('saveResult', {
+        resultKey: 'info',
+        key: 'experiment_start_time', //TODO dynamically add names to mongoose model
+        value: new Date().toTimeString(),
+      });
+    },
     getTaskCount() {
       let tasks = {};
       Object.keys(this.preloadedMedia).forEach((key) => {
@@ -207,7 +216,6 @@ export default {
     },
     endExperiment() {
       console.log('loppu');
-      this.$store.commit('submitResults');
       this.$store.commit('nextPage');
       return;
     },

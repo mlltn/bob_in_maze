@@ -47,6 +47,8 @@ export default {
           key: 'DEV_MODE',
           value: true,
         });
+      } else if (this.id == 'InputField#feedback') {
+        this.$store.commit('submitResults');
       }
     },
     getValue() {

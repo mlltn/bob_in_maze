@@ -22,7 +22,7 @@ let Post = new Schema(
             }
         ],
         info: {
-            startTime: Schema.Types.Date,
+            startTime: Schema.Types.String,
             access_code: Schema.Types.String,
 
         },
