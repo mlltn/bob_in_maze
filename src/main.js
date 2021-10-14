@@ -45,7 +45,7 @@ var store = new Vuex.Store({
     preloadedMedia: utils.getMediaObject(require.context('./assets/tasks/')),
     dynamicProps: {},
 
-    results: utils.initResults()
+    results: utils.initResults(compositionJSON.RESULT_SET)
   },
   getters: {
     getComponentById: (state) => (pageId, componentId) => {
