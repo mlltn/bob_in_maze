@@ -121,7 +121,7 @@ export default {
       isValidTotal: false,
       props: {
         pic_width: '10em',
-        totalTasks: 1,
+        totalTasks: 15,
       },
       currentTaskStartTime: Date.now(),
       randomizedTaskOrder: [],
