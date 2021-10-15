@@ -116,11 +116,11 @@ export function getMediaObject(media) {
 
 export function initResults(resultSet) {
     let results = {};
-    results["feedback"] = {}
+    results["feedback"] = {};
     results["info"] = {
         result_set: resultSet,
         start_time: new Date().toTimeString()
-    }
+    };
     results["experiment"] = [];
     return results;
 }
