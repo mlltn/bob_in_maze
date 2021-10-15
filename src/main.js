@@ -99,7 +99,7 @@ var store = new Vuex.Store({
 
 export const bus = new Vue();
 
-new Vue({
+ew Vue({
   render: h => h(App),
   store: store,
 }).$mount('#app')

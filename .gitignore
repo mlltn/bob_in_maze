@@ -32,3 +32,4 @@ src/assets_backup
 
 data/
 results/
+build_and_deploy.sh
