@@ -66,21 +66,20 @@ VIPJONO
 
 CURRENT ISSUES
 
-+ Mongo uri env variable
-+ Hide last next button (done in untracked composition file)
++ Add mode to results
 
+INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
+    might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
 
++ Mongo uri env variable
++ Hide last next button (done in untracked composition file)
 + fix result model
 + remove page refres listener int the end
 + rest of the info to results
 + prevent accidental page refresh etc
 + feedback added to results
-
-INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
-    might be because all the pages might be done same time. Better would be generate them as the page is changed.
-Solution / this is specific for dev environment so this is not happening in production build
 
 + experiment results and access code to results
 + Setup database connection

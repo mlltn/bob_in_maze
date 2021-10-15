@@ -12,6 +12,7 @@ let Post = new Schema(
             result_set: Schema.Types.String,
             start_time: Schema.Types.String,
             experiment_start_time: Schema.Types.String,
+            mode: Schema.Types.Number
 
         },
         experiment: [

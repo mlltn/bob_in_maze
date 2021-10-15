@@ -142,13 +142,21 @@ export default {
       ...Array(this.getTaskCount()).keys(),
     ]);
     this.mode = _.random(1, 2);
+    this.saveModeToResults();
   },
   methods: {
     recordStartTime() {
       this.$store.commit('saveResult', {
         resultKey: 'info',
-        key: 'experiment_start_time', //TODO dynamically add names to mongoose model
+        key: 'experiment_start_time',
         value: new Date().toTimeString(),
+      });
+    },
+    saveModeToResults() {
+      this.$store.commit('saveResult', {
+        resultKey: 'info',
+        key: 'mode',
+        value: this.mode,
       });
     },
     getTaskCount() {
