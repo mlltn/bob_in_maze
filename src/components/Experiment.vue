@@ -142,7 +142,7 @@ export default {
       ...Array(this.getTaskCount()).keys(),
     ]);
     // this.mode = _.random(1, 2);
-    this.mode = 2;
+    this.mode = 1;
     this.saveModeToResults();
   },
   methods: {
