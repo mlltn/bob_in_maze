@@ -141,7 +141,8 @@ export default {
     this.randomizedTaskOrder = _.shuffle([
       ...Array(this.getTaskCount()).keys(),
     ]);
-    this.mode = _.random(1, 2);
+    // this.mode = _.random(1, 2);
+    this.mode = 2;
     this.saveModeToResults();
   },
   methods: {
