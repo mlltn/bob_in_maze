@@ -2,47 +2,8 @@
   <div>
     <!-- <div>Experiment</div> -->
     <div class="w-full mt-40">
-      <!-- PICTURE MODES -->
-      <el-button
-        v-if="devModeEnabled"
-        v-on:click="mode = (mode % 2) + 1"
-        :type="'primary'"
-        class="button-corner-tl"
-        >CHANGE MODE ({{ mode }})</el-button
-      >
       <!-- MODE 1 -->
       <div v-if="mode == 1" class="flex">
-        <div
-          id="pictureFrame"
-          class="flex flex-1 flex-wrap w-full"
-          :class="step % 3 == 2 ? 'justify-end' : 'justify-center'"
-          style=""
-        >
-          <div
-            v-for="(image, index) in currentImgSet"
-            v-bind:key="image.fileName"
-            v-show="step % 3 == index"
-            class="p-2"
-            style="width: 500px"
-          >
-            <p v-if="$store.state.showGuides">
-              {{ '(' + image.fileName + ')' }}
-            </p>
-            <img :src="image.path" class="" style="" />
-          </div>
-        </div>
-        <div v-if="step % 3 == 2" id="sliderFrame" class="flex-1 m-20 mt-28">
-          <SliderMenu
-            ref="slidermenu"
-            :content="content['SliderMenu#experiment']"
-            class="w-full"
-            id="SliderMenu#experiment"
-            pageId="experiment"
-          />
-        </div>
-      </div>
-      <!-- MODE 2 -->
-      <div v-if="mode == 2" class="flex">
         <div
           id="pictureFrame"
           class="flex flex-1 flex-wrap w-full"
@@ -55,17 +16,11 @@
             </p>
             <img :src="currentImgSet[0].path" class="" style="" />
           </div>
-          <div v-if="step % 2 == 0" class="p-2 mx-12" style="width: 500px">
+          <div v-if="step % 2 == 1">
             <p v-if="$store.state.showGuides">
               {{ '(' + currentImgSet[1].fileName + ')' }}
             </p>
-            <img :src="currentImgSet[1].path" class="" style="" />
-          </div>
-          <div v-if="step % 2 == 1">
-            <p v-if="$store.state.showGuides">
-              {{ '(' + currentImgSet[2].fileName + ')' }}
-            </p>
-            <img :src="currentImgSet[2].path" class="" style="width: 500px" />
+            <img :src="currentImgSet[1].path" class="" style="width: 500px" />
           </div>
         </div>
         <div v-if="step % 2 == 1" id="sliderFrame" class="flex-1 m-20 mt-28">
@@ -121,7 +76,7 @@ export default {
       isValidTotal: false,
       props: {
         pic_width: '10em',
-        totalTasks: 15,
+        totalTasks: 12,
       },
       currentTaskStartTime: Date.now(),
       randomizedTaskOrder: [],
@@ -201,8 +156,6 @@ export default {
     },
     isSliderStep() {
       if (this.mode == 1) {
-        return this.step == 2;
-      } else if (this.mode == 2) {
         return this.step == 1;
       } else {
         console.log('############# VIRHE ###############');
@@ -210,8 +163,6 @@ export default {
     },
     endOfTask() {
       if (this.mode == 1) {
-        return this.step > 2;
-      } else if (this.mode == 2) {
         return this.step > 1;
       } else {
         console.log('############# VIRHE ###############');
@@ -239,11 +190,9 @@ export default {
     currentImgSet() {
       let stimulus1 =
         this.preloadedMedia['./' + this.getCurrentTaskId() + '/Stimulus-1.png'];
-      let stimulus2 =
-        this.preloadedMedia['./' + this.getCurrentTaskId() + '/Stimulus-2.png'];
       let test =
         this.preloadedMedia['./' + this.getCurrentTaskId() + '/Test-1.png'];
-      return [stimulus1, stimulus2, test];
+      return [stimulus1, test];
     },
 
     devModeEnabled() {

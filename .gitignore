@@ -29,6 +29,7 @@ pnpm-debug.log*
 src/translations.json
 src/composition.json
 src/assets_backup
+src/assets/v_1_tasks
 
 data/
 results/
