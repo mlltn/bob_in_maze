@@ -1,0 +1,194 @@
+{
+    "NEXT": {
+        "en": "Next"
+    },
+    "LONG_TEXT": {
+        "en": "Vel facilisis volutpat est velit egestas. Gravida in fermentum et sollicitudin. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Tincidunt tortor aliquam nulla facilisi. Augue ut lectus arcu bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada. Amet purus gravida quis blandit turpis cursus. Eu turpis egestas pretium aenean pharetra magna ac placerat. Facilisis volutpat est velit egestas dui. Viverra nam libero justo laoreet sit amet cursus. Sit amet aliquam id diam maecenas ultricies mi. Interdum varius sit amet mattis vulputate."
+    },
+    "WELCOME_TEXT": {
+        "en": "Noniiiiiiiiiin"
+    },
+    "TEMPLATE_CAPTION": {
+        "en": "Replace this template caption in composition.json::PAGES"
+    },
+    "INTRO_TITLE_1": {
+        "en": "Instructions\n #1"
+    },
+    "INTRO_INFO": {
+        "en": "In the experiment, you will see images like this. They show a birds-eye view of a berry picking robot. It always starts in the cell that has \"S\" and ends at the last column. The red line shows how the robot has moved. Each step of moving in cells cost little effort."
+    },
+    "INTRO_TEXT_1": {
+        "en": "Besides going to the last column, the berry-picking robot aims to pick up berries. In the figures, berries are the red and yellow circle. The robot picks up berry automatically when goes through the berry. As shown in the figure, the robot picks up the yellow berry."
+    },
+    "INTRO_ITEM_0": {
+        "en": "For the grey cells, this cost of movement is larger or the same as the cost of the white cells."
+    },
+    "INTRO_ITEM_1": {
+        "en": "The robot starts here."
+    },
+    "INTRO_ITEM_2": {
+        "en": "The robots may have different preferences over berries of different colours."
+    },
+    "INTRO_ITEM_3": {
+        "en": "path taken by the robot, always finishes on the last column."
+    },
+    "INTRO_TITLE_2": {
+        "en": "Instructions #2"
+    },
+    "Ignore": {
+        "en": "The robot only picks up berries if it doesn't cost too much effort. Each white cell need little effort associated with it, but the grey cells sometimes take a lot of effort to pass through."
+    },
+    "Reason1": {
+        "en": "There are two cases that the robot may not pick up the berry. Maybe it is too far to get the yellow berry."
+    },
+    "Reason2": {
+        "en": "Or maybe it is too costly to get the red berry."
+    },
+    "INTRO_3_TITLE": {
+        "en": "Instructions #3"
+    },
+    "INTRO_3_EXPLANATION": {
+        "en": "Your task is to determine the probability of the robot taking alternative paths. You do this based on observing previous paths that the robot has taken."
+    },
+    "INTRO_3_STIMULUS_1": {
+        "en": "You are shown one or more image like this, depicting Bob’s movements."
+    },
+    "INTRO_3_STIMULUS_2": {
+        "en": "You are then shown an image that has alternative paths colored purple, blue and green. Your task is to assign points to each path based on how certain you are that this is the path taken by the robot next."
+    },
+    "INTRO_3_SLIDER": {
+        "en": "You need assign a total of 10 points to the possible paths with sliders. The color of sliders are corresponding to the paths. Once exact 10 points are assigned, press next to submit your result and move to next task. Try to move the sliders!"
+    },
+    "ST1": {
+        "en": "Stimulus One"
+    },
+    "ST2": {
+        "en": "Stimulus Two"
+    },
+    "TE": {
+        "en": "Test"
+    },
+    "PRAC_1_TITLE": {
+        "en": "Practice #1"
+    },
+    "LetPractice": {
+        "en": "Let’s practice! Here you see an example path taken by the robot. Take a look at it and pay attention to \n\na) if the robot picks up the berry, and what the colour of the berry is; \n\nb) if there are any gray areas and if the robot avoids them. Please note that once you press ‘next’, you can’t look back. After you click 'next', you need to use the sliders to assess how plausible different paths taken by the robot are. You will need to remember information from this picture in order to do the task. Only click next after looking at this picture carefully!"
+    },
+    "TaskDes": {
+        "en": "Now your taks is to, based on the image you just saw, to assign points to these alternative paths according to how plausible you think they are. The more certain you are, the bigger the difference between the sliders. You can press 'next' when you have assigned exactly 10 points."
+    },
+    "PRAC_2_TITLE": {
+        "en": "Practice #2"
+    },
+    "Prac2Welcome": {
+        "en": "You should now forget about the previous pictures: this is a new robot with its own preference for berries and effort for moving around. In each new task, you should only use the information from that task, and not from the previous ones."
+    },
+    "PRAC_3_TITLE": {
+        "en": "Practice #3"
+    },
+    "Prac3Welcome": {
+        "en": "Good! Here is a new task, with two berries of different colour. Remember that different colours might have different desirability."
+    },
+    "PRAC_4_TITLE": {
+        "en": "Practice #4"
+    },
+    "Prac4Welcome": {
+        "en": "Good! In previous practices you were shown one image, and then the alternative paths. From now on, you will se two images next to each other, both giving you information about the robot’s preferences. You should use this combined information to then assign points to alternative paths. Here is the first image."
+    },
+    "Prac4ST2": {
+        "en": "Here is a new image. It’s the same robot as in the previous image, but in a new environment. Thus its preference is the same as the previous figure."
+    },
+    "PRAC_5_TITLE": {
+        "en": "Practice #5"
+    },
+    "Prac5Welcome": {
+        "en": "Good! Now you have seen the kinds of tasks in this experiment. Let’s take one more practise. Remember that you should not be influenced by the images from the previous tasks: each task is a new one, with the robot starting with new preferences."
+    },
+    "Prac5ST2": {
+        "en": "Here’s another picture showing the preference of the robot."
+    },
+    "Prac1T": {
+        "en": "Now your taks is to, based on the image you just saw, to assign points to these alternative paths according to how plausible you think they are. The more certain you are, the bigger the difference between the sliders. You can press “next” when you have assigned exactly 10 points."
+    },
+    "Prac2T": {
+        "en": "Please again assign points to the alternative paths. Remember that you can use them to indicate how confident you are in the alternatives."
+    },
+    "Prac3T": {
+        "en": "Now please assign points to the to the alternative paths. You can see three alternative paths here. The sliders’ color is corresponding to the paths. Please pay attention to the color of berries and the number of white and grey cell."
+    },
+    "Prac4T": {
+        "en": "Now assign points to these alternative paths based on the two previous images you saw."
+    },
+    "Prac5T": {
+        "en": "Now assign points to these alternative paths based on the two previous images you saw. You might find it is hard to decide which path the robot will take, but that's OK. You can use the slider to show the possibility of each path."
+    },
+    "SlideInfo": {
+        "en": "sliders are colour coded to possible trajectories"
+    },
+    "GeneralSlideInfo": {
+        "en": ""
+    },
+    "EMPTY": {
+        "en": ""
+    },
+    "BUTTON_HELP_1": {
+        "en": "After you click 'next', you need to use the sliders to assess how plausible different paths taken by the robot are. You will need to remember information from this picture in order to do the task. Only click next after looking at this picture carefully!"
+    },
+    "BUTTON_HELP_1_previous": {
+        "en": "Click next button for the test scenario, but remember you can't look back."
+    },
+    "BUTTON_HELP_2": {
+        "en": "If you have assigned a total of 10 points to the sliders, click next for next task."
+    },
+    "BUTTON_HELP_3": {
+        "en": "Sometimes clicking next button brings you a new stimulus, you need to guess Bob's preference based on both stimuli."
+    },
+    "SLIDER_HELP_1": {
+        "en": "Here we have two possible paths and two sliders. The sliders are colour coded to possible trajectories."
+    },
+    "SLIDER_HELP_2": {
+        "en": "Sometimes there are just two paths, sometimes there are three. Likewise, the sliders are colour coded to possible trajectories."
+    },
+    "PRACTICE_FINISH": {
+        "en": "Now you have finished practice. Before moving to tasks, please check each box to confirm that you understand that ... "
+    },
+    "PROGRESS_BAR_TITLE": {
+        "en": "Pratice task: "
+    },
+    "WelcomePage": {
+        "en": "Welcome!"
+    },
+    "CheckBoxTitle": {
+        "en": "Review"
+    },
+    "CheckBoxDes": {
+        "en": ""
+    },
+    "CheckBoxItem1": {
+        "en": "I understand that for each task, the robot has new preferences over the berries and grey area."
+    },
+    "CheckBoxItem2": {
+        "en": "I understand that it takes effort for the robot to move."
+    },
+    "CheckBoxItem3": {
+        "en": "I understand that the robot likes to pick up berries."
+    },
+    "CheckBoxItem4": {
+        "en": "I understand that the robot doesn’t necessarily pick up berries if it is too difficult to get them."
+    },
+    "CheckBoxItem5": {
+        "en": "I understand that by looking at pictures in particular task I get information about the robot's preferences over berries."
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    },
+    "TEXT_1": {
+        "en": ""
+    }
+}

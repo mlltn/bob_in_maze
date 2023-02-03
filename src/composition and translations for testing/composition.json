@@ -1,0 +1,663 @@
+{
+    "RESOURCE_PATHS": {
+        "assets": "./",
+        "material": "./material/"
+    },
+    "RESULT_SET": "pilot",
+    "NEXT_PAGE_CONDITIONS": [
+        "slider-total",
+        "time-in-seconds"
+    ],
+    "PAGES": {
+        "&access_code_input#1": {
+            "TextArea#top": {
+                "text": "WelcomePage"
+            },
+            "InputField#access_code": {
+                "_styles": "w-72 mx-auto",
+                "placeholder": "Please enter your invite code here."
+            }
+        },
+        "&one_pic_intro_page#intro1": {
+            "_helpTexts": {
+                "nextButton": "EMPTY"
+            },
+            "TextArea#Title": {
+                "text": "INTRO_TITLE_1"
+            },
+            "TextArea#top": {
+                "text": "INTRO_INFO"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-1.png"
+                }
+            }
+        },
+        "&explanation_of_items#intro2": {
+            "TextArea#Title": {
+                "text": "INTRO_TITLE_2"
+            },
+            "TextArea#top": {
+                "text": "EMPTY"
+            },
+            "TextArea#description": {
+                "text": "INTRO_TEXT_1"
+            },
+            "Picture#examplepic": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-2.png"
+                }
+            },
+            "Picture#item0": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "label_grey.png"
+                }
+            },
+            "TextArea#item0desc": {
+                "text": "INTRO_ITEM_0"
+            },
+            "Picture#item1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "label_start.png"
+                }
+            },
+            "TextArea#item1desc": {
+                "text": "INTRO_ITEM_1"
+            },
+            "Picture#item2": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "label_berry.png"
+                }
+            },
+            "TextArea#item2desc": {
+                "text": "INTRO_ITEM_2"
+            },
+            "Picture#item3": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "label_obs.png"
+                }
+            },
+            "TextArea#item3desc": {
+                "text": "INTRO_ITEM_3"
+            }
+        },
+        "&two_pic_intro_page#intro3": {
+            "TextArea#Title": {
+                "text": "INTRO_TITLE_2"
+            },
+            "TextArea#top": {
+                "text": "EMPTY"
+            },
+            "TextArea#top-description": {
+                "text": "Ignore"
+            },
+            "Picture#image-1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-3-1.png"
+                }
+            },
+            "TextArea#pic-description": {
+                "type": "description",
+                "text": "Reason1"
+            },
+            "Picture#image-2": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-3-2.png"
+                }
+            },
+            "TextArea#pic-description-2": {
+                "type": "description",
+                "text": "Reason2"
+            }
+        },
+        "&two_pics_with_slider#intro4": {
+            "TextArea#Title": {
+                "text": "INTRO_3_TITLE"
+            },
+            "TextArea#top": {
+                "text": "INTRO_3_EXPLANATION"
+            },
+            "Picture#image-1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-4-1.png"
+                }
+            },
+            "TextArea#pic-description": {
+                "text": "INTRO_3_STIMULUS_1"
+            },
+            "Picture#image-2": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-4-2.png"
+                }
+            },
+            "TextArea#pic-description-2": {
+                "text": "INTRO_3_STIMULUS_2"
+            },
+            "SliderMenu#tutorial": {
+                "sliders": [
+                    {
+                        "id": 1,
+                        "color": "green",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 2,
+                        "color": "blue",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 3,
+                        "color": "blueviolet",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    }
+                ]
+            },
+            "TextArea#slider-info": {
+                "text": "INTRO_3_SLIDER"
+            }
+        },
+        "&one_pic_practice_page#prac1-1": {
+            "TextArea#Title": {
+                "text": "PRAC_1_TITLE"
+            },
+            "TextArea#top": {
+                "type": "wide-text",
+                "text": "LetPractice"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "_styles": "mt-8",
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-5.png"
+                }
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 1,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_with_slider_and_helpers#prac1": {
+            "_helpTexts": {
+                "nextButton": "BUTTON_HELP_2"
+            },
+            "TextArea#Title": {
+                "text": "PRAC_1_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac1T"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-6.png"
+                }
+            },
+            "SliderMenu#tutorial": {
+                "sliders": [
+                    {
+                        "id": 1,
+                        "color": "blue",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 2,
+                        "color": "blueviolet",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    }
+                ]
+            },
+            "TextArea#slider-info": {
+                "text": "TEMPLATE_SLIDER_INFO"
+            },
+            "TextArea#slider-top-helper": {
+                "text": "SLIDER_HELP_1"
+            },
+            "TextArea#slider-bottom-helper": {
+                "text": "EMPTY"
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 1,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_practice_page#prac2-1": {
+            "TextArea#Title": {
+                "text": "PRAC_2_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac2Welcome"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-7.png"
+                }
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 2,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_with_slider#prac2": {
+            "TextArea#Title": {
+                "text": "PRAC_2_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac2T"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-8.png"
+                }
+            },
+            "SliderMenu#tutorial": {
+                "sliders": [
+                    {
+                        "id": 1,
+                        "color": "blue",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 2,
+                        "color": "blueviolet",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    }
+                ]
+            },
+            "TextArea#slider-info": {
+                "text": "GeneralSliderInfo"
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 2,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_practice_page#prac3-1": {
+            "TextArea#Title": {
+                "text": "PRAC_3_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac3Welcome"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-9.png"
+                }
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 3,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_with_slider_and_helpers#prac3": {
+            "TextArea#Title": {
+                "text": "PRAC_3_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac3T"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-10.png"
+                }
+            },
+            "SliderMenu#tutorial": {
+                "sliders": [
+                    {
+                        "id": 1,
+                        "color": "green",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 2,
+                        "color": "blue",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 3,
+                        "color": "blueviolet",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    }
+                ]
+            },
+            "TextArea#slider-info": {
+                "text": "GeneralSliderInfo"
+            },
+            "TextArea#slider-top-helper": {
+                "text": "SLIDER_HELP_2"
+            },
+            "TextArea#slider-bottom-helper": {
+                "text": "EMPTY"
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 3,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_practice_page#prac4-1": {
+            "_helpTexts": {
+                "nextButton": "BUTTON_HELP_3"
+            },
+            "TextArea#Title": {
+                "text": "PRAC_4_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac4Welcome"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-11.png"
+                }
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 4,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_practice_page#prac4-2": {
+            "TextArea#Title": {
+                "text": "PRAC_4_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac4ST2"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-12.png"
+                }
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 4,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_with_slider#prac4": {
+            "TextArea#Title": {
+                "text": "PRAC_4_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac4T"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-13.png"
+                }
+            },
+            "SliderMenu#tutorial": {
+                "sliders": [
+                    {
+                        "id": 1,
+                        "color": "green",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 2,
+                        "color": "blue",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 3,
+                        "color": "blueviolet",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    }
+                ]
+            },
+            "TextArea#slider-info": {
+                "text": "GeneralSliderInfo"
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 4,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_practice_page#prac5-1": {
+            "TextArea#Title": {
+                "text": "PRAC_5_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac5Welcome"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-14.png"
+                }
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 5,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_practice_page#prac5-2": {
+            "TextArea#Title": {
+                "text": "PRAC_5_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac5ST2"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-15.png"
+                }
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 5,
+                "maxSteps": 5
+            }
+        },
+        "&one_pic_with_slider#prac5": {
+            "TextArea#Title": {
+                "text": "PRAC_5_TITLE"
+            },
+            "TextArea#top": {
+                "text": "Prac5T"
+            },
+            "TextArea#pic-header": {
+                "text": "EMPTY"
+            },
+            "Picture#stimulus1": {
+                "src": {
+                    "path_key": "material",
+                    "filename": "Slide-16.png"
+                }
+            },
+            "SliderMenu#tutorial": {
+                "sliders": [
+                    {
+                        "id": 1,
+                        "color": "green",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 2,
+                        "color": "blue",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    },
+                    {
+                        "id": 3,
+                        "color": "blueviolet",
+                        "score": 0,
+                        "min": 0,
+                        "max": 10
+                    }
+                ]
+            },
+            "TextArea#slider-info": {
+                "text": "GeneralSliderInfo"
+            },
+            "ProgressBar#practice": {
+                "title": "Pratice task: ",
+                "step": 5,
+                "maxSteps": 5
+            }
+        },
+        "&checkbox_page#final_page": {
+            "TextArea#title": {
+                "text": "CheckBoxTitle"
+            },
+            "TextArea#description": {
+                "text": "PRACTICE_FINISH"
+            },
+            "CheckBoxMenu#test": {
+                "title": "CheckBoxDes",
+                "translations": [
+                    "CheckBoxItem2",
+                    "CheckBoxItem1",
+                    "CheckBoxItem3",
+                    "CheckBoxItem4",
+                    "CheckBoxItem5"
+                ]
+            }
+        },
+        "experiment": {
+            "_useDefaultNextButton": false,
+            "_nextPageConditions": [],
+            "_helpTexts": {},
+            "components": {
+                "Experiment#practice": {
+                    "iterations": 10,
+                    "mode": "practice",
+                    "SliderMenu#experiment": {
+                        "validTotalScore": 10,
+                        "sliderBoxWidth": "400px",
+                        "defaultSettings": {},
+                        "sliders": [
+                            {
+                                "id": 1,
+                                "color": "green",
+                                "score": 0,
+                                "min": 0,
+                                "max": 10
+                            },
+                            {
+                                "id": 2,
+                                "color": "blue",
+                                "score": 0,
+                                "min": 0,
+                                "max": 10
+                            },
+                            {
+                                "id": 3,
+                                "color": "blueviolet",
+                                "score": 0,
+                                "min": 0,
+                                "max": 10
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "&feedback_page#end": {
+            "TextArea#top": {
+                "text": "FEEDBACK_TEXT"
+            },
+            "InputField#access_code": {
+                "placeholder": "PLACEHOLDERTEXT",
+                "_styles": ""
+            }
+        },
+        "&info_page": {
+            "_useDefaultNextButton": false,
+            "TextArea#top": {
+                "text": "THANK_YOU_TEXT",
+                "_styles": "mt-60"
+            }
+        }
+    }
+}
