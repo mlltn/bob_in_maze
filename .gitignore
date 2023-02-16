@@ -24,6 +24,8 @@ pnpm-debug.log*
 
 .prettierrc
 
+#npm 
+package-lock.json
 
 #Custom
 src/translations.json

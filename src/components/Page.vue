@@ -4,7 +4,7 @@
     <p v-if="$store.state.showGuides">{{ '(' + id + ')' }}</p>
     <Brick
       v-for="(component, name) in content.components"
-      :key="name + '_' + $uuid.v4()"
+      :key="name"
       :name="name"
       :id="name"
       :ref="name"
@@ -22,7 +22,7 @@
         :disabled="!nextPageConditionsMet"
         v-on:click="nextPage()"
         type="success"
-        :key="'button-' + $uuid.v4()"
+        :key="name +'--button-next-page'"
         >next</el-button
       >
     </div>
@@ -30,32 +30,32 @@
       <el-button
         v-on:click="toggleGuides()"
         type="danger"
-        :key="'button-' + $uuid.v4()"
+        key='button-toggle-guides'
         >toggle guides</el-button
       >
       <el-button
         v-on:click="toExperiment()"
         type="danger"
-        :key="'button-' + $uuid.v4()"
+        key='button-to-experiment'
         >Go to experiment</el-button
       >
       <el-button
         v-if="currentPage > 0"
         v-on:click="previousPage()"
         type="danger"
-        :key="'button-' + $uuid.v4()"
+        key='button-previous-page'
         >previous</el-button
       >
       <el-button
         v-on:click="nextPage()"
         type="danger"
-        :key="'button-' + $uuid.v4()"
+        key='button-next-page'
         >next</el-button
       >
       <el-button
         v-on:click="testPost()"
         type="danger"
-        :key="'button-' + $uuid.v4()"
+        key='button-test-post'
         >testpost</el-button
       >
     </div>
