@@ -1,7 +1,7 @@
 <template>
   <!-- <div>df {{ this.$vnode.key }}</div> -->
   <div>
-    <p v-if="$store.state.showGuides">{{ '(' + id + ')' }}</p>
+    <p v-if="$store.state.showGuides">{{ "(" + id + ")" }}</p>
     <Brick
       v-for="(component, name) in content.components"
       :key="name"
@@ -22,52 +22,27 @@
         :disabled="!nextPageConditionsMet"
         v-on:click="nextPage()"
         type="success"
-        :key="name +'--button-next-page'"
+        :key="id + '--button-next-page'"
         >next</el-button
       >
     </div>
     <div v-if="devModeEnabled" id="admin-panel" class="button-right-top-corner">
-      <el-button
-        v-on:click="toggleGuides()"
-        type="danger"
-        key='button-toggle-guides'
-        >toggle guides</el-button
-      >
-      <el-button
-        v-on:click="toExperiment()"
-        type="danger"
-        key='button-to-experiment'
-        >Go to experiment</el-button
-      >
-      <el-button
-        v-if="currentPage > 0"
-        v-on:click="previousPage()"
-        type="danger"
-        key='button-previous-page'
-        >previous</el-button
-      >
-      <el-button
-        v-on:click="nextPage()"
-        type="danger"
-        key='button-next-page'
-        >next</el-button
-      >
-      <el-button
-        v-on:click="testPost()"
-        type="danger"
-        key='button-test-post'
-        >testpost</el-button
-      >
+      <AdminPanel
+        :page="id"
+        :nextPage="nextPage"
+        :previousPage="previousPage"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Brick from './Brick.vue';
-import { mapGetters, mapState } from 'vuex';
-import * as utils from '../logic/utils.js';
+import Brick from "./Brick.vue";
+import AdminPanel from "./AdminPanel.vue";
+import { mapGetters, mapState } from "vuex";
+import * as utils from "../logic/utils.js";
 
-import { bus } from '../main.js';
+import { bus } from "../main.js";
 
 export default {
   props: { id: String, content: Object },
@@ -87,6 +62,7 @@ export default {
   },
   components: {
     Brick,
+    AdminPanel,
   },
   methods: {
     updateNextPageConditions(condition, value) {
@@ -94,16 +70,16 @@ export default {
     },
 
     previousPage() {
-      this.$store.commit('resetNextPageConditions');
-      this.$store.commit('previousPage');
-      bus.$emit('reset-slider-score', {}); //make general resetter
+      this.$store.commit("resetNextPageConditions");
+      this.$store.commit("previousPage");
+      bus.$emit("reset-slider-score", {}); //make general resetter
     },
 
     nextPage() {
       this.executeLeavePageActions();
-      this.$store.commit('resetNextPageConditions');
-      this.$store.commit('nextPage');
-      bus.$emit('reset-slider-score', {}); //make general resetter
+      this.$store.commit("resetNextPageConditions");
+      this.$store.commit("nextPage");
+      bus.$emit("reset-slider-score", {}); //make general resetter
     },
     executeLeavePageActions() {
       try {
@@ -115,22 +91,12 @@ export default {
         //   this.$store.commit('executeLeavePageAction', action);
         // });
       } catch {
-        console.log('NoLeavePageAction: ' + this.id);
+        console.log("NoLeavePageAction: " + this.id);
       }
-    },
-    toggleGuides() {
-      this.$store.commit('toggleGuides');
-    },
-    toExperiment() {
-      this.$store.commit('toExperiment');
-    },
-    testPost() {
-      this.$store.commit('pushNewExperimentResult', { time_spent: 123 });
-      this.$store.commit('submitResults');
     },
   },
   computed: {
-    ...mapGetters(['getDynamicProp']),
+    ...mapGetters(["getDynamicProp"]),
     ...mapState({
       currentPage: (state) => state.currentPage,
     }),
@@ -143,7 +109,7 @@ export default {
       return true;
     },
     devModeEnabled() {
-      return this.getDynamicProp('DEV_MODE');
+      return this.getDynamicProp("DEV_MODE");
     },
   },
 };
