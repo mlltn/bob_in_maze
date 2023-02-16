@@ -9,14 +9,10 @@
       v-bind:class="{ 'bg-green-500': isValidTotalScore }"
     >
       Total score
-      {{ totalScore + '/' + content.validTotalScore }}
+      {{ totalScore + "/" + content.validTotalScore }}
     </div>
     <div>
-      <div
-        class="flex mt-5"
-        v-for="slider in getComponentById(pageId, id).sliders"
-        :key="slider.id"
-      >
+      <div class="flex mt-5" v-for="slider in sliders" :key="slider.id">
         <el-slider
           v-bind:id="'slider-' + slider.id"
           class="flex-auto"
@@ -35,8 +31,8 @@
 </template>
 
 <script>
-import { bus } from '../main.js';
-import { mapGetters } from 'vuex';
+import { bus } from "../main.js";
+import { mapGetters } from "vuex";
 export default {
   props: {
     id: String,
@@ -49,7 +45,7 @@ export default {
   },
   beforeMount() {},
   created() {
-    bus.$on('reset-slider-score', this.resetSliderScore);
+    bus.$on("reset-slider-score", this.resetSliderScore);
   },
   mounted() {
     // this.$store.commit('setSliderMenuVisible', true);
@@ -60,7 +56,7 @@ export default {
   methods: {
     scoreChanged() {
       let ivts = this.isValidTotalScore;
-      bus.$emit('slider-total', ivts);
+      bus.$emit("slider-total", ivts);
     },
     resetSliderScore() {
       this.sliders.forEach((slider) => {
@@ -70,7 +66,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['getComponentById']),
+    ...mapGetters(["getComponentById"]),
     properties() {
       return this.getComponentById(this.pageId, this.id);
     },
