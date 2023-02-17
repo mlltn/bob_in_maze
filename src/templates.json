@@ -461,12 +461,16 @@
                 "text": "TEMPLATE_DESCRIPTION",
                 "_styles": ""
             },
-            "CheckBoxMenu#test": {
+            "Vertical#check-boxes-and-title": {
                 "_styles": "w-1/2 m-auto",
-                "title": "TEMPLATE",
-                "translations": [
-                    "TEMPLATE"
-                ]
+                "TextArea#check-box-title": {
+                    "text": "TEMPLATE_TITLE",
+                    "type": "title",
+                    "_styles": ""
+                },
+                "CheckBoxMenu#check-boxes": {
+                    "_styles": "w-1/2 m-auto"
+                }
             }
         }
     },

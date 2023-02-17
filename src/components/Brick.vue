@@ -12,7 +12,7 @@
         !name.startsWith('Vertical')
       "
     >
-      {{ '(' + name + ')' }}
+      {{ "(" + name + ")" }}
     </p>
 
     <template
@@ -68,8 +68,6 @@
         :id="name"
         :pageId="pageId"
         :name="name"
-        :translations="content.translations"
-        :title="content.title"
         :ref="'_REF_HANDLE_'"
       />
     </template>
@@ -97,13 +95,13 @@
 </template>
 
 <script>
-import Picture from './Picture.vue';
-import Experiment from './Experiment';
-import SliderMenu from './SliderMenu';
-import ProgressBar from './ProgressBar';
-import InputField from './InputField';
-import CheckBoxMenu from './CheckBoxMenu';
-import TextAreaTODO from './TextAreaTODO';
+import Picture from "./Picture.vue";
+import Experiment from "./Experiment";
+import SliderMenu from "./SliderMenu";
+import ProgressBar from "./ProgressBar";
+import InputField from "./InputField";
+import CheckBoxMenu from "./CheckBoxMenu";
+import TextAreaTODO from "./TextAreaTODO";
 export default {
   props: {
     name: String,
@@ -111,7 +109,7 @@ export default {
     pageId: String,
     content: Object,
   },
-  name: 'Brick',
+  name: "Brick",
   data() {
     return {};
   },
@@ -127,19 +125,19 @@ export default {
   methods: {
     parseComponents(components) {
       const arr = Object.entries(components);
-      const filteredArr = arr.filter(([key]) => !key.startsWith('_'));
+      const filteredArr = arr.filter(([key]) => !key.startsWith("_"));
       return Object.fromEntries(filteredArr);
     },
     executeLeavePageActions() {
-      if (typeof this.content['resultKey'] !== 'undefined') {
-        this.$store.commit('saveResult', {
-          resultKey: this.content['resultKey'],
-          key: this.name.split('#')[1], //TODO dynamically add names to mongoose model
-          value: this.$refs['_REF_HANDLE_'].getValue(),
+      if (typeof this.content["resultKey"] !== "undefined") {
+        this.$store.commit("saveResult", {
+          resultKey: this.content["resultKey"],
+          key: this.name.split("#")[1], //TODO dynamically add names to mongoose model
+          value: this.$refs["_REF_HANDLE_"].getValue(),
         });
       }
       try {
-        this.$refs['_REF_HANDLE_'].executeLeavePageActions();
+        this.$refs["_REF_HANDLE_"].executeLeavePageActions();
       } catch {
         // console.log('NoLeavePageAction: ' + this.id);
       }

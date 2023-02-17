@@ -37,7 +37,7 @@ Vue.config.productionTip = false
 
 var store = new Vuex.Store({
   state: {
-    currentPage: 0,
+    currentPage: 17,
     showGuides: false,
     nextPageConditions: [],
     composition: utils.parseComposition(compositionJSON, templatesJSON), // real component tree and props

@@ -1,71 +1,52 @@
 <template>
   <div class="text-left m-5">
-    <p>{{ $t(title) }}</p>
-    <el-checkbox-group v-model="checked">
-      <div
-        v-for="translation in translations"
-        v-bind:key="translation + '_' + $uuid.v4()"
-        class="m-1 ml-5"
-      >
-        <el-checkbox :label="$t(translation)" />
-      </div>
-    </el-checkbox-group>
+    <div>
+      <el-checkbox
+        v-for="checkbox in checkBoxes"
+        :label="$t(checkbox.label)"
+        v-bind:key="checkbox.index"
+        v-model="checkbox.checked"
+        @change="checkBoxChanged()"
+      ></el-checkbox>
+    </div>
   </div>
 </template>
 
 <script>
-import { bus } from '../main.js';
+import { bus } from "../main.js";
+import { mapGetters } from "vuex";
 export default {
   props: {
     name: String,
     id: String,
     pageId: String,
-    title: String,
-    translations: Array,
   },
   data() {
-    return {
-      checkBoxGroupKey: 'checkBoxGroupKey_' + this.pageId + '_' + this.id,
-    };
-  },
-  watch: {
-    checked: function () {
-      this.checkBoxChanged();
-    },
+    return {};
   },
   methods: {
     checkBoxChanged() {
-      if (this.allBoxesChecked()) {
-        bus.$emit('all-boxes-checked', true);
+      if (this.allBoxesChecked) {
+        bus.$emit("all-boxes-checked", true);
       } else {
-        bus.$emit('all-boxes-checked', false);
-      }
-    },
-    allBoxesChecked() {
-      if (this.translations.length == this.checked.length) {
-        return true;
-      } else {
-        return false;
+        bus.$emit("all-boxes-checked", false);
       }
     },
   },
   computed: {
-    checked: {
-      get() {
-        if (
-          typeof this.$store.state.dynamicProps[this.checkBoxGroupKey] ===
-          'undefined'
-        ) {
-          return [];
+    ...mapGetters(["getComponentById"]),
+    checkBoxes() {
+      return this.getComponentById(this.pageId, this.id).checkboxes;
+    },
+    allBoxesChecked() {
+      let allBoxesChecked = true;
+      this.checkBoxes.forEach((cb) => {
+        if (!cb.checked) {
+          allBoxesChecked = false;
+          return;
         }
-        return this.$store.state.dynamicProps[this.checkBoxGroupKey];
-      },
-      set(newValue) {
-        this.$store.commit('setDynamicProp', {
-          key: this.checkBoxGroupKey,
-          value: newValue,
-        });
-      },
+      });
+      return allBoxesChecked;
     },
   },
   components: {},
