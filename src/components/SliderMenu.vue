@@ -22,7 +22,7 @@
           :show-tooltip="false"
           show-stops
           v-model="slider.score"
-          @change="scoreChanged(slider.id)"
+          @change="scoreChanged()"
         ></el-slider>
         <div class="m-2">{{ slider.score }}</div>
       </div>

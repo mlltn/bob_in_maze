@@ -70,16 +70,19 @@ VIPJONO
 
 CURRENT ISSUES
 
-+ Checkbox reimplementation, maybe ditch elementUI checkbox group as it only accepts handling the label values and seems buggy.
-    + Make checkbox menu behive similarly to slider menu to hold checkboxes in array in the composition.
++ Slider menu refactor out unused paramenter
 
 -- Dynamic props to the common composition/component structure
-    + refactor checkboxes not to use dynamic props
 
 INVESTIGATION / Why all the assets are donwloaded with every rerender. Not happening in experiment but in practice.
     might be because all the pages might be done same time. Better would be generate them as the page is changed.
 **************************************************
 
++ Checkbox reimplementation, maybe ditch elementUI checkbox group as it only accepts handling the label values and seems buggy.
+    + Make checkbox menu behive similarly to slider menu to hold checkboxes in array in the composition.
+
+-- Dynamic props to the common composition/component structure
+    + refactor checkboxes not to use dynamic props
 
 + refactor Sliders menu
 + BUG / Admin panel buttons rendered for every page on button state change
